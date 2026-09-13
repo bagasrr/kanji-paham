@@ -34,10 +34,10 @@ export function KanjiCard({ entry }: Props) {
     <div className="w-full max-w-md md:max-w-5xl mx-auto bg-surface rounded-3xl border border-border-color overflow-hidden shadow-xl shadow-black/5">
       <div className="md:flex h-full">
         {/* ── Hero ───────────────────────────────────── */}
-        <div className="relative flex flex-col items-center justify-center gap-6 pt-12 pb-10 px-6 bg-gradient-to-b from-sakura/10 to-gold/10 dark:from-sakura/5 dark:to-gold/5 md:w-2/5 md:border-r border-border-color overflow-hidden">
+        <div className="relative flex flex-col items-center justify-start gap-5 pt-8 pb-8 px-6 bg-gradient-to-b from-sakura/10 to-gold/10 dark:from-sakura/5 dark:to-gold/5 md:w-2/5 md:border-r border-border-color overflow-hidden flex-shrink-0">
           <div className="pattern-washi absolute inset-0 z-0"></div>
           
-          <div className="relative z-10 flex gap-2 mb-4">
+          <div className="relative z-10 flex gap-2 mb-1">
             <span className="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full shadow-sm">
               N{entry.jlpt}
             </span>
@@ -47,13 +47,13 @@ export function KanjiCard({ entry }: Props) {
           </div>
 
           <span
-            className="text-[140px] md:text-[180px] font-serif leading-none select-none text-text-main drop-shadow-sm relative z-10"
+            className="text-[110px] md:text-[140px] font-serif leading-none select-none text-text-main drop-shadow-sm relative z-10 my-2"
             style={{ fontFamily: "'Noto Serif JP', serif" }}
           >
             {entry.character}
           </span>
 
-          <div className="relative z-10 flex flex-wrap gap-2 justify-center mt-2">
+          <div className="relative z-10 flex flex-wrap gap-2 justify-center">
             {entry.readings_on.slice(0, 2).map(r => (
               <span key={r} className="text-sm font-bold text-primary tracking-wider">{r}</span>
             ))}
@@ -64,11 +64,11 @@ export function KanjiCard({ entry }: Props) {
           </div>
 
           {/* SVG stroke animation */}
-          <div className="relative z-10 mt-6 flex flex-col items-center">
-            <span className="text-xs font-bold uppercase tracking-widest text-text-muted mb-3 flex items-center gap-2">
+          <div className="relative z-10 mt-3 flex flex-col items-center">
+            <span className="text-xs font-bold uppercase tracking-widest text-text-muted mb-2 flex items-center gap-2">
               <span>✏️</span> Urutan Penulisan
             </span>
-            <div className="w-32 h-32 md:w-40 md:h-40 border-2 border-border-color rounded-2xl bg-white dark:bg-card-muted/50 flex items-center justify-center p-2 shadow-inner">
+            <div className="w-28 h-28 md:w-36 md:h-36 border-2 border-border-color rounded-2xl bg-white dark:bg-card-muted/50 flex items-center justify-center p-2 shadow-inner">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={kanjiSvgPath(entry.character)}
@@ -85,11 +85,11 @@ export function KanjiCard({ entry }: Props) {
         <div className="md:w-3/5 flex flex-col bg-surface relative z-10">
           
           {/* ── Meanings ───────────────────────────────── */}
-          <div className="px-8 py-8 border-b border-border-color bg-card-muted/30">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-text-muted mb-3 flex items-center gap-2">
+          <div className="px-6 py-5 md:px-8 md:py-5 border-b border-border-color bg-card-muted/30">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-text-muted mb-2 flex items-center gap-2">
               <span>💡</span> Arti
             </h3>
-            <p className="text-2xl md:text-3xl text-text-main font-bold capitalize leading-tight">
+            <p className="text-xl md:text-2xl text-text-main font-bold capitalize leading-tight">
               {lang === 'id' && entry.meanings_id && entry.meanings_id.length > 0 
                 ? entry.meanings_id.join(', ')
                 : entry.meanings.join(' · ')}
@@ -97,9 +97,9 @@ export function KanjiCard({ entry }: Props) {
           </div>
 
           {/* ── Readings ───────────────────────────────── */}
-          <div className="px-8 py-8 border-b border-border-color grid md:grid-cols-2 gap-8 md:gap-4">
+          <div className="px-6 py-4 md:px-8 md:py-4 border-b border-border-color grid md:grid-cols-2 gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-text-muted mb-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-text-muted mb-2">
                 ON&apos;YOMI
               </p>
               <div className="flex flex-wrap gap-2">
@@ -107,7 +107,7 @@ export function KanjiCard({ entry }: Props) {
                   entry.readings_on.map((r) => (
                     <span
                       key={r}
-                      className="px-4 py-2 bg-primary/10 text-primary rounded-xl text-sm font-bold border border-primary/20"
+                      className="px-3.5 py-1.5 bg-primary/10 text-primary rounded-xl text-sm font-bold border border-primary/20"
                     >
                       {r}
                     </span>
@@ -118,7 +118,7 @@ export function KanjiCard({ entry }: Props) {
               </div>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-text-muted mb-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-text-muted mb-2">
                 KUN&apos;YOMI
               </p>
               <div className="flex flex-wrap gap-2">
@@ -126,7 +126,7 @@ export function KanjiCard({ entry }: Props) {
                   entry.readings_kun.map((r) => (
                     <span
                       key={r}
-                      className="px-4 py-2 bg-blue-500/10 text-blue-700 dark:text-blue-300 rounded-xl text-sm font-bold border border-blue-500/20"
+                      className="px-3.5 py-1.5 bg-blue-500/10 text-blue-700 dark:text-blue-300 rounded-xl text-sm font-bold border border-blue-500/20"
                     >
                       {r}
                     </span>
@@ -139,15 +139,20 @@ export function KanjiCard({ entry }: Props) {
           </div>
 
           {/* ── Vocabulary Examples ───────────────────────── */}
-          <div className="px-8 py-8 flex-1">
-            <div className="flex items-center justify-between mb-6">
+          <div className="px-6 py-5 md:px-8 md:py-5 flex-1 flex flex-col min-h-0">
+            <div className="flex items-center justify-between mb-4 flex-shrink-0">
               <h3 className="text-xs font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
                 <span>📖</span> Contoh Kosakata
+                {entry.vocab && entry.vocab.length > 0 && (
+                  <span className="text-xs font-normal text-text-subtle">
+                    ({entry.vocab.length})
+                  </span>
+                )}
               </h3>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5">
                 <button
                   onClick={() => setShowFurigana((v) => !v)}
-                  className="text-xs px-4 py-2 rounded-full border border-border-color text-text-main hover:bg-card-muted transition-colors font-bold shadow-sm"
+                  className="text-xs px-3.5 py-1.5 rounded-full border border-border-color text-text-main hover:bg-card-muted transition-colors font-bold shadow-sm"
                 >
                   Furigana: {showFurigana ? 'ON' : 'OFF'}
                 </button>
@@ -155,23 +160,23 @@ export function KanjiCard({ entry }: Props) {
                   <button
                     onClick={handleAudio}
                     aria-label={isPlaying ? 'Stop audio' : 'Play audio'}
-                    className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-hover hover:scale-105 transition-all shadow-md"
+                    className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-hover hover:scale-105 transition-all shadow-sm"
                   >
-                    {isPlaying ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                    {isPlaying ? <VolumeX size={15} /> : <Volume2 size={15} />}
                   </button>
                 )}
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 max-h-[300px] md:max-h-[340px] overflow-y-auto pr-2 scrollbar-thin">
               {entry.vocab && entry.vocab.length > 0 ? (
                 entry.vocab.map((v, i) => (
-                  <div key={i} className="flex flex-col p-4 rounded-2xl border border-border-color bg-card-muted/20 hover:bg-card-muted transition-colors">
-                    <div className="flex items-start justify-between mb-2">
-                      <ruby className="text-3xl font-medium text-text-main tracking-wide">
+                  <div key={i} className="flex flex-col p-3.5 rounded-2xl border border-border-color bg-card-muted/20 hover:bg-card-muted transition-colors">
+                    <div className="flex items-start justify-between mb-1.5">
+                      <ruby className="text-2xl font-medium text-text-main tracking-wide">
                         {v.word}
                         {showFurigana && v.reading && (
-                          <rt className="text-sm text-text-muted mb-1 font-normal tracking-normal">{v.reading}</rt>
+                          <rt className="text-xs text-text-muted mb-0.5 font-normal tracking-normal">{v.reading}</rt>
                         )}
                       </ruby>
                       {isSupported && (
@@ -180,14 +185,14 @@ export function KanjiCard({ entry }: Props) {
                             if (isPlaying) stop()
                             speak(v.word)
                           }}
-                          className="w-9 h-9 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center transition-all shadow-sm"
+                          className="w-8 h-8 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center transition-all shadow-sm"
                           title={`Dengarkan ${v.word}`}
                         >
-                          <Volume2 size={16} />
+                          <Volume2 size={14} />
                         </button>
                       )}
                     </div>
-                    <p className="text-sm text-text-muted capitalize font-medium">
+                    <p className="text-xs text-text-muted capitalize font-medium">
                       {lang === 'id' && v.meanings_id && v.meanings_id.length > 0
                         ? v.meanings_id.join(', ')
                         : v.meanings.join(', ')}
