@@ -3,17 +3,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Home, BookOpen, Brain, User, AlignJustify } from 'lucide-react'
-
-const NAV_ITEMS = [
-  { href: '/learn', icon: Home, label: 'Beranda' },
-  { href: '/kana', icon: AlignJustify, label: 'Kana' },
-  { href: '/quiz', icon: Brain, label: 'Quiz' },
-  { href: '/profile', icon: User, label: 'Profil' },
-] as const
+import { Home, BookOpen, Brain, User, AlignJustify, Info } from 'lucide-react'
+import { useLanguage } from '@/components/LanguageProvider'
 
 export function BottomNav() {
   const pathname = usePathname()
+  const { lang } = useLanguage()
+
+  const navItems = [
+    { href: '/learn', icon: Home, label: lang === 'id' ? 'Beranda' : 'Home' },
+    { href: '/kana', icon: AlignJustify, label: 'Kana' },
+    { href: '/quiz', icon: Brain, label: 'Quiz' },
+    { href: '/profile', icon: User, label: lang === 'id' ? 'Profil' : 'Profile' },
+    { href: '/info', icon: Info, label: 'Info' },
+  ]
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 md:top-0 md:bottom-auto md:w-60 md:h-screen md:border-r z-50 bg-surface border-t md:border-t-0 border-border-color pb-[env(safe-area-inset-bottom)] md:pb-0 md:flex md:flex-col justify-between shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.05)] md:shadow-none">
@@ -34,21 +37,21 @@ export function BottomNav() {
         </Link>
       </div>
 
-      <div className="w-full h-16 md:h-auto flex md:flex-col justify-around md:justify-start items-center md:items-stretch gap-1 md:gap-3 p-2 md:p-6 md:pt-8">
-        {NAV_ITEMS.map(({ href, icon: Icon, label }) => {
+      <div className="w-full h-16 md:h-auto flex md:flex-col justify-around md:justify-start items-center md:items-stretch gap-1 md:gap-2 p-2 md:p-6 md:pt-6">
+        {navItems.map(({ href, icon: Icon, label }) => {
           const active = pathname.startsWith(href)
           return (
             <Link
               key={href}
               href={href}
-              className={`flex-1 md:flex-none flex md:flex-row flex-col items-center md:justify-start gap-1 md:gap-4 py-1 md:py-3.5 px-2 md:px-5 rounded-2xl md:rounded-xl transition-all duration-300 ${
+              className={`flex-1 md:flex-none flex md:flex-row flex-col items-center md:justify-start gap-1 md:gap-4 py-1 md:py-3 px-1.5 md:px-5 rounded-2xl md:rounded-xl transition-all duration-300 ${
                 active
                   ? 'text-primary md:bg-primary/10 md:text-primary md:font-semibold'
                   : 'text-text-muted hover:text-text-main hover:bg-surface/80 md:hover:bg-card-muted/50'
               }`}
             >
               <Icon 
-                size={22} 
+                size={20} 
                 strokeWidth={active ? 2.5 : 2} 
                 className={`transition-transform duration-300 ${active ? 'scale-110 md:scale-100' : ''}`}
               />
@@ -61,9 +64,12 @@ export function BottomNav() {
       <div className="hidden md:block mt-auto p-6 text-center">
         <div className="pattern-washi absolute inset-0 z-[-1]"></div>
         <p className="text-xs text-text-subtle font-serif italic mb-2 tracking-widest text-sakura">桜が咲くように</p>
-        <p className="text-xs text-text-muted/60">
-          &copy; {new Date().getFullYear()} KanjiPaham
-        </p>
+        <Link 
+          href="/info"
+          className="text-xs text-text-muted/70 hover:text-primary transition-colors block"
+        >
+          &copy; {new Date().getFullYear()} KanjiPaham · {lang === 'id' ? 'Info & Kontak' : 'About & Contact'}
+        </Link>
       </div>
     </nav>
   )
