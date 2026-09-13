@@ -16,16 +16,26 @@ export async function GET(request: NextRequest) {
     const kanjis = data.default as KanjiEntry[]
 
     // Extract all vocabulary
-    const allVocab: { word: string; reading: string; meaning: string, meaning_id: string }[] = []
+    const allVocab: { word: string; reading: string; meaning: string; meaning_id: string }[] = []
     kanjis.forEach((k) => {
       if (k.vocab) {
         k.vocab.forEach((v) => {
           if (v.word && v.reading) {
+            // Find Indonesian meaning: prefer vocab meanings_id, fallback to kanji meanings_id, fallback to English
+            let indonesianMeaning = ''
+            if (v.meanings_id && v.meanings_id.length > 0) {
+              indonesianMeaning = v.meanings_id[0]
+            } else if (k.meanings_id && k.meanings_id.length > 0) {
+              indonesianMeaning = k.meanings_id[0]
+            } else {
+              indonesianMeaning = v.meanings[0] || ''
+            }
+
             allVocab.push({
               word: v.word,
               reading: v.reading,
               meaning: v.meanings[0] || '',
-              meaning_id: (v.meanings_id && v.meanings_id.length > 0) ? v.meanings_id[0] : (v.meanings[0] || '')
+              meaning_id: indonesianMeaning
             })
           }
         })
@@ -48,27 +58,38 @@ export async function GET(request: NextRequest) {
       let correctAnswer = ''
       let pool: string[] = []
 
-      const getM = (voc: any) => lang === 'id' ? voc.meaning_id : voc.meaning;
+      const getM = (voc: { meaning: string; meaning_id: string }) => 
+        lang === 'id' ? (voc.meaning_id || voc.meaning) : voc.meaning;
       const currentMeaning = getM(v)
 
       if (modeIdx === 0) {
-        prompt = `Bagian yang digarisbawahi pada kata 「__${v.word}__」 dibaca...`
+        prompt = lang === 'id'
+          ? `Bagian yang digarisbawahi pada kata 「__${v.word}__」 dibaca...`
+          : `How is the underlined part in 「__${v.word}__」 read?`
         correctAnswer = v.reading
         pool = allVocab.map(x => x.reading)
       } else if (modeIdx === 1) {
-        prompt = `Kanji yang tepat untuk menulis kata 「__${v.reading}__」 (${currentMeaning}) adalah...`
+        prompt = lang === 'id'
+          ? `Kanji yang tepat untuk menulis kata 「__${v.reading}__」 (${currentMeaning}) adalah...`
+          : `Which kanji correctly writes 「__${v.reading}__」 (${currentMeaning})?`
         correctAnswer = v.word
         pool = allVocab.map(x => x.word)
       } else if (modeIdx === 2) {
-        prompt = `Apa makna yang tepat dari kosakata 「${v.word}」?`
+        prompt = lang === 'id'
+          ? `Apa makna yang tepat dari kosakata 「${v.word}」?`
+          : `What is the correct meaning of 「${v.word}」?`
         correctAnswer = currentMeaning
         pool = allVocab.map(x => getM(x))
       } else if (modeIdx === 3) {
-        prompt = `Kosakata manakah yang memiliki arti "${currentMeaning}"?`
+        prompt = lang === 'id'
+          ? `Kosakata manakah yang memiliki arti "${currentMeaning}"?`
+          : `Which vocabulary word means "${currentMeaning}"?`
         correctAnswer = v.word
         pool = allVocab.map(x => x.word)
       } else {
-        prompt = `Pilihlah kosakata yang memiliki cara baca 「${v.reading}」!`
+        prompt = lang === 'id'
+          ? `Pilihlah kosakata yang memiliki cara baca 「${v.reading}」!`
+          : `Choose the vocabulary that is read as 「${v.reading}」!`
         correctAnswer = v.word
         pool = allVocab.map(x => x.word)
       }
@@ -103,7 +124,9 @@ export async function GET(request: NextRequest) {
         options,
         correctIndex,
         word: v.word,
-        meaning: v.meaning
+        meaning: currentMeaning,
+        meaning_id: v.meaning_id || v.meaning,
+        meaning_en: v.meaning
       }
     })
 

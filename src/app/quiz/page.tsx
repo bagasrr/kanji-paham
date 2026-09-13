@@ -10,46 +10,48 @@ type JLPTQuestion = {
   correctIndex: number
   word: string
   meaning: string
+  meaning_id?: string
+  meaning_en?: string
 }
 
 type AnswerState = 'unanswered' | 'correct' | 'wrong'
 
 const LEVEL_DATA = [
   {
-    level: 5, label: 'N5', title: 'Pemula',
-    subtitle: '79 kanji dasar',
+    level: 5, label: 'N5', title: 'Pemula', titleEn: 'Beginner',
+    subtitle: '79 kanji dasar', subtitleEn: '79 basic kanji',
     emoji: '🌱',
     color: 'text-success',
     badge: 'bg-success/15 text-success',
     accentBg: 'bg-success',
   },
   {
-    level: 4, label: 'N4', title: 'Dasar',
-    subtitle: '166 kanji sehari-hari',
+    level: 4, label: 'N4', title: 'Dasar', titleEn: 'Elementary',
+    subtitle: '166 kanji sehari-hari', subtitleEn: '166 everyday kanji',
     emoji: '🌿',
     color: 'text-secondary',
     badge: 'bg-secondary/15 text-secondary',
     accentBg: 'bg-secondary',
   },
   {
-    level: 3, label: 'N3', title: 'Menengah',
-    subtitle: '367 kanji teks umum',
+    level: 3, label: 'N3', title: 'Menengah', titleEn: 'Intermediate',
+    subtitle: '367 kanji teks umum', subtitleEn: '367 general kanji',
     emoji: '🌸',
     color: 'text-warning',
     badge: 'bg-warning/15 text-warning',
     accentBg: 'bg-warning',
   },
   {
-    level: 2, label: 'N2', title: 'Lanjutan',
-    subtitle: '367 kanji bacaan luas',
+    level: 2, label: 'N2', title: 'Lanjutan', titleEn: 'Advanced',
+    subtitle: '367 kanji bacaan luas', subtitleEn: '367 broad reading kanji',
     emoji: '🏯',
     color: 'text-sakura',
     badge: 'bg-sakura/15 text-sakura',
     accentBg: 'bg-sakura',
   },
   {
-    level: 1, label: 'N1', title: 'Mahir',
-    subtitle: '1232 kanji tingkat lanjut',
+    level: 1, label: 'N1', title: 'Mahir', titleEn: 'Expert',
+    subtitle: '1232 kanji tingkat lanjut', subtitleEn: '1232 advanced kanji',
     emoji: '⛩️',
     color: 'text-primary',
     badge: 'bg-primary/15 text-primary',
@@ -121,8 +123,12 @@ export default function GlobalQuizPage() {
           <div className="w-16 h-16 border-4 border-t-primary border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin absolute inset-0" />
         </div>
         <div className="text-center">
-          <p className="text-text-main font-semibold mb-1">Menyiapkan soal...</p>
-          <p className="text-text-muted text-sm">Mengacak pertanyaan untuk kamu</p>
+          <p className="text-text-main font-semibold mb-1">
+            {lang === 'id' ? 'Menyiapkan soal...' : 'Preparing questions...'}
+          </p>
+          <p className="text-text-muted text-sm">
+            {lang === 'id' ? 'Mengacak pertanyaan untuk kamu' : 'Shuffling questions for you'}
+          </p>
         </div>
       </div>
     )
@@ -148,10 +154,16 @@ export default function GlobalQuizPage() {
             </div>
 
             <h2 className="text-2xl font-bold text-text-main mb-1">
-              {isGreat ? 'Luar Biasa!' : isOk ? 'Bagus sekali!' : 'Terus berlatih!'}
+              {isGreat
+                ? (lang === 'id' ? 'Luar Biasa!' : 'Awesome!')
+                : isOk
+                ? (lang === 'id' ? 'Bagus sekali!' : 'Well done!')
+                : (lang === 'id' ? 'Terus berlatih!' : 'Keep practicing!')}
             </h2>
             <p className="text-text-muted mb-6 text-sm">
-              Simulasi N{level} · {currentLevel?.title}
+              {lang === 'id'
+                ? `Simulasi N${level} · ${currentLevel?.title}`
+                : `Simulation N${level} · ${currentLevel?.titleEn || currentLevel?.title}`}
             </p>
 
             {/* Score circle */}
@@ -173,12 +185,14 @@ export default function GlobalQuizPage() {
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-3xl font-bold text-text-main">{pct}%</span>
-                <span className="text-xs text-text-muted">Benar</span>
+                <span className="text-xs text-text-muted">{lang === 'id' ? 'Benar' : 'Correct'}</span>
               </div>
             </div>
 
             <p className="text-lg font-semibold text-text-main">
-              {score} dari {questions.length} soal benar
+              {lang === 'id'
+                ? `${score} dari ${questions.length} soal benar`
+                : `${score} of ${questions.length} questions correct`}
             </p>
           </div>
 
@@ -188,13 +202,13 @@ export default function GlobalQuizPage() {
               onClick={() => startQuiz(level!)}
               className="w-full py-4 rounded-2xl bg-primary text-white font-bold text-base flex items-center justify-center gap-2 hover:bg-primary-hover transition-colors shadow-md active:scale-[0.98]"
             >
-              <RotateCcw size={18} /> Ulangi N{level}
+              <RotateCcw size={18} /> {lang === 'id' ? `Ulangi N${level}` : `Retry N${level}`}
             </button>
             <button
               onClick={() => { setLevel(null); setDone(false) }}
               className="w-full py-4 rounded-2xl border-2 border-border-color bg-surface text-text-main font-semibold text-base hover:border-primary/40 transition-colors active:scale-[0.98]"
             >
-              Pilih Level Lain
+              {lang === 'id' ? 'Pilih Level Lain' : 'Choose Another Level'}
             </button>
           </div>
 
@@ -217,13 +231,15 @@ export default function GlobalQuizPage() {
           <button
             onClick={() => setLevel(null)}
             className="w-10 h-10 rounded-full border border-border-color bg-surface flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all shadow-sm flex-shrink-0"
-            aria-label="Keluar dari quiz"
+            aria-label={lang === 'id' ? 'Keluar dari quiz' : 'Exit quiz'}
           >
             <ArrowLeft size={18} />
           </button>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-1.5">
-              <span className="text-xs font-bold uppercase tracking-widest text-text-muted">Simulasi N{level}</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-text-muted">
+                {lang === 'id' ? `Simulasi N${level}` : `N${level} Simulation`}
+              </span>
               <span className="text-xs font-semibold text-text-muted">
                 <span className="text-text-main font-bold">{idx + 1}</span> / {questions.length}
               </span>
@@ -270,7 +286,7 @@ export default function GlobalQuizPage() {
                 key={i}
                 onClick={() => selectAnswer(i)}
                 disabled={answerState !== 'unanswered'}
-                aria-label={`Pilihan ${['A','B','C','D'][i]}: ${option}`}
+                aria-label={`${lang === 'id' ? 'Pilihan' : 'Option'} ${['A','B','C','D'][i]}: ${option}`}
                 className={`
                   relative border-2 rounded-2xl transition-all duration-200 text-left
                   disabled:cursor-default active:scale-[0.98]
@@ -313,12 +329,16 @@ export default function GlobalQuizPage() {
               }
             `}>
               <p className={`font-bold mb-1 flex items-center gap-2 ${answerState === 'correct' ? 'text-success' : 'text-error'}`}>
-                {answerState === 'correct' ? '✓ Benar!' : '✕ Kurang tepat'}
+                {answerState === 'correct' 
+                  ? (lang === 'id' ? '✓ Benar!' : '✓ Correct!') 
+                  : (lang === 'id' ? '✕ Kurang tepat' : '✕ Not quite right')}
               </p>
               <p className="text-sm text-text-muted">
                 <span className="font-semibold text-text-main">{q.word}</span>{' '}
-                berarti{' '}
-                <span className="font-semibold text-text-main">{q.meaning}</span>
+                {lang === 'id' ? 'berarti' : 'means'}{' '}
+                <span className="font-semibold text-text-main">
+                  {lang === 'id' ? (q.meaning_id || q.meaning) : (q.meaning_en || q.meaning)}
+                </span>
               </p>
             </div>
 
@@ -327,7 +347,9 @@ export default function GlobalQuizPage() {
               onClick={goNext}
               className="w-full py-4 rounded-2xl bg-primary text-white font-bold text-base flex items-center justify-center gap-2 hover:bg-primary-hover transition-colors shadow-md active:scale-[0.98]"
             >
-              {idx + 1 >= questions.length ? 'Lihat Hasil 🏆' : 'Soal Berikutnya'}
+              {idx + 1 >= questions.length 
+                ? (lang === 'id' ? 'Lihat Hasil 🏆' : 'View Results 🏆') 
+                : (lang === 'id' ? 'Soal Berikutnya' : 'Next Question')}
               <ChevronRight size={20} />
             </button>
           </div>
@@ -347,10 +369,12 @@ export default function GlobalQuizPage() {
           </div>
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-text-main">
-              Simulasi Ujian JLPT
+              {lang === 'id' ? 'Simulasi Ujian JLPT' : 'JLPT Exam Simulation'}
             </h1>
             <p className="text-text-muted text-sm font-medium">
-              Uji kemampuan kosakatamu sebelum ujian asli
+              {lang === 'id'
+                ? 'Uji kemampuan kosakatamu sebelum ujian asli'
+                : 'Test your vocabulary before the real exam'}
             </p>
           </div>
         </div>
@@ -359,7 +383,9 @@ export default function GlobalQuizPage() {
         <div className="mt-4 bg-primary/5 border border-primary/15 rounded-2xl px-4 py-3 flex items-center gap-3">
           <span className="text-2xl">⚡</span>
           <p className="text-sm text-text-main font-medium">
-            Latihan sedikit hari ini, biar besok makin paham.
+            {lang === 'id'
+              ? 'Latihan sedikit hari ini, biar besok makin paham.'
+              : 'A little daily practice makes mastery effortless.'}
           </p>
         </div>
       </div>
@@ -368,17 +394,21 @@ export default function GlobalQuizPage() {
       <div className="flex items-center gap-2 mb-4">
         <div className="flex items-center gap-1.5 bg-surface border border-border-color rounded-full px-3 py-1.5 shadow-sm">
           <Zap size={13} className="text-warning" />
-          <span className="text-xs font-semibold text-text-main">Soal Acak</span>
+          <span className="text-xs font-semibold text-text-main">
+            {lang === 'id' ? 'Soal Acak' : 'Randomized'}
+          </span>
         </div>
         <div className="flex items-center gap-1.5 bg-surface border border-border-color rounded-full px-3 py-1.5 shadow-sm">
           <span className="text-xs">🕐</span>
-          <span className="text-xs font-semibold text-text-main">~5 Menit</span>
+          <span className="text-xs font-semibold text-text-main">
+            {lang === 'id' ? '~5 Menit' : '~5 Mins'}
+          </span>
         </div>
       </div>
 
       {/* Level Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {LEVEL_DATA.map(({ level, label, title, subtitle, emoji, badge, accentBg }) => (
+        {LEVEL_DATA.map(({ level, label, title, titleEn, subtitle, subtitleEn, emoji, badge, accentBg }) => (
           <button
             key={level}
             onClick={() => startQuiz(level)}
@@ -397,12 +427,16 @@ export default function GlobalQuizPage() {
               {label}
             </span>
 
-            <h3 className="text-base font-bold text-text-main mb-0.5">{title}</h3>
-            <p className="text-xs text-text-muted mb-4">{subtitle}</p>
+            <h3 className="text-base font-bold text-text-main mb-0.5">
+              {lang === 'id' ? title : titleEn}
+            </h3>
+            <p className="text-xs text-text-muted mb-4">
+              {lang === 'id' ? subtitle : subtitleEn}
+            </p>
 
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-text-muted group-hover:text-text-main transition-colors">
-                Mulai Ujian
+                {lang === 'id' ? 'Mulai Ujian' : 'Start Exam'}
               </span>
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-white transition-transform group-hover:scale-110 ${accentBg}`}
@@ -416,7 +450,9 @@ export default function GlobalQuizPage() {
 
       {/* Footer hint */}
       <p className="text-center text-xs text-text-subtle mt-8">
-        Soal diacak dari kosakata JLPT yang sering muncul di ujian asli
+        {lang === 'id'
+          ? 'Soal diacak dari kosakata JLPT yang sering muncul di ujian asli'
+          : 'Questions are randomized from frequent JLPT vocabulary in real exams'}
       </p>
     </div>
   )

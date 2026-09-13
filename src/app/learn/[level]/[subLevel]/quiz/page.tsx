@@ -378,7 +378,7 @@ export default function QuizPage() {
             </div>
           ) : (
             <div className="flex items-center gap-2 text-sm text-text-muted relative z-10">
-              <span>Ketuk untuk melihat arti</span>
+              <span>{lang === 'id' ? 'Ketuk untuk melihat arti' : 'Tap to reveal meaning'}</span>
             </div>
           )}
         </div>
@@ -391,14 +391,14 @@ export default function QuizPage() {
               className="flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-error/30 bg-error/10 text-error font-bold text-sm hover:bg-error/20 transition-colors active:scale-[0.98]"
             >
               <XCircle size={18} />
-              Belum Tahu
+              {lang === 'id' ? 'Belum Tahu' : "Don't Know"}
             </button>
             <button
               onClick={() => nextCard(true)}
               className="flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-success/30 bg-success/10 text-success font-bold text-sm hover:bg-success/20 transition-colors active:scale-[0.98]"
             >
               <CheckCircle2 size={18} />
-              Tahu!
+              {lang === 'id' ? 'Tahu!' : 'I Know It!'}
             </button>
           </div>
         ) : (
@@ -407,7 +407,7 @@ export default function QuizPage() {
               onClick={() => setRevealed(true)}
               className="px-8 py-3.5 rounded-2xl bg-warning text-white font-bold text-sm hover:opacity-90 transition-opacity shadow-md active:scale-[0.98]"
             >
-              Lihat Arti
+              {lang === 'id' ? 'Lihat Arti' : 'Show Meaning'}
             </button>
           </div>
         )}
@@ -515,10 +515,12 @@ export default function QuizPage() {
               }
             `}>
               <p className={`font-bold text-sm mb-0.5 ${answerState === 'correct' ? 'text-success' : 'text-error'}`}>
-                {answerState === 'correct' ? '✓ Benar!' : '✕ Kurang tepat'}
+                {answerState === 'correct' 
+                  ? (lang === 'id' ? '✓ Benar!' : '✓ Correct!') 
+                  : (lang === 'id' ? '✕ Kurang tepat' : '✕ Not quite right')}
               </p>
               <p className="text-sm text-text-muted">
-                Jawaban benar:{' '}
+                {lang === 'id' ? 'Jawaban benar: ' : 'Correct answer: '}
                 <span
                   className="font-bold text-text-main"
                   style={isKanjiLike(q.options[q.correctIndex]) ? { fontFamily: "'Noto Serif JP', serif" } : undefined}
@@ -532,7 +534,9 @@ export default function QuizPage() {
               onClick={goMCQNext}
               className="w-full py-4 rounded-2xl bg-primary text-white font-bold text-base flex items-center justify-center gap-2 hover:bg-primary-hover transition-colors shadow-md active:scale-[0.98]"
             >
-              {idx + 1 >= questions.length ? 'Lihat Hasil 🏆' : 'Soal Berikutnya'}
+              {idx + 1 >= questions.length 
+                ? (lang === 'id' ? 'Lihat Hasil 🏆' : 'View Results 🏆') 
+                : (lang === 'id' ? 'Soal Berikutnya' : 'Next Question')}
               <ChevronRight size={20} />
             </button>
           </div>

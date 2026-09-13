@@ -57,23 +57,31 @@ export function buildMCQQuestions(entries: KanjiEntry[], lang: 'id' | 'en' = 'id
 
     if (mode === 'meaning') {
       // Variasi 1: Kanji -> Arti
-      prompt = `Apa arti dari kanji "${entry.character}"?`
+      prompt = lang === 'id'
+        ? `Apa arti dari kanji "${entry.character}"?`
+        : `What is the meaning of kanji "${entry.character}"?`
       correctAnswer = currentMeaning
       pool = entries.filter((e) => e.character !== entry.character).map((e) => getMeaning(e, lang))
     } else if (mode === 'onyomi') {
       // Variasi 2: Kanji -> On'yomi
-      prompt = `Bagaimana cara baca On'yomi (Katakana) dari "${entry.character}"?`
+      prompt = lang === 'id'
+        ? `Bagaimana cara baca On'yomi (Katakana) dari "${entry.character}"?`
+        : `What is the On'yomi reading of "${entry.character}"?`
       correctAnswer = entry.readings_on[0]
       pool = entries.filter((e) => e.character !== entry.character && e.readings_on.length > 0).map((e) => e.readings_on[0])
     } else if (mode === 'kunyomi') {
       // Variasi 3: Kanji -> Kun'yomi
-      prompt = `Bagaimana cara baca Kun'yomi (Hiragana) dari "${entry.character}"?`
+      prompt = lang === 'id'
+        ? `Bagaimana cara baca Kun'yomi (Hiragana) dari "${entry.character}"?`
+        : `What is the Kun'yomi reading of "${entry.character}"?`
       correctAnswer = entry.readings_kun[0]
       pool = entries.filter((e) => e.character !== entry.character && e.readings_kun.length > 0).map((e) => e.readings_kun[0])
     } else if (mode === 'reverse_meaning') {
       // Variasi 4: Arti -> Kanji
       displayChar = '?'
-      prompt = `Manakah kanji yang memiliki arti "${currentMeaning}"?`
+      prompt = lang === 'id'
+        ? `Manakah kanji yang memiliki arti "${currentMeaning}"?`
+        : `Which kanji has the meaning "${currentMeaning}"?`
       correctAnswer = entry.character
       pool = entries.filter((e) => e.character !== entry.character).map((e) => e.character)
     } else if (mode === 'reverse_reading') {
@@ -85,7 +93,9 @@ export function buildMCQQuestions(entries: KanjiEntry[], lang: 'id' | 'en' = 'id
       const reading = useOn ? entry.readings_on[0] : entry.readings_kun[0]
       const type = useOn ? "On'yomi" : "Kun'yomi"
       
-      prompt = `Kanji apakah yang memiliki bacaan ${type} "${reading}"?`
+      prompt = lang === 'id'
+        ? `Kanji apakah yang memiliki bacaan ${type} "${reading}"?`
+        : `Which kanji has the ${type} reading "${reading}"?`
       correctAnswer = entry.character
       pool = entries.filter((e) => e.character !== entry.character).map((e) => e.character)
     }
