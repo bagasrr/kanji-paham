@@ -1,0 +1,554 @@
+[
+  {
+    "character": "あ",
+    "romaji": "a",
+    "type": "hiragana",
+    "svgFile": "03042.svg"
+  },
+  {
+    "character": "い",
+    "romaji": "i",
+    "type": "hiragana",
+    "svgFile": "03044.svg"
+  },
+  {
+    "character": "う",
+    "romaji": "u",
+    "type": "hiragana",
+    "svgFile": "03046.svg"
+  },
+  {
+    "character": "え",
+    "romaji": "e",
+    "type": "hiragana",
+    "svgFile": "03048.svg"
+  },
+  {
+    "character": "お",
+    "romaji": "o",
+    "type": "hiragana",
+    "svgFile": "0304a.svg"
+  },
+  {
+    "character": "か",
+    "romaji": "ka",
+    "type": "hiragana",
+    "svgFile": "0304b.svg"
+  },
+  {
+    "character": "き",
+    "romaji": "ki",
+    "type": "hiragana",
+    "svgFile": "0304d.svg"
+  },
+  {
+    "character": "く",
+    "romaji": "ku",
+    "type": "hiragana",
+    "svgFile": "0304f.svg"
+  },
+  {
+    "character": "け",
+    "romaji": "ke",
+    "type": "hiragana",
+    "svgFile": "03051.svg"
+  },
+  {
+    "character": "こ",
+    "romaji": "ko",
+    "type": "hiragana",
+    "svgFile": "03053.svg"
+  },
+  {
+    "character": "さ",
+    "romaji": "sa",
+    "type": "hiragana",
+    "svgFile": "03055.svg"
+  },
+  {
+    "character": "し",
+    "romaji": "shi",
+    "type": "hiragana",
+    "svgFile": "03057.svg"
+  },
+  {
+    "character": "す",
+    "romaji": "su",
+    "type": "hiragana",
+    "svgFile": "03059.svg"
+  },
+  {
+    "character": "せ",
+    "romaji": "se",
+    "type": "hiragana",
+    "svgFile": "0305b.svg"
+  },
+  {
+    "character": "そ",
+    "romaji": "so",
+    "type": "hiragana",
+    "svgFile": "0305d.svg"
+  },
+  {
+    "character": "た",
+    "romaji": "ta",
+    "type": "hiragana",
+    "svgFile": "0305f.svg"
+  },
+  {
+    "character": "ち",
+    "romaji": "chi",
+    "type": "hiragana",
+    "svgFile": "03061.svg"
+  },
+  {
+    "character": "つ",
+    "romaji": "tsu",
+    "type": "hiragana",
+    "svgFile": "03064.svg"
+  },
+  {
+    "character": "て",
+    "romaji": "te",
+    "type": "hiragana",
+    "svgFile": "03066.svg"
+  },
+  {
+    "character": "と",
+    "romaji": "to",
+    "type": "hiragana",
+    "svgFile": "03068.svg"
+  },
+  {
+    "character": "な",
+    "romaji": "na",
+    "type": "hiragana",
+    "svgFile": "0306a.svg"
+  },
+  {
+    "character": "に",
+    "romaji": "ni",
+    "type": "hiragana",
+    "svgFile": "0306b.svg"
+  },
+  {
+    "character": "ぬ",
+    "romaji": "nu",
+    "type": "hiragana",
+    "svgFile": "0306c.svg"
+  },
+  {
+    "character": "ね",
+    "romaji": "ne",
+    "type": "hiragana",
+    "svgFile": "0306d.svg"
+  },
+  {
+    "character": "の",
+    "romaji": "no",
+    "type": "hiragana",
+    "svgFile": "0306e.svg"
+  },
+  {
+    "character": "は",
+    "romaji": "ha",
+    "type": "hiragana",
+    "svgFile": "0306f.svg"
+  },
+  {
+    "character": "ひ",
+    "romaji": "hi",
+    "type": "hiragana",
+    "svgFile": "03072.svg"
+  },
+  {
+    "character": "ふ",
+    "romaji": "fu",
+    "type": "hiragana",
+    "svgFile": "03075.svg"
+  },
+  {
+    "character": "へ",
+    "romaji": "he",
+    "type": "hiragana",
+    "svgFile": "03078.svg"
+  },
+  {
+    "character": "ほ",
+    "romaji": "ho",
+    "type": "hiragana",
+    "svgFile": "0307b.svg"
+  },
+  {
+    "character": "ま",
+    "romaji": "ma",
+    "type": "hiragana",
+    "svgFile": "0307e.svg"
+  },
+  {
+    "character": "み",
+    "romaji": "mi",
+    "type": "hiragana",
+    "svgFile": "0307f.svg"
+  },
+  {
+    "character": "む",
+    "romaji": "mu",
+    "type": "hiragana",
+    "svgFile": "03080.svg"
+  },
+  {
+    "character": "め",
+    "romaji": "me",
+    "type": "hiragana",
+    "svgFile": "03081.svg"
+  },
+  {
+    "character": "も",
+    "romaji": "mo",
+    "type": "hiragana",
+    "svgFile": "03082.svg"
+  },
+  {
+    "character": "や",
+    "romaji": "ya",
+    "type": "hiragana",
+    "svgFile": "03084.svg"
+  },
+  {
+    "character": "ゆ",
+    "romaji": "yu",
+    "type": "hiragana",
+    "svgFile": "03086.svg"
+  },
+  {
+    "character": "よ",
+    "romaji": "yo",
+    "type": "hiragana",
+    "svgFile": "03088.svg"
+  },
+  {
+    "character": "ら",
+    "romaji": "ra",
+    "type": "hiragana",
+    "svgFile": "03089.svg"
+  },
+  {
+    "character": "り",
+    "romaji": "ri",
+    "type": "hiragana",
+    "svgFile": "0308a.svg"
+  },
+  {
+    "character": "る",
+    "romaji": "ru",
+    "type": "hiragana",
+    "svgFile": "0308b.svg"
+  },
+  {
+    "character": "れ",
+    "romaji": "re",
+    "type": "hiragana",
+    "svgFile": "0308c.svg"
+  },
+  {
+    "character": "ろ",
+    "romaji": "ro",
+    "type": "hiragana",
+    "svgFile": "0308d.svg"
+  },
+  {
+    "character": "わ",
+    "romaji": "wa",
+    "type": "hiragana",
+    "svgFile": "0308f.svg"
+  },
+  {
+    "character": "を",
+    "romaji": "wo",
+    "type": "hiragana",
+    "svgFile": "03092.svg"
+  },
+  {
+    "character": "ん",
+    "romaji": "n",
+    "type": "hiragana",
+    "svgFile": "03093.svg"
+  },
+  {
+    "character": "ア",
+    "romaji": "a",
+    "type": "katakana",
+    "svgFile": "030a2.svg"
+  },
+  {
+    "character": "イ",
+    "romaji": "i",
+    "type": "katakana",
+    "svgFile": "030a4.svg"
+  },
+  {
+    "character": "ウ",
+    "romaji": "u",
+    "type": "katakana",
+    "svgFile": "030a6.svg"
+  },
+  {
+    "character": "エ",
+    "romaji": "e",
+    "type": "katakana",
+    "svgFile": "030a8.svg"
+  },
+  {
+    "character": "オ",
+    "romaji": "o",
+    "type": "katakana",
+    "svgFile": "030aa.svg"
+  },
+  {
+    "character": "カ",
+    "romaji": "ka",
+    "type": "katakana",
+    "svgFile": "030ab.svg"
+  },
+  {
+    "character": "キ",
+    "romaji": "ki",
+    "type": "katakana",
+    "svgFile": "030ad.svg"
+  },
+  {
+    "character": "ク",
+    "romaji": "ku",
+    "type": "katakana",
+    "svgFile": "030af.svg"
+  },
+  {
+    "character": "ケ",
+    "romaji": "ke",
+    "type": "katakana",
+    "svgFile": "030b1.svg"
+  },
+  {
+    "character": "コ",
+    "romaji": "ko",
+    "type": "katakana",
+    "svgFile": "030b3.svg"
+  },
+  {
+    "character": "サ",
+    "romaji": "sa",
+    "type": "katakana",
+    "svgFile": "030b5.svg"
+  },
+  {
+    "character": "シ",
+    "romaji": "shi",
+    "type": "katakana",
+    "svgFile": "030b7.svg"
+  },
+  {
+    "character": "ス",
+    "romaji": "su",
+    "type": "katakana",
+    "svgFile": "030b9.svg"
+  },
+  {
+    "character": "セ",
+    "romaji": "se",
+    "type": "katakana",
+    "svgFile": "030bb.svg"
+  },
+  {
+    "character": "ソ",
+    "romaji": "so",
+    "type": "katakana",
+    "svgFile": "030bd.svg"
+  },
+  {
+    "character": "タ",
+    "romaji": "ta",
+    "type": "katakana",
+    "svgFile": "030bf.svg"
+  },
+  {
+    "character": "チ",
+    "romaji": "chi",
+    "type": "katakana",
+    "svgFile": "030c1.svg"
+  },
+  {
+    "character": "ツ",
+    "romaji": "tsu",
+    "type": "katakana",
+    "svgFile": "030c4.svg"
+  },
+  {
+    "character": "テ",
+    "romaji": "te",
+    "type": "katakana",
+    "svgFile": "030c6.svg"
+  },
+  {
+    "character": "ト",
+    "romaji": "to",
+    "type": "katakana",
+    "svgFile": "030c8.svg"
+  },
+  {
+    "character": "ナ",
+    "romaji": "na",
+    "type": "katakana",
+    "svgFile": "030ca.svg"
+  },
+  {
+    "character": "ニ",
+    "romaji": "ni",
+    "type": "katakana",
+    "svgFile": "030cb.svg"
+  },
+  {
+    "character": "ヌ",
+    "romaji": "nu",
+    "type": "katakana",
+    "svgFile": "030cc.svg"
+  },
+  {
+    "character": "ネ",
+    "romaji": "ne",
+    "type": "katakana",
+    "svgFile": "030cd.svg"
+  },
+  {
+    "character": "ノ",
+    "romaji": "no",
+    "type": "katakana",
+    "svgFile": "030ce.svg"
+  },
+  {
+    "character": "ハ",
+    "romaji": "ha",
+    "type": "katakana",
+    "svgFile": "030cf.svg"
+  },
+  {
+    "character": "ヒ",
+    "romaji": "hi",
+    "type": "katakana",
+    "svgFile": "030d2.svg"
+  },
+  {
+    "character": "フ",
+    "romaji": "fu",
+    "type": "katakana",
+    "svgFile": "030d5.svg"
+  },
+  {
+    "character": "ヘ",
+    "romaji": "he",
+    "type": "katakana",
+    "svgFile": "030d8.svg"
+  },
+  {
+    "character": "ホ",
+    "romaji": "ho",
+    "type": "katakana",
+    "svgFile": "030db.svg"
+  },
+  {
+    "character": "マ",
+    "romaji": "ma",
+    "type": "katakana",
+    "svgFile": "030de.svg"
+  },
+  {
+    "character": "ミ",
+    "romaji": "mi",
+    "type": "katakana",
+    "svgFile": "030df.svg"
+  },
+  {
+    "character": "ム",
+    "romaji": "mu",
+    "type": "katakana",
+    "svgFile": "030e0.svg"
+  },
+  {
+    "character": "メ",
+    "romaji": "me",
+    "type": "katakana",
+    "svgFile": "030e1.svg"
+  },
+  {
+    "character": "モ",
+    "romaji": "mo",
+    "type": "katakana",
+    "svgFile": "030e2.svg"
+  },
+  {
+    "character": "ヤ",
+    "romaji": "ya",
+    "type": "katakana",
+    "svgFile": "030e4.svg"
+  },
+  {
+    "character": "ユ",
+    "romaji": "yu",
+    "type": "katakana",
+    "svgFile": "030e6.svg"
+  },
+  {
+    "character": "ヨ",
+    "romaji": "yo",
+    "type": "katakana",
+    "svgFile": "030e8.svg"
+  },
+  {
+    "character": "ラ",
+    "romaji": "ra",
+    "type": "katakana",
+    "svgFile": "030e9.svg"
+  },
+  {
+    "character": "リ",
+    "romaji": "ri",
+    "type": "katakana",
+    "svgFile": "030ea.svg"
+  },
+  {
+    "character": "ル",
+    "romaji": "ru",
+    "type": "katakana",
+    "svgFile": "030eb.svg"
+  },
+  {
+    "character": "レ",
+    "romaji": "re",
+    "type": "katakana",
+    "svgFile": "030ec.svg"
+  },
+  {
+    "character": "ロ",
+    "romaji": "ro",
+    "type": "katakana",
+    "svgFile": "030ed.svg"
+  },
+  {
+    "character": "ワ",
+    "romaji": "wa",
+    "type": "katakana",
+    "svgFile": "030ef.svg"
+  },
+  {
+    "character": "ヲ",
+    "romaji": "wo",
+    "type": "katakana",
+    "svgFile": "030f2.svg"
+  },
+  {
+    "character": "ン",
+    "romaji": "n",
+    "type": "katakana",
+    "svgFile": "030f3.svg"
+  }
+]

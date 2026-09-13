@@ -1,0 +1,163 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  GAKUSEI
+  SENSEI
+  ADMIN
+}
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?   // null for OAuth users
+  role          Role      @default(GAKUSEI)
+  accounts      Account[]
+  sessions      Session[]
+  progress      UserProgress[]
+  quizResults   QuizResult[]
+  weakKanji     WeakKanji[]
+  teacherApp    TeacherApplication?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+  @@id([identifier, token])
+}
+
+model UserProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  character   String   // kanji character
+  jlptLevel   Int      // 1-5
+  subLevel    Int
+  completedAt DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, character])
+}
+
+model QuizResult {
+  id        String   @id @default(cuid())
+  userId    String
+  level     Int
+  subLevel  Int
+  mode      String   // 'flashcard' | 'mcq'
+  score     Int
+  total     Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Kanji {
+  character    String   @id
+  strokes      Int
+  grade        Int?
+  freq         Int?
+  jlpt         Int
+  meanings     String[]
+  meanings_id  String[]
+  readings_on  String[]
+  readings_kun String[]
+  svgFile      String
+  subLevel     Int
+  vocab        Vocab[]
+  weakBy       WeakKanji[]
+}
+
+model Vocab {
+  id          String   @id @default(cuid())
+  kanjiChar   String
+  kanji       Kanji    @relation(fields: [kanjiChar], references: [character], onDelete: Cascade)
+  word        String
+  reading     String
+  meanings    String[]
+  meanings_id String[]
+}
+
+model WeakKanji {
+  id           String   @id @default(cuid())
+  userId       String
+  character    String
+  mistakeCount Int      @default(1)
+  lastMistake  DateTime @default(now())
+  
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kanji        Kanji    @relation(fields: [character], references: [character], onDelete: Cascade)
+
+  @@unique([userId, character])
+}
+
+model TeacherApplication {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  certificateUrl String   // JLPT N3 Cert URL
+  idCardUrl      String?  // KTP (optional for now)
+  status         ApplicationStatus @default(PENDING)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model CustomQuestionBank {
+  id          String   @id @default(cuid())
+  title       String
+  level       Int      // 1-5 (JLPT level)
+  subLevel    Int?     // If null, it means it's a global JLPT simulation bank
+  createdBy   String   // User ID of the Sensei/Admin
+  questions   CustomQuestion[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model CustomQuestion {
+  id            String   @id @default(cuid())
+  bankId        String
+  kanji         String?
+  prompt        String
+  options       String[]
+  correctIndex  Int
+  type          String   // e.g., 'meaning', 'reading', 'reverse'
+  bank          CustomQuestionBank @relation(fields: [bankId], references: [id], onDelete: Cascade)
+}

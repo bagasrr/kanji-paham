@@ -1,0 +1,413 @@
+
+> nihongo-app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.19:3000
+- Environments: .env.local, .env
+✓ Ready in 520ms
+✓ Running next.config.ts took 156ms
+
+[31m[auth][error][0m MissingCSRF: CSRF token was missing during an action signin. Read more at https://errors.authjs.dev#missingcsrf
+    at validateCSRF (/Users/bagasrr/Documents/code/web belajar kanji/.next/dev/server/chunks/node_modules_@auth_core_0sffop8._.js:1892:11)
+    at AuthInternal (/Users/bagasrr/Documents/code/web belajar kanji/.next/dev/server/chunks/node_modules_@auth_core_0sffop8._.js:2516:222)
+    at async Auth (/Users/bagasrr/Documents/code/web belajar kanji/.next/dev/server/chunks/node_modules_@auth_core_0sffop8._.js:350:34)
+    at async AppRouteRouteModule.do (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+    at async AppRouteRouteModule.handle (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:50547)
+    at async responseGenerator (/Users/bagasrr/Documents/code/web belajar kanji/.next/dev/server/chunks/node_modules_next_1e9htnb._.js:5328:30)
+    at async AppRouteRouteModule.handleResponse (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:1:250435)
+    at async handleResponse (/Users/bagasrr/Documents/code/web belajar kanji/.next/dev/server/chunks/node_modules_next_1e9htnb._.js:5400:32)
+    at async Module.handler (/Users/bagasrr/Documents/code/web belajar kanji/.next/dev/server/chunks/node_modules_next_1e9htnb._.js:5520:9)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/base-server.js:1537:9)
+    at async DevServer.renderPageComponent (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/base-server.js:1589:24)
+    at async DevServer.renderToResponseImpl (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/base-server.js:1639:32)
+    at async DevServer.pipeImpl (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/base-server.js:1088:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/next-server.js:338:17)
+    at async DevServer.handleRequestImpl (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/base-server.js:979:17)
+    at async /Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/dev/next-dev-server.js:426:20
+    at async Span.traceAsyncFn (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/trace/trace.js:164:20)
+    at async DevServer.handleRequest (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/dev/next-dev-server.js:422:24)
+    at async invokeRender (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/lib/router-server.js:306:21)
+    at async handleRequest (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/lib/router-server.js:508:24)
+    at async requestHandlerImpl (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/lib/router-server.js:565:13)
+    at async Server.requestListener (/Users/bagasrr/Documents/code/web belajar kanji/node_modules/next/dist/server/lib/start-server.js:225:13)
+ POST /api/auth/signin/google 302 in 1654ms (next.js: 1602ms, application-code: 51ms)
+  Reload env: .env
+ GET /auth/error?error=Configuration 200 in 776ms (next.js: 530ms, application-code: 246ms)
+ GET /profile 200 in 68ms (next.js: 56ms, application-code: 12ms)
+ GET /auth/login 200 in 158ms (next.js: 139ms, application-code: 19ms)
+ GET /api/auth/providers 200 in 89ms (next.js: 75ms, application-code: 13ms)
+ GET /api/auth/csrf 200 in 12ms (next.js: 0.9ms, application-code: 11ms)
+ POST /api/auth/signin/google? 200 in 98ms (next.js: 1.5ms, application-code: 97ms)
+ GET /api/auth/callback/google?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0ATsMZqDQWkzI09eZSIXU3d5bjGjibpufmDlNKbM0RiG_pQEaWQ_4Ltn-TN_KkfO4jHjoZQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none 302 in 274ms (next.js: 11ms, application-code: 263ms)
+ GET /learn 200 in 135ms (next.js: 45ms, proxy.ts: 61ms, application-code: 30ms)
+ GET /profile 200 in 26ms (next.js: 11ms, application-code: 15ms)
+ GET /kana 200 in 64ms (next.js: 51ms, application-code: 13ms)
+ GET /profile 200 in 27ms (next.js: 9ms, application-code: 18ms)
+ GET /quiz 200 in 516ms (next.js: 446ms, application-code: 69ms)
+ GET /api/quiz/jlpt?level=5&lang=id 200 in 85ms (next.js: 69ms, application-code: 15ms)
+ GET /profile 200 in 53ms (next.js: 21ms, application-code: 32ms)
+ GET /learn 200 in 381ms (next.js: 57ms, proxy.ts: 246ms, application-code: 78ms)
+ GET /learn/5 200 in 1190ms (next.js: 1043ms, proxy.ts: 99ms, application-code: 47ms)
+ GET /learn/5/1 200 in 540ms (next.js: 456ms, proxy.ts: 40ms, application-code: 45ms)
+ GET /learn/5/1/quiz 200 in 404ms (next.js: 376ms, proxy.ts: 15ms, application-code: 14ms)
+ GET /api/kanji?level=5&subLevel=1 200 in 93ms (next.js: 80ms, application-code: 12ms)
+ GET /api/kanji?level=5&subLevel=1 200 in 5ms (next.js: 2ms, application-code: 3ms)
+✓ Compiled in 1800ms
+ GET /learn/5/1/quiz 200 in 190ms (next.js: 14ms, proxy.ts: 145ms, application-code: 31ms)
+✓ Compiled in 903ms
+ GET /learn/5/1/quiz 200 in 294ms (next.js: 160ms, proxy.ts: 97ms, application-code: 37ms)
+ GET /learn/5/1/quiz 200 in 88ms (next.js: 14ms, proxy.ts: 5ms, application-code: 69ms)
+ GET /learn/5/1/quiz 200 in 49ms (next.js: 8ms, proxy.ts: 12ms, application-code: 29ms)
+ GET /learn/5/1/quiz 200 in 57ms (next.js: 2.0ms, proxy.ts: 28ms, application-code: 27ms)
+ GET /learn/5/1/quiz 200 in 38ms (next.js: 4ms, proxy.ts: 12ms, application-code: 22ms)
+ GET /learn/5/1/quiz 200 in 72ms (next.js: 1.7ms, proxy.ts: 7ms, application-code: 63ms)
+ GET /learn/5/1/quiz 200 in 72ms (next.js: 3ms, proxy.ts: 44ms, application-code: 25ms)
+ GET /learn/5/1/quiz 200 in 44ms (next.js: 3ms, proxy.ts: 12ms, application-code: 29ms)
+ GET /learn/5/1/quiz 200 in 60ms (next.js: 3ms, proxy.ts: 31ms, application-code: 25ms)
+ GET /learn/5/1/quiz 200 in 41ms (next.js: 18ms, proxy.ts: 8ms, application-code: 15ms)
+ GET /learn/5/1/quiz 200 in 25ms (next.js: 4ms, proxy.ts: 9ms, application-code: 12ms)
+ GET /learn/5/1/quiz 200 in 107ms (next.js: 8ms, proxy.ts: 11ms, application-code: 88ms)
+ GET /learn/5/1/quiz 200 in 165ms (next.js: 18ms, proxy.ts: 60ms, application-code: 88ms)
+ GET /learn/5/1/quiz 200 in 50ms (next.js: 6ms, proxy.ts: 11ms, application-code: 33ms)
+ GET /learn/5/1/quiz 200 in 54ms (next.js: 5ms, proxy.ts: 12ms, application-code: 38ms)
+ GET /learn/5/1/quiz 200 in 53ms (next.js: 12ms, proxy.ts: 13ms, application-code: 28ms)
+ GET /learn/5/1/quiz 200 in 44ms (next.js: 14ms, proxy.ts: 6ms, application-code: 24ms)
+ GET /learn/5/1/quiz 200 in 116ms (next.js: 16ms, proxy.ts: 67ms, application-code: 34ms)
+ GET /learn/5/1/quiz 200 in 40ms (next.js: 3ms, proxy.ts: 14ms, application-code: 23ms)
+ GET /learn/5/1/quiz 200 in 38ms (next.js: 2ms, proxy.ts: 5ms, application-code: 31ms)
+ GET /learn/5/1/quiz 200 in 35ms (next.js: 5ms, proxy.ts: 8ms, application-code: 22ms)
+ GET /learn/5/1/quiz 200 in 33ms (next.js: 5ms, proxy.ts: 4ms, application-code: 24ms)
+ GET /learn/5/1/quiz 200 in 36ms (next.js: 3ms, proxy.ts: 5ms, application-code: 27ms)
+ GET /learn/5/1/quiz 200 in 25ms (next.js: 4ms, proxy.ts: 7ms, application-code: 14ms)
+ GET /learn/5/1/quiz 200 in 33ms (next.js: 3ms, proxy.ts: 7ms, application-code: 24ms)
+ GET /learn/5/1/quiz 200 in 69ms (next.js: 11ms, proxy.ts: 9ms, application-code: 48ms)
+ GET /learn/5/1/quiz 200 in 58ms (next.js: 7ms, proxy.ts: 25ms, application-code: 26ms)
+ GET /learn/5/1/quiz 200 in 37ms (next.js: 9ms, proxy.ts: 9ms, application-code: 19ms)
+ GET /learn/5/1/quiz 200 in 27ms (next.js: 4ms, proxy.ts: 9ms, application-code: 14ms)
+ GET /learn/5/1/quiz 200 in 48ms (next.js: 19ms, proxy.ts: 7ms, application-code: 21ms)
+ GET /learn/5/1/quiz 200 in 47ms (next.js: 3ms, proxy.ts: 4ms, application-code: 40ms)
+ GET /learn/5/1/quiz 200 in 90ms (next.js: 18ms, proxy.ts: 29ms, application-code: 43ms)
+ GET /learn/5/1/quiz 200 in 61ms (next.js: 13ms, proxy.ts: 19ms, application-code: 29ms)
+ GET /learn/5/1/quiz 200 in 23ms (next.js: 1.9ms, proxy.ts: 8ms, application-code: 13ms)
+ GET /learn/5/1/quiz 200 in 19ms (next.js: 2ms, proxy.ts: 5ms, application-code: 12ms)
+ GET /learn/5/1/quiz 200 in 33ms (next.js: 3ms, proxy.ts: 4ms, application-code: 26ms)
+ GET /learn/5/1/quiz 200 in 32ms (next.js: 3ms, proxy.ts: 8ms, application-code: 22ms)
+ GET /learn/5/1/quiz 200 in 32ms (next.js: 2ms, proxy.ts: 8ms, application-code: 21ms)
+ GET /learn/5/1/quiz 200 in 28ms (next.js: 5ms, proxy.ts: 8ms, application-code: 15ms)
+ GET /learn/5/1/quiz 200 in 24ms (next.js: 1.9ms, proxy.ts: 6ms, application-code: 16ms)
+ GET /learn/5/1/quiz 200 in 942ms (next.js: 671ms, proxy.ts: 131ms, application-code: 139ms)
+ GET /learn/5/1/quiz 200 in 136ms (next.js: 37ms, proxy.ts: 39ms, application-code: 60ms)
+✓ Compiled in 1216ms
+ GET /learn/5/1/quiz 200 in 176ms (next.js: 17ms, proxy.ts: 25ms, application-code: 133ms)
+ GET /learn/5/1/quiz 200 in 115ms (next.js: 57ms, proxy.ts: 33ms, application-code: 25ms)
+ GET /learn/5/1/quiz 200 in 30ms (next.js: 4ms, proxy.ts: 5ms, application-code: 21ms)
+ GET /learn/5/1/quiz 200 in 40ms (next.js: 4ms, proxy.ts: 8ms, application-code: 28ms)
+ GET /learn/5/1/quiz 200 in 58ms (next.js: 9ms, proxy.ts: 6ms, application-code: 43ms)
+ GET /learn/5/1/quiz 200 in 40ms (next.js: 2ms, proxy.ts: 21ms, application-code: 17ms)
+ GET /learn/5/1/quiz 200 in 25ms (next.js: 3ms, proxy.ts: 8ms, application-code: 14ms)
+ GET /learn/5/1/quiz 200 in 45ms (next.js: 11ms, proxy.ts: 18ms, application-code: 16ms)
+ GET /learn/5/1/quiz 200 in 87ms (next.js: 2ms, proxy.ts: 6ms, application-code: 78ms)
+ GET /learn/5/1/quiz 200 in 170ms (next.js: 56ms, proxy.ts: 69ms, application-code: 45ms)
+ GET /learn/5/1/quiz 200 in 55ms (next.js: 25ms, proxy.ts: 13ms, application-code: 17ms)
+ GET /learn/5/1/quiz 200 in 22ms (next.js: 5ms, proxy.ts: 6ms, application-code: 12ms)
+ GET /learn/5/1/quiz 200 in 40ms (next.js: 4ms, proxy.ts: 13ms, application-code: 23ms)
+ GET /learn/5/1/quiz 200 in 67ms (next.js: 9ms, proxy.ts: 11ms, application-code: 46ms)
+ GET /learn/5/1/quiz 200 in 31ms (next.js: 2ms, proxy.ts: 8ms, application-code: 21ms)
+ GET /learn/5/1/quiz 200 in 40ms (next.js: 3ms, proxy.ts: 18ms, application-code: 19ms)
+ GET /learn/5/1/quiz 200 in 46ms (next.js: 4ms, proxy.ts: 6ms, application-code: 36ms)
+ GET /learn/5/1/quiz 200 in 25ms (next.js: 2ms, proxy.ts: 11ms, application-code: 11ms)
+ GET /learn/5/1/quiz 200 in 16ms (next.js: 1.8ms, proxy.ts: 4ms, application-code: 9ms)
+ GET /learn/5/1/quiz 200 in 28ms (next.js: 2ms, proxy.ts: 14ms, application-code: 12ms)
+ GET /learn/5/1/quiz 200 in 34ms (next.js: 3ms, proxy.ts: 8ms, application-code: 23ms)
+ GET /learn/5/1/quiz 200 in 24ms (next.js: 3ms, proxy.ts: 7ms, application-code: 14ms)
+ GET /learn/5/1/quiz 200 in 32ms (next.js: 4ms, proxy.ts: 5ms, application-code: 23ms)
+ GET /learn/5/1/quiz 200 in 41ms (next.js: 5ms, proxy.ts: 20ms, application-code: 17ms)
+ GET /learn/5/1/quiz 200 in 31ms (next.js: 1.8ms, proxy.ts: 6ms, application-code: 23ms)
+ GET /learn/5/1/quiz 200 in 27ms (next.js: 1.9ms, proxy.ts: 10ms, application-code: 15ms)
+ GET /learn/5/1/quiz 200 in 24ms (next.js: 2ms, proxy.ts: 7ms, application-code: 15ms)
+ GET /learn/5/1/quiz 200 in 53ms (next.js: 3ms, proxy.ts: 5ms, application-code: 45ms)
+ GET /learn/5/1/quiz 200 in 108ms (next.js: 28ms, proxy.ts: 10ms, application-code: 70ms)
+ GET /learn/5/1/quiz 200 in 111ms (next.js: 34ms, proxy.ts: 18ms, application-code: 59ms)
+ GET /learn/5/1/quiz 200 in 56ms (next.js: 14ms, proxy.ts: 7ms, application-code: 35ms)
+ GET /learn/5/1/quiz 200 in 34ms (next.js: 6ms, proxy.ts: 9ms, application-code: 19ms)
+ GET /learn/5/1/quiz 200 in 20ms (next.js: 1.8ms, proxy.ts: 5ms, application-code: 13ms)
+ GET /learn/5/1/quiz 200 in 23ms (next.js: 1.8ms, proxy.ts: 5ms, application-code: 17ms)
+ GET /learn/5/1/quiz 200 in 47ms (next.js: 5ms, proxy.ts: 22ms, application-code: 21ms)
+ GET /learn/5/1/quiz 200 in 81ms (next.js: 2ms, proxy.ts: 10ms, application-code: 69ms)
+ GET /learn/5/1/quiz 200 in 37ms (next.js: 3ms, proxy.ts: 20ms, application-code: 14ms)
+ GET /learn/5/1/quiz 200 in 26ms (next.js: 1.9ms, proxy.ts: 6ms, application-code: 18ms)
+ GET /learn/5/1/quiz 200 in 21ms (next.js: 3ms, proxy.ts: 5ms, application-code: 13ms)
+ GET /learn/5/1/quiz 200 in 23ms (next.js: 2ms, proxy.ts: 4ms, application-code: 17ms)
+✓ Compiled in 2.3s
+ GET /learn/5/1/quiz 200 in 147ms (next.js: 62ms, proxy.ts: 45ms, application-code: 40ms)
+ GET /learn/5/1 200 in 151ms (next.js: 101ms, proxy.ts: 13ms, application-code: 37ms)
+ GET /learn/5/1/%E4%B8%80 200 in 297ms (next.js: 264ms, proxy.ts: 15ms, application-code: 18ms)
+ GET /learn/5/1 200 in 58ms (next.js: 15ms, proxy.ts: 20ms, application-code: 24ms)
+ GET /learn/5/1/quiz 200 in 212ms (next.js: 101ms, proxy.ts: 32ms, application-code: 79ms)
+ GET /api/kanji?level=5&subLevel=1 200 in 183ms (next.js: 143ms, application-code: 40ms)
+ GET /api/kanji?level=5&subLevel=1 200 in 56ms (next.js: 11ms, application-code: 45ms)
+ POST /api/user/progress 201 in 1052ms (next.js: 680ms, proxy.ts: 16ms, application-code: 356ms)
+ GET /learn/5/1 200 in 432ms (next.js: 153ms, proxy.ts: 57ms, application-code: 222ms)
+ GET /profile 200 in 296ms (next.js: 183ms, application-code: 113ms)
+✓ Compiled in 704ms
+ GET /learn 200 in 732ms (next.js: 146ms, proxy.ts: 518ms, application-code: 68ms)
+ GET /learn/1 200 in 261ms (next.js: 67ms, proxy.ts: 25ms, application-code: 169ms)
+ GET /learn/1/27 200 in 100ms (next.js: 56ms, proxy.ts: 25ms, application-code: 19ms)
+ GET /learn/1/27/%E7%9C%8B 200 in 88ms (next.js: 55ms, proxy.ts: 18ms, application-code: 15ms)
+ GET /learn/1/27 200 in 60ms (next.js: 12ms, proxy.ts: 23ms, application-code: 25ms)
+ GET /learn/1/27/%E7%9C%8B 200 in 38ms (next.js: 12ms, proxy.ts: 10ms, application-code: 16ms)
+ GET /learn/1/27/%E8%A8%9F 200 in 54ms (next.js: 9ms, proxy.ts: 19ms, application-code: 26ms)
+ GET /learn/1/27/%E6%88%92 200 in 38ms (next.js: 6ms, proxy.ts: 7ms, application-code: 25ms)
+ GET /learn/1/27/%E7%A5%89 200 in 25ms (next.js: 7ms, proxy.ts: 6ms, application-code: 12ms)
+ GET /learn/1/27/%E8%AA%89 200 in 47ms (next.js: 16ms, proxy.ts: 14ms, application-code: 17ms)
+ GET /learn/1/27/%E6%AD%93 200 in 34ms (next.js: 7ms, proxy.ts: 13ms, application-code: 14ms)
+ GET /learn/1/27/%E5%A5%8F 200 in 32ms (next.js: 5ms, proxy.ts: 8ms, application-code: 19ms)
+ GET /learn/1/27/%E5%8B%A7 200 in 22ms (next.js: 5ms, proxy.ts: 7ms, application-code: 10ms)
+ GET /learn/1/27 200 in 71ms (next.js: 12ms, proxy.ts: 19ms, application-code: 41ms)
+ GET /learn/1/27/quiz 200 in 83ms (next.js: 39ms, proxy.ts: 21ms, application-code: 24ms)
+ GET /api/kanji?level=1&subLevel=27 200 in 62ms (next.js: 20ms, application-code: 41ms)
+ GET /api/kanji?level=1&subLevel=27 200 in 5ms (next.js: 3ms, application-code: 2ms)
+ POST /api/user/progress 201 in 136ms (next.js: 26ms, proxy.ts: 18ms, application-code: 92ms)
+ GET /learn/1/27 200 in 43ms (next.js: 12ms, proxy.ts: 8ms, application-code: 24ms)
+ GET /learn/1 200 in 131ms (next.js: 11ms, proxy.ts: 14ms, application-code: 106ms)
+ GET /learn 200 in 45ms (next.js: 6ms, proxy.ts: 24ms, application-code: 16ms)
+ GET /learn 200 in 304ms (next.js: 35ms, proxy.ts: 151ms, application-code: 118ms)
+ GET /learn 200 in 1793ms (next.js: 1540ms, proxy.ts: 196ms, application-code: 57ms)
+ GET /learn 200 in 128ms (next.js: 6ms, proxy.ts: 44ms, application-code: 78ms)
+ GET /learn 200 in 23ms (next.js: 1.2ms, proxy.ts: 7ms, application-code: 15ms)
+ GET /learn 200 in 21ms (next.js: 1.1ms, proxy.ts: 6ms, application-code: 14ms)
+ GET /learn 200 in 133ms (next.js: 1.1ms, proxy.ts: 6ms, application-code: 126ms)
+ GET /learn 200 in 105ms (next.js: 2ms, proxy.ts: 65ms, application-code: 39ms)
+ GET /learn 200 in 31ms (next.js: 1.9ms, proxy.ts: 7ms, application-code: 23ms)
+ GET /learn 200 in 34ms (next.js: 1.5ms, proxy.ts: 17ms, application-code: 16ms)
+ GET /learn 200 in 68ms (next.js: 9ms, proxy.ts: 14ms, application-code: 44ms)
+ GET /learn 200 in 33ms (next.js: 1.3ms, proxy.ts: 12ms, application-code: 20ms)
+ GET /learn 200 in 21ms (next.js: 1.5ms, proxy.ts: 8ms, application-code: 11ms)
+ GET /learn 200 in 19ms (next.js: 1.4ms, proxy.ts: 5ms, application-code: 12ms)
+ GET /learn 200 in 25ms (next.js: 6ms, proxy.ts: 6ms, application-code: 14ms)
+ GET /learn 200 in 27ms (next.js: 1.6ms, proxy.ts: 13ms, application-code: 12ms)
+ GET /learn 200 in 17ms (next.js: 1.3ms, proxy.ts: 4ms, application-code: 12ms)
+ GET /learn 200 in 20ms (next.js: 1.3ms, proxy.ts: 5ms, application-code: 13ms)
+ GET /learn 200 in 30ms (next.js: 2.0ms, proxy.ts: 12ms, application-code: 16ms)
+ GET /learn 200 in 31ms (next.js: 1.3ms, proxy.ts: 9ms, application-code: 21ms)
+ GET /learn 200 in 26ms (next.js: 1.9ms, proxy.ts: 8ms, application-code: 16ms)
+ GET /learn 200 in 24ms (next.js: 1.1ms, proxy.ts: 11ms, application-code: 12ms)
+ GET /learn 200 in 24ms (next.js: 1.1ms, proxy.ts: 4ms, application-code: 20ms)
+ GET /learn 200 in 27ms (next.js: 2ms, proxy.ts: 11ms, application-code: 13ms)
+ GET /learn 200 in 29ms (next.js: 2ms, proxy.ts: 15ms, application-code: 13ms)
+ GET /learn 200 in 20ms (next.js: 1.3ms, proxy.ts: 6ms, application-code: 13ms)
+ GET /learn 200 in 34ms (next.js: 2ms, proxy.ts: 17ms, application-code: 15ms)
+ GET /learn 200 in 36ms (next.js: 1.6ms, proxy.ts: 5ms, application-code: 29ms)
+ GET /learn 200 in 34ms (next.js: 2ms, proxy.ts: 17ms, application-code: 15ms)
+ GET /learn 200 in 20ms (next.js: 1.2ms, proxy.ts: 5ms, application-code: 14ms)
+ GET /learn 200 in 27ms (next.js: 3ms, proxy.ts: 5ms, application-code: 19ms)
+ GET /learn 200 in 19ms (next.js: 1.6ms, proxy.ts: 6ms, application-code: 11ms)
+ GET /learn 200 in 19ms (next.js: 1.1ms, proxy.ts: 5ms, application-code: 13ms)
+ GET /learn 200 in 18ms (next.js: 1.4ms, proxy.ts: 5ms, application-code: 11ms)
+ GET /learn 200 in 29ms (next.js: 2ms, proxy.ts: 5ms, application-code: 22ms)
+ GET /learn 200 in 24ms (next.js: 1.3ms, proxy.ts: 6ms, application-code: 17ms)
+ GET /learn 200 in 41ms (next.js: 3ms, proxy.ts: 10ms, application-code: 28ms)
+ GET /learn 200 in 29ms (next.js: 3ms, proxy.ts: 8ms, application-code: 18ms)
+ GET /learn 200 in 21ms (next.js: 2ms, proxy.ts: 5ms, application-code: 13ms)
+ GET /learn 200 in 41ms (next.js: 6ms, proxy.ts: 11ms, application-code: 23ms)
+ GET /learn 200 in 34ms (next.js: 1.5ms, proxy.ts: 7ms, application-code: 25ms)
+ GET /learn 200 in 38ms (next.js: 5ms, proxy.ts: 9ms, application-code: 24ms)
+ GET /learn 200 in 29ms (next.js: 9ms, proxy.ts: 5ms, application-code: 15ms)
+ GET /learn 200 in 19ms (next.js: 1.4ms, proxy.ts: 5ms, application-code: 12ms)
+ GET /learn 200 in 19ms (next.js: 1.6ms, proxy.ts: 4ms, application-code: 13ms)
+ GET /learn 200 in 19ms (next.js: 2ms, proxy.ts: 5ms, application-code: 12ms)
+ GET /learn 200 in 156ms (next.js: 86ms, proxy.ts: 29ms, application-code: 42ms)
+✓ Compiled in 2.2s
+ GET /learn 200 in 219ms (next.js: 13ms, proxy.ts: 105ms, application-code: 101ms)
+✓ Compiled in 2.6s
+ GET /learn 200 in 592ms (next.js: 48ms, proxy.ts: 351ms, application-code: 194ms)
+ GET /learn 200 in 185ms (next.js: 22ms, proxy.ts: 76ms, application-code: 87ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getSubLevels (src/lib/kanji.ts:112:21)
+    at LevelPage (src/app/learn/[level]/page.tsx:15:35)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5 200 in 2.5s (next.js: 729ms, proxy.ts: 200ms, application-code: 1572ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getSubLevels (src/lib/kanji.ts:112:21)
+    at LevelPage (src/app/learn/[level]/page.tsx:15:35)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5 200 in 103ms (next.js: 10ms, proxy.ts: 16ms, application-code: 77ms)
+ GET /learn 200 in 353ms (next.js: 16ms, proxy.ts: 24ms, application-code: 314ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getSubLevels (src/lib/kanji.ts:112:21)
+    at LevelPage (src/app/learn/[level]/page.tsx:15:35)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5 200 in 75ms (next.js: 12ms, proxy.ts: 21ms, application-code: 42ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getKanjiBySubLevel (src/lib/kanji.ts:104:21)
+    at SubLevelPage (src/app/learn/[level]/[subLevel]/page.tsx:16:42)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5/1 200 in 142ms (next.js: 63ms, proxy.ts: 16ms, application-code: 63ms)
+ GET /learn/5/1/quiz 200 in 144ms (next.js: 102ms, proxy.ts: 24ms, application-code: 17ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getKanjiBySubLevel (src/lib/kanji.ts:104:21)
+    at GET (src/app/api/kanji/route.ts:10:43)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /api/kanji?level=5&subLevel=1 200 in 246ms (next.js: 61ms, application-code: 184ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getKanjiBySubLevel (src/lib/kanji.ts:104:21)
+    at GET (src/app/api/kanji/route.ts:10:43)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /api/kanji?level=5&subLevel=1 200 in 20ms (next.js: 8ms, application-code: 12ms)
+⨯ TypeError: Cannot read properties of undefined (reading 'upsert')
+    at POST (src/app/api/user/quiz-result/route.ts:30:30)
+  28 |   if (mistakes && Array.isArray(mistakes)) {
+  29 |     for (const char of mistakes) {
+> 30 |       await prisma.weakKanji.upsert({
+     |                              ^
+  31 |         where: { userId_character: { userId: session.user.id, character: char } },
+  32 |         update: { 
+  33 |           mistakeCount: { increment: 1 },
+ POST /api/user/quiz-result 500 in 2.1s (next.js: 1644ms, proxy.ts: 19ms, application-code: 467ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getKanjiBySubLevel (src/lib/kanji.ts:104:21)
+    at SubLevelPage (src/app/learn/[level]/[subLevel]/page.tsx:16:42)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5/1 200 in 217ms (next.js: 19ms, proxy.ts: 20ms, application-code: 179ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getSubLevels (src/lib/kanji.ts:112:21)
+    at LevelPage (src/app/learn/[level]/page.tsx:15:35)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5 200 in 132ms (next.js: 32ms, proxy.ts: 12ms, application-code: 87ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getKanjiBySubLevel (src/lib/kanji.ts:104:21)
+    at SubLevelPage (src/app/learn/[level]/[subLevel]/page.tsx:16:42)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5/1 200 in 69ms (next.js: 15ms, proxy.ts: 16ms, application-code: 38ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getSubLevels (src/lib/kanji.ts:112:21)
+    at LevelPage (src/app/learn/[level]/page.tsx:15:35)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5 200 in 62ms (next.js: 10ms, proxy.ts: 14ms, application-code: 37ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getKanjiBySubLevel (src/lib/kanji.ts:104:21)
+    at SubLevelPage (src/app/learn/[level]/[subLevel]/page.tsx:16:42)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5/2 200 in 58ms (next.js: 24ms, proxy.ts: 13ms, application-code: 21ms)
+[kanji.ts] Database query failed for level 5, falling back to JSON. TypeError: Cannot read properties of undefined (reading 'findMany')
+    at getKanjiByLevel (src/lib/kanji.ts:57:41)
+    at getSubLevels (src/lib/kanji.ts:112:21)
+    at LevelPage (src/app/learn/[level]/page.tsx:15:35)
+  55 | export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEntry[]> {
+  56 |   try {
+> 57 |     const dbKanjis = await prisma.kanji.findMany({
+     |                                         ^
+  58 |       where: { jlpt: level },
+  59 |       include: { vocab: true },
+  60 |       orderBy: { freq: 'asc' }
+ GET /learn/5 200 in 64ms (next.js: 7ms, proxy.ts: 20ms, application-code: 36ms)
+ GET /kana 200 in 145ms (next.js: 93ms, application-code: 53ms)
+✓ Compiled in 910ms
+✓ Compiled in 1006ms
+✓ Compiled in 640ms
+✓ Compiled in 235ms
+✓ Compiled in 406ms
+✓ Compiled in 1735ms
+✓ Compiled in 9.1s
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.19:3000
+- Environments: .env.local, .env
+✓ Ready in 794ms
+✓ Running next.config.ts took 111ms
+
+⨯ ERROR: This build is using Turbopack, with a `webpack` config and no `turbopack` config.
+   This may be a mistake.
+
+   As of Next.js 16 Turbopack is enabled by default and
+   custom webpack configurations may need to be migrated to Turbopack.
+
+   NOTE: your `webpack` config may have been added by a configuration plugin.
+
+   To configure Turbopack, see https://nextjs.org/docs/app/api-reference/next-config-js/turbopack
+
+   TIP: Many applications work fine under Turbopack with no configuration,
+   if that is the case for you, you can silence this error by passing the
+   `--turbopack` or `--webpack` flag explicitly or simply setting an 
+   empty turbopack config in your Next config file (e.g. `turbopack: {}`).
+[?25h

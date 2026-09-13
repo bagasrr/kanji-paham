@@ -1,0 +1,7384 @@
+[
+  {
+    "character": "会",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 4,
+    "jlpt": 4,
+    "meanings": [
+      "Meeting",
+      "Meet",
+      "Party",
+      "Association",
+      "Interview",
+      "Join"
+    ],
+    "readings_on": [
+      "カイ",
+      "エ"
+    ],
+    "readings_kun": [
+      "あ.う",
+      "あ.わせる",
+      "あつ.まる"
+    ],
+    "svgFile": "04f1a.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "pertemuan",
+      "bertemu",
+      "pesta",
+      "asosiasi",
+      "wawancara",
+      "bergabung"
+    ],
+    "vocab": [
+      {
+        "word": "会議",
+        "reading": "かいぎ",
+        "meanings": [
+          "meeting"
+        ],
+        "meanings_id": [
+          "rapat",
+          "konferensi",
+          "sesi",
+          "sidang",
+          "dewan",
+          "konvensi",
+          "kongres"
+        ]
+      },
+      {
+        "word": "会議室",
+        "reading": "かいぎしつ",
+        "meanings": [
+          "meeting room"
+        ],
+        "meanings_id": [
+          "ruang rapat",
+          "ruang konferensi"
+        ]
+      },
+      {
+        "word": "会場",
+        "reading": "かいじょう",
+        "meanings": [
+          "assembly hall or meeting place"
+        ],
+        "meanings_id": [
+          "aula pertemuan",
+          "tempat rapat",
+          "tempat acara",
+          "lokasi",
+          "arena"
+        ]
+      },
+      {
+        "word": "会話",
+        "reading": "かいわ",
+        "meanings": [
+          "conversation"
+        ],
+        "meanings_id": [
+          "percakapan",
+          "obrolan",
+          "pembicaraan"
+        ]
+      },
+      {
+        "word": "機会",
+        "reading": "きかい",
+        "meanings": [
+          "opportunity"
+        ],
+        "meanings_id": [
+          "kesempatan",
+          "peluang",
+          "waktu yang tepat"
+        ]
+      },
+      {
+        "word": "教会",
+        "reading": "きょうかい",
+        "meanings": [
+          "church"
+        ],
+        "meanings_id": [
+          "gereja",
+          "jemaat"
+        ]
+      },
+      {
+        "word": "社会",
+        "reading": "しゃかい",
+        "meanings": [
+          "society",
+          "public"
+        ],
+        "meanings_id": [
+          "masyarakat",
+          "publik",
+          "komunitas",
+          "dunia"
+        ]
+      },
+      {
+        "word": "展覧会",
+        "reading": "てんらんかい",
+        "meanings": [
+          "exhibition"
+        ],
+        "meanings_id": [
+          "pameran"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "同",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 15,
+    "jlpt": 4,
+    "meanings": [
+      "Same",
+      "Agree",
+      "Equal"
+    ],
+    "readings_on": [
+      "ドウ"
+    ],
+    "readings_kun": [
+      "おな.じ"
+    ],
+    "svgFile": "0540c.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "sama",
+      "setuju",
+      "sederajat"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "事",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 18,
+    "jlpt": 4,
+    "meanings": [
+      "Matter",
+      "Thing",
+      "Fact",
+      "Business",
+      "Reason",
+      "Possibly"
+    ],
+    "readings_on": [
+      "ジ",
+      "ズ"
+    ],
+    "readings_kun": [
+      "こと",
+      "つか.う",
+      "つか.える"
+    ],
+    "svgFile": "04e8b.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "perkara",
+      "hal",
+      "fakta",
+      "urusan",
+      "alasan",
+      "mungkin"
+    ],
+    "vocab": [
+      {
+        "word": "火事",
+        "reading": "かじ",
+        "meanings": [
+          "fire"
+        ],
+        "meanings_id": [
+          "kebakaran"
+        ]
+      },
+      {
+        "word": "事故",
+        "reading": "じこ",
+        "meanings": [
+          "accident"
+        ],
+        "meanings_id": [
+          "kecelakaan",
+          "insiden",
+          "masalah"
+        ]
+      },
+      {
+        "word": "事務所",
+        "reading": "じむしょ",
+        "meanings": [
+          "office"
+        ],
+        "meanings_id": [
+          "kantor"
+        ]
+      },
+      {
+        "word": "食事",
+        "reading": "しょくじする",
+        "meanings": [
+          "to have a meal"
+        ],
+        "meanings_id": [
+          "makan (misalnya makan siang, makan malam)"
+        ]
+      },
+      {
+        "word": "大事",
+        "reading": "だいじ",
+        "meanings": [
+          "important",
+          "valuable",
+          "serious matter"
+        ],
+        "meanings_id": [
+          "masalah serius",
+          "insiden besar",
+          "masalah yang sangat penting",
+          "krisis"
+        ]
+      },
+      {
+        "word": "返事",
+        "reading": "へんじ",
+        "meanings": [
+          "reply"
+        ],
+        "meanings_id": [
+          "balasan",
+          "jawaban",
+          "respons"
+        ]
+      },
+      {
+        "word": "用事",
+        "reading": "ようじ",
+        "meanings": [
+          "things to do"
+        ],
+        "meanings_id": [
+          "urusan",
+          "pekerjaan",
+          "janji",
+          "keperluan",
+          "tugas"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "自",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 19,
+    "jlpt": 4,
+    "meanings": [
+      "Oneself"
+    ],
+    "readings_on": [
+      "ジ",
+      "シ"
+    ],
+    "readings_kun": [
+      "みずか.ら",
+      "おの.ずから",
+      "おの.ずと"
+    ],
+    "svgFile": "081ea.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "diri sendiri"
+    ],
+    "vocab": [
+      {
+        "word": "自由",
+        "reading": "じゆう",
+        "meanings": [
+          "freedom"
+        ],
+        "meanings_id": [
+          "kebebasan",
+          "kemerdekaan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "社",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 21,
+    "jlpt": 4,
+    "meanings": [
+      "Company",
+      "Firm",
+      "Office",
+      "Association",
+      "Shrine"
+    ],
+    "readings_on": [
+      "シャ"
+    ],
+    "readings_kun": [
+      "やしろ"
+    ],
+    "svgFile": "0793e.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "perusahaan",
+      "firma",
+      "kantor",
+      "asosiasi",
+      "kuil"
+    ],
+    "vocab": [
+      {
+        "word": "社会",
+        "reading": "しゃかい",
+        "meanings": [
+          "society",
+          "public"
+        ],
+        "meanings_id": [
+          "masyarakat",
+          "publik",
+          "komunitas",
+          "dunia"
+        ]
+      },
+      {
+        "word": "社長",
+        "reading": "しゃちょう",
+        "meanings": [
+          "company president"
+        ],
+        "meanings_id": [
+          "presiden perusahaan",
+          "direktur utama",
+          "manajer"
+        ]
+      },
+      {
+        "word": "新聞社",
+        "reading": "しんぶんしゃ",
+        "meanings": [
+          "newspaper company"
+        ],
+        "meanings_id": [
+          "perusahaan surat kabar"
+        ]
+      },
+      {
+        "word": "神社",
+        "reading": "じんじゃ",
+        "meanings": [
+          "Shinto shrine"
+        ],
+        "meanings_id": [
+          "kuil Shinto"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "発",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 32,
+    "jlpt": 4,
+    "meanings": [
+      "Departure",
+      "Discharge",
+      "Publish",
+      "Emit",
+      "Start From",
+      "Disclose",
+      "Counter For Gunshots"
+    ],
+    "readings_on": [
+      "ハツ",
+      "ホツ"
+    ],
+    "readings_kun": [
+      "た.つ",
+      "あば.く",
+      "おこ.る",
+      "つか.わす",
+      "はな.つ"
+    ],
+    "svgFile": "0767a.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "keberangkatan",
+      "pelepasan",
+      "menerbitkan",
+      "memancarkan",
+      "berangkat dari",
+      "mengungkapkan",
+      "satuan untuk tembakan senjata"
+    ],
+    "vocab": [
+      {
+        "word": "出発",
+        "reading": "しゅっぱつする",
+        "meanings": [
+          "to depart"
+        ],
+        "meanings_id": [
+          "keberangkatan",
+          "pergi",
+          "berangkat"
+        ]
+      },
+      {
+        "word": "発音",
+        "reading": "はつおん",
+        "meanings": [
+          "pronunciation"
+        ],
+        "meanings_id": [
+          "pengucapan",
+          "pelafalan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "者",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 38,
+    "jlpt": 4,
+    "meanings": [
+      "Someone",
+      "Person"
+    ],
+    "readings_on": [
+      "シャ"
+    ],
+    "readings_kun": [
+      "もの"
+    ],
+    "svgFile": "08005.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "seseorang",
+      "orang"
+    ],
+    "vocab": [
+      {
+        "word": "歯医者",
+        "reading": "はいしゃ",
+        "meanings": [
+          "dentist"
+        ],
+        "meanings_id": [
+          "dokter gigi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "地",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 40,
+    "jlpt": 4,
+    "meanings": [
+      "Ground",
+      "Earth"
+    ],
+    "readings_on": [
+      "チ",
+      "ジ"
+    ],
+    "readings_kun": [],
+    "svgFile": "05730.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "tanah",
+      "bumi"
+    ],
+    "vocab": [
+      {
+        "word": "地震",
+        "reading": "じしん",
+        "meanings": [
+          "earthquake"
+        ],
+        "meanings_id": [
+          "gempa bumi"
+        ]
+      },
+      {
+        "word": "地理",
+        "reading": "ちり",
+        "meanings": [
+          "geography"
+        ],
+        "meanings_id": [
+          "geografi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "業",
+    "strokes": 13,
+    "grade": 3,
+    "freq": 43,
+    "jlpt": 4,
+    "meanings": [
+      "Business",
+      "Vocation",
+      "Arts",
+      "Performance"
+    ],
+    "readings_on": [
+      "ギョウ",
+      "ゴウ"
+    ],
+    "readings_kun": [
+      "わざ"
+    ],
+    "svgFile": "0696d.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "bisnis",
+      "pekerjaan",
+      "seni",
+      "pertunjukan"
+    ],
+    "vocab": [
+      {
+        "word": "工業",
+        "reading": "こうぎょう",
+        "meanings": [
+          "the manufacturing industry"
+        ],
+        "meanings_id": [
+          "industri (manufaktur)"
+        ]
+      },
+      {
+        "word": "産業",
+        "reading": "さんぎょう",
+        "meanings": [
+          "industry"
+        ],
+        "meanings_id": [
+          "industri"
+        ]
+      },
+      {
+        "word": "卒業",
+        "reading": "そつぎょう",
+        "meanings": [
+          "graduation"
+        ],
+        "meanings_id": [
+          "kelulusan",
+          "penyelesaian (suatu jenjang)"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "方",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 46,
+    "jlpt": 4,
+    "meanings": [
+      "Direction",
+      "Person",
+      "Alternative"
+    ],
+    "readings_on": [
+      "ホウ"
+    ],
+    "readings_kun": [
+      "かた",
+      "-かた",
+      "-がた"
+    ],
+    "svgFile": "065b9.svg",
+    "subLevel": 1,
+    "meanings_id": [
+      "arah",
+      "orang",
+      "alternatif"
+    ],
+    "vocab": [
+      {
+        "word": "泳ぎ方",
+        "reading": "およぎかた",
+        "meanings": [
+          "way of swimming"
+        ],
+        "meanings_id": [
+          "cara berenang"
+        ]
+      },
+      {
+        "word": "仕方",
+        "reading": "しかた",
+        "meanings": [
+          "method"
+        ],
+        "meanings_id": [
+          "cara",
+          "metode",
+          "sarana",
+          "sumber daya",
+          "langkah"
+        ]
+      },
+      {
+        "word": "両方",
+        "reading": "りょうほう",
+        "meanings": [
+          "both sides"
+        ],
+        "meanings_id": [
+          "keduanya",
+          "kedua belah pihak",
+          "kedua pihak"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "新",
+    "strokes": 13,
+    "grade": 2,
+    "freq": 51,
+    "jlpt": 4,
+    "meanings": [
+      "New"
+    ],
+    "readings_on": [
+      "シン"
+    ],
+    "readings_kun": [
+      "あたら.しい",
+      "あら.た",
+      "あら-",
+      "にい-"
+    ],
+    "svgFile": "065b0.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "baru"
+    ],
+    "vocab": [
+      {
+        "word": "新聞社",
+        "reading": "しんぶんしゃ",
+        "meanings": [
+          "newspaper company"
+        ],
+        "meanings_id": [
+          "perusahaan surat kabar"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "場",
+    "strokes": 12,
+    "grade": 2,
+    "freq": 52,
+    "jlpt": 4,
+    "meanings": [
+      "Location",
+      "Place"
+    ],
+    "readings_on": [
+      "ジョウ",
+      "チョウ"
+    ],
+    "readings_kun": [
+      "ば"
+    ],
+    "svgFile": "05834.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "lokasi",
+      "tempat"
+    ],
+    "vocab": [
+      {
+        "word": "会場",
+        "reading": "かいじょう",
+        "meanings": [
+          "assembly hall or meeting place"
+        ],
+        "meanings_id": [
+          "aula pertemuan",
+          "tempat rapat",
+          "tempat acara",
+          "lokasi",
+          "arena"
+        ]
+      },
+      {
+        "word": "工場",
+        "reading": "こうじょう",
+        "meanings": [
+          "factory"
+        ],
+        "meanings_id": [
+          "pabrik",
+          "kilang",
+          "pabrik (kecil)",
+          "bengkel"
+        ]
+      },
+      {
+        "word": "場合",
+        "reading": "ばあい",
+        "meanings": [
+          "situation"
+        ],
+        "meanings_id": [
+          "kasus",
+          "kesempatan",
+          "situasi",
+          "keadaan"
+        ]
+      },
+      {
+        "word": "場所",
+        "reading": "ばしょ",
+        "meanings": [
+          "location"
+        ],
+        "meanings_id": [
+          "tempat",
+          "lokasi",
+          "titik",
+          "posisi",
+          "area"
+        ]
+      },
+      {
+        "word": "駐車場",
+        "reading": "ちゅうしゃじょう",
+        "meanings": [
+          "parking lot"
+        ],
+        "meanings_id": [
+          "tempat parkir",
+          "lahan parkir",
+          "gedung parkir"
+        ]
+      },
+      {
+        "word": "売り場",
+        "reading": "うりば",
+        "meanings": [
+          "place where things are sold"
+        ],
+        "meanings_id": [
+          "area penjualan",
+          "kasir",
+          "seksi",
+          "departemen",
+          "lantai penjualan"
+        ]
+      },
+      {
+        "word": "飛行場",
+        "reading": "ひこうじょう",
+        "meanings": [
+          "airport"
+        ],
+        "meanings_id": [
+          "lapangan udara",
+          "bandara"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "員",
+    "strokes": 10,
+    "grade": 3,
+    "freq": 54,
+    "jlpt": 4,
+    "meanings": [
+      "Employee",
+      "Member",
+      "Number",
+      "The One In Charge"
+    ],
+    "readings_on": [
+      "イン"
+    ],
+    "readings_kun": [],
+    "svgFile": "054e1.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "pegawai",
+      "anggota",
+      "jumlah",
+      "penanggung jawab"
+    ],
+    "vocab": [
+      {
+        "word": "公務員",
+        "reading": "こうむいん",
+        "meanings": [
+          "government worker"
+        ],
+        "meanings_id": [
+          "pegawai negeri",
+          "karyawan pemerintah",
+          "pekerja sektor publik",
+          "abdi negara"
+        ]
+      },
+      {
+        "word": "店員",
+        "reading": "てんいん",
+        "meanings": [
+          "shop assistant"
+        ],
+        "meanings_id": [
+          "karyawan (toko)",
+          "pramuniaga",
+          "pelayan toko",
+          "penjual"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "立",
+    "strokes": 5,
+    "grade": 1,
+    "freq": 58,
+    "jlpt": 4,
+    "meanings": [
+      "Stand Up",
+      "Rise",
+      "Set Up",
+      "Erect"
+    ],
+    "readings_on": [
+      "リツ",
+      "リュウ",
+      "リットル"
+    ],
+    "readings_kun": [
+      "た.つ",
+      "-た.つ",
+      "た.ち-",
+      "た.てる",
+      "-た.てる",
+      "た.て-",
+      "たて-",
+      "-た.て",
+      "-だ.て",
+      "-だ.てる"
+    ],
+    "svgFile": "07acb.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "berdiri",
+      "bangkit",
+      "mendirikan",
+      "menegakkan"
+    ],
+    "vocab": [
+      {
+        "word": "役に立つ",
+        "reading": "やくにたつ",
+        "meanings": [
+          "to be helpful"
+        ],
+        "meanings_id": [
+          "bermanfaat",
+          "berguna"
+        ]
+      },
+      {
+        "word": "立てる",
+        "reading": "たてる",
+        "meanings": [
+          "to stand something up"
+        ],
+        "meanings_id": [
+          "mendirikan",
+          "memasang",
+          "menancapkan",
+          "meninggikan",
+          "mengangkat"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "開",
+    "strokes": 12,
+    "grade": 3,
+    "freq": 59,
+    "jlpt": 4,
+    "meanings": [
+      "Open",
+      "Unfold",
+      "Unseal"
+    ],
+    "readings_on": [
+      "カイ"
+    ],
+    "readings_kun": [
+      "ひら.く",
+      "ひら.き",
+      "-びら.き",
+      "ひら.ける",
+      "あ.く",
+      "あ.ける"
+    ],
+    "svgFile": "0958b.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "membuka",
+      "mengembangkan",
+      "membuka segel"
+    ],
+    "vocab": [
+      {
+        "word": "開く",
+        "reading": "ひらく",
+        "meanings": [
+          "to open an event"
+        ],
+        "meanings_id": [
+          "terbuka (misalnya pintu)"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "手",
+    "strokes": 4,
+    "grade": 1,
+    "freq": 60,
+    "jlpt": 4,
+    "meanings": [
+      "Hand"
+    ],
+    "readings_on": [
+      "シュ",
+      "ズ"
+    ],
+    "readings_kun": [
+      "て",
+      "て-",
+      "-て",
+      "た-"
+    ],
+    "svgFile": "0624b.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "tangan"
+    ],
+    "vocab": [
+      {
+        "word": "運転手",
+        "reading": "うんてんしゅ",
+        "meanings": [
+          "driver"
+        ],
+        "meanings_id": [
+          "pengemudi",
+          "sopir"
+        ]
+      },
+      {
+        "word": "手袋",
+        "reading": "てぶくろ",
+        "meanings": [
+          "glove"
+        ],
+        "meanings_id": [
+          "sarung tangan",
+          "mitten"
+        ]
+      },
+      {
+        "word": "手伝う",
+        "reading": "てつだう",
+        "meanings": [
+          "to assist"
+        ],
+        "meanings_id": [
+          "membantu",
+          "menolong",
+          "mendampingi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "力",
+    "strokes": 2,
+    "grade": 1,
+    "freq": 62,
+    "jlpt": 4,
+    "meanings": [
+      "Power",
+      "Strength",
+      "Strong",
+      "Strain",
+      "Bear Up",
+      "Exert"
+    ],
+    "readings_on": [
+      "リョク",
+      "リキ",
+      "リイ"
+    ],
+    "readings_kun": [
+      "ちから"
+    ],
+    "svgFile": "0529b.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "kekuatan",
+      "tenaga",
+      "kuat",
+      "berusaha keras",
+      "menanggung",
+      "mengerahkan"
+    ],
+    "vocab": [
+      {
+        "word": "力",
+        "reading": "ちから",
+        "meanings": [
+          "strength",
+          "power"
+        ],
+        "meanings_id": [
+          "kekuatan",
+          "tenaga",
+          "kemahiran",
+          "kemampuan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "問",
+    "strokes": 11,
+    "grade": 3,
+    "freq": 64,
+    "jlpt": 4,
+    "meanings": [
+      "Question",
+      "Ask",
+      "Problem"
+    ],
+    "readings_on": [
+      "モン"
+    ],
+    "readings_kun": [
+      "と.う",
+      "と.い",
+      "とん"
+    ],
+    "svgFile": "0554f.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "pertanyaan",
+      "bertanya",
+      "masalah"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "代",
+    "strokes": 5,
+    "grade": 3,
+    "freq": 66,
+    "jlpt": 4,
+    "meanings": [
+      "Substitute",
+      "Change",
+      "Convert",
+      "Replace",
+      "Period",
+      "Age",
+      "Counter For Decades Of Ages, Eras, Etc.",
+      "Generation",
+      "Charge",
+      "Rate",
+      "Fee"
+    ],
+    "readings_on": [
+      "ダイ",
+      "タイ"
+    ],
+    "readings_kun": [
+      "か.わる",
+      "かわ.る",
+      "かわ.り",
+      "か.わり",
+      "-がわ.り",
+      "-が.わり",
+      "か.える",
+      "よ",
+      "しろ"
+    ],
+    "svgFile": "04ee3.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "pengganti",
+      "mengubah",
+      "mengonversi",
+      "menggantikan",
+      "periode",
+      "zaman",
+      "satuan untuk dekade usia atau era",
+      "generasi",
+      "biaya",
+      "tarif"
+    ],
+    "vocab": [
+      {
+        "word": "時代",
+        "reading": "じだい",
+        "meanings": [
+          "era"
+        ],
+        "meanings_id": [
+          "periode",
+          "zaman",
+          "era",
+          "abad"
+        ]
+      },
+      {
+        "word": "代わり",
+        "reading": "かわり",
+        "meanings": [
+          "substitute",
+          "alternate"
+        ],
+        "meanings_id": [
+          "pengganti untuk ..."
+        ]
+      }
+    ]
+  },
+  {
+    "character": "明",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 67,
+    "jlpt": 4,
+    "meanings": [
+      "Bright",
+      "Light"
+    ],
+    "readings_on": [
+      "メイ",
+      "ミョウ",
+      "ミン"
+    ],
+    "readings_kun": [
+      "あ.かり",
+      "あか.るい",
+      "あか.るむ",
+      "あか.らむ",
+      "あき.らか",
+      "あ.ける",
+      "-あ.け",
+      "あ.く",
+      "あ.くる",
+      "あ.かす"
+    ],
+    "svgFile": "0660e.svg",
+    "subLevel": 2,
+    "meanings_id": [
+      "cerah",
+      "terang"
+    ],
+    "vocab": [
+      {
+        "word": "説明",
+        "reading": "せつめい",
+        "meanings": [
+          "explanation"
+        ],
+        "meanings_id": [
+          "penjelasan",
+          "eksposisi",
+          "deskripsi",
+          "keterangan",
+          "keterangan gambar",
+          "legenda"
+        ]
+      },
+      {
+        "word": "明日",
+        "reading": "あす",
+        "meanings": [
+          "tomorrow"
+        ],
+        "meanings_id": [
+          "besok"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "動",
+    "strokes": 11,
+    "grade": 3,
+    "freq": 73,
+    "jlpt": 4,
+    "meanings": [
+      "Move",
+      "Motion",
+      "Change",
+      "Confusion",
+      "Shift",
+      "Shake"
+    ],
+    "readings_on": [
+      "ドウ"
+    ],
+    "readings_kun": [
+      "うご.く",
+      "うご.かす"
+    ],
+    "svgFile": "052d5.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "bergerak",
+      "gerakan",
+      "perubahan",
+      "kekacauan",
+      "pergeseran",
+      "guncangan"
+    ],
+    "vocab": [
+      {
+        "word": "運動",
+        "reading": "うんどうする",
+        "meanings": [
+          "to exercise"
+        ],
+        "meanings_id": [
+          "olahraga",
+          "latihan fisik",
+          "latihan",
+          "atletik"
+        ]
+      },
+      {
+        "word": "動く",
+        "reading": "うごく",
+        "meanings": [
+          "to move"
+        ],
+        "meanings_id": [
+          "bergerak",
+          "berguncang",
+          "berpindah",
+          "bergoyah",
+          "berayun"
+        ]
+      },
+      {
+        "word": "動物園",
+        "reading": "どうぶつえん",
+        "meanings": [
+          "zoo"
+        ],
+        "meanings_id": [
+          "kebun binatang"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "京",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 74,
+    "jlpt": 4,
+    "meanings": [
+      "Capital",
+      "10**16"
+    ],
+    "readings_on": [
+      "キョウ",
+      "ケイ",
+      "キン"
+    ],
+    "readings_kun": [
+      "みやこ"
+    ],
+    "svgFile": "04eac.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "ibu kota",
+      "10**16"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "目",
+    "strokes": 5,
+    "grade": 1,
+    "freq": 76,
+    "jlpt": 4,
+    "meanings": [
+      "Eye",
+      "Class",
+      "Look",
+      "Insight",
+      "Experience",
+      "Care",
+      "Favor"
+    ],
+    "readings_on": [
+      "モク",
+      "ボク"
+    ],
+    "readings_kun": [
+      "め",
+      "-め",
+      "ま-"
+    ],
+    "svgFile": "076ee.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "mata",
+      "kelas",
+      "pandangan",
+      "wawasan",
+      "pengalaman",
+      "perhatian",
+      "kebaikan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "通",
+    "strokes": 10,
+    "grade": 2,
+    "freq": 80,
+    "jlpt": 4,
+    "meanings": [
+      "Traffic",
+      "Pass Through",
+      "Avenue",
+      "Commute",
+      "Counter For Letters, Notes, Documents, Etc."
+    ],
+    "readings_on": [
+      "ツウ",
+      "ツ"
+    ],
+    "readings_kun": [
+      "とお.る",
+      "とお.り",
+      "-とお.り",
+      "-どお.り",
+      "とお.す",
+      "とお.し",
+      "-どお.し",
+      "かよ.う"
+    ],
+    "svgFile": "0901a.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "lalu lintas",
+      "melewati",
+      "jalan",
+      "bepergian",
+      "satuan untuk surat dan dokumen"
+    ],
+    "vocab": [
+      {
+        "word": "交通",
+        "reading": "こうつう",
+        "meanings": [
+          "traffic",
+          "transportation"
+        ],
+        "meanings_id": [
+          "lalu lintas",
+          "transportasi"
+        ]
+      },
+      {
+        "word": "通う",
+        "reading": "かよう",
+        "meanings": [
+          "to commute"
+        ],
+        "meanings_id": [
+          "pergi dan pulang (dari suatu tempat)",
+          "bolak-balik",
+          "beroperasi antara (mis. bus, kereta)",
+          "berlayar antara"
+        ]
+      },
+      {
+        "word": "通る",
+        "reading": "とおる",
+        "meanings": [
+          "to go through"
+        ],
+        "meanings_id": [
+          "melewati",
+          "lewat",
+          "berjalan sepanjang",
+          "melintasi",
+          "menggunakan (jalan)",
+          "mengambil (rute)",
+          "melalui"
+        ]
+      },
+      {
+        "word": "普通",
+        "reading": "ふつう",
+        "meanings": [
+          "usually",
+          "or a train that stops at every station"
+        ],
+        "meanings_id": [
+          "normal",
+          "biasa",
+          "teratur",
+          "lazim",
+          "umum",
+          "rata-rata"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "言",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 83,
+    "jlpt": 4,
+    "meanings": [
+      "Say",
+      "Word"
+    ],
+    "readings_on": [
+      "ゲン",
+      "ゴン"
+    ],
+    "readings_kun": [
+      "い.う",
+      "こと"
+    ],
+    "svgFile": "08a00.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "berkata",
+      "kata"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "理",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 86,
+    "jlpt": 4,
+    "meanings": [
+      "Logic",
+      "Arrangement",
+      "Reason",
+      "Justice",
+      "Truth"
+    ],
+    "readings_on": [
+      "リ"
+    ],
+    "readings_kun": [
+      "ことわり"
+    ],
+    "svgFile": "07406.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "logika",
+      "susunan",
+      "alasan",
+      "keadilan",
+      "kebenaran"
+    ],
+    "vocab": [
+      {
+        "word": "地理",
+        "reading": "ちり",
+        "meanings": [
+          "geography"
+        ],
+        "meanings_id": [
+          "geografi"
+        ]
+      },
+      {
+        "word": "無理",
+        "reading": "むり",
+        "meanings": [
+          "impossible"
+        ],
+        "meanings_id": [
+          "tidak masuk akal",
+          "tidak wajar",
+          "tidak dapat dibenarkan"
+        ]
+      },
+      {
+        "word": "理由",
+        "reading": "りゆう",
+        "meanings": [
+          "reason"
+        ],
+        "meanings_id": [
+          "alasan",
+          "dasar",
+          "dalih",
+          "pembenaran",
+          "motif"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "体",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 88,
+    "jlpt": 4,
+    "meanings": [
+      "Body",
+      "Substance",
+      "Object",
+      "Reality",
+      "Counter For Images"
+    ],
+    "readings_on": [
+      "タイ",
+      "テイ"
+    ],
+    "readings_kun": [
+      "からだ",
+      "かたち"
+    ],
+    "svgFile": "04f53.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "tubuh",
+      "substansi",
+      "objek",
+      "kenyataan",
+      "satuan untuk gambar"
+    ],
+    "vocab": [
+      {
+        "word": "大体",
+        "reading": "だいたい",
+        "meanings": [
+          "generally"
+        ],
+        "meanings_id": [
+          "umumnya",
+          "pada umumnya",
+          "kebanyakan",
+          "hampir",
+          "nyaris",
+          "kurang lebih",
+          "kira-kira",
+          "sekitar"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "田",
+    "strokes": 5,
+    "grade": 1,
+    "freq": 90,
+    "jlpt": 4,
+    "meanings": [
+      "Rice Field",
+      "Rice Paddy"
+    ],
+    "readings_on": [
+      "デン"
+    ],
+    "readings_kun": [
+      "た"
+    ],
+    "svgFile": "07530.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "sawah",
+      "ladang padi"
+    ],
+    "vocab": [
+      {
+        "word": "田舎",
+        "reading": "いなか",
+        "meanings": [
+          "countryside"
+        ],
+        "meanings_id": [
+          "pedesaan",
+          "rumah pedesaan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "主",
+    "strokes": 5,
+    "grade": 3,
+    "freq": 95,
+    "jlpt": 4,
+    "meanings": [
+      "Lord",
+      "Chief",
+      "Master",
+      "Main Thing",
+      "Principal"
+    ],
+    "readings_on": [
+      "シュ",
+      "ス",
+      "シュウ"
+    ],
+    "readings_kun": [
+      "ぬし",
+      "おも",
+      "あるじ"
+    ],
+    "svgFile": "04e3b.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "tuan",
+      "kepala",
+      "majikan",
+      "hal utama",
+      "yang pokok"
+    ],
+    "vocab": [
+      {
+        "word": "御主人",
+        "reading": "ごしゅじん",
+        "meanings": [
+          "(honorable) your husband"
+        ],
+        "meanings_id": []
+      }
+    ]
+  },
+  {
+    "character": "題",
+    "strokes": 18,
+    "grade": 3,
+    "freq": 96,
+    "jlpt": 4,
+    "meanings": [
+      "Topic",
+      "Subject"
+    ],
+    "readings_on": [
+      "ダイ"
+    ],
+    "readings_kun": [],
+    "svgFile": "0984c.svg",
+    "subLevel": 3,
+    "meanings_id": [
+      "topik",
+      "subjek"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "意",
+    "strokes": 13,
+    "grade": 3,
+    "freq": 99,
+    "jlpt": 4,
+    "meanings": [
+      "Idea",
+      "Mind",
+      "Heart",
+      "Taste",
+      "Thought",
+      "Desire",
+      "Care",
+      "Liking"
+    ],
+    "readings_on": [
+      "イ"
+    ],
+    "readings_kun": [],
+    "svgFile": "0610f.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "gagasan",
+      "pikiran",
+      "hati",
+      "selera",
+      "pemikiran",
+      "keinginan",
+      "perhatian",
+      "kesukaan"
+    ],
+    "vocab": [
+      {
+        "word": "意見",
+        "reading": "いけん",
+        "meanings": [
+          "opinion"
+        ],
+        "meanings_id": [
+          "pendapat",
+          "pandangan",
+          "komentar"
+        ]
+      },
+      {
+        "word": "注意",
+        "reading": "ちゅうい",
+        "meanings": [
+          "caution"
+        ],
+        "meanings_id": [
+          "perhatian",
+          "kewaspadaan",
+          "kepedulian"
+        ]
+      },
+      {
+        "word": "用意",
+        "reading": "ようい",
+        "meanings": [
+          "preparation"
+        ],
+        "meanings_id": [
+          "persiapan",
+          "pengaturan",
+          "penyediaan",
+          "bersiap",
+          "menghidangkan (mis. makanan)"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "不",
+    "strokes": 4,
+    "grade": 4,
+    "freq": 101,
+    "jlpt": 4,
+    "meanings": [
+      "Negative",
+      "Non-",
+      "Bad",
+      "Ugly",
+      "Clumsy"
+    ],
+    "readings_on": [
+      "フ",
+      "ブ"
+    ],
+    "readings_kun": [],
+    "svgFile": "04e0d.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "negatif",
+      "non-",
+      "buruk",
+      "jelek",
+      "canggung"
+    ],
+    "vocab": [
+      {
+        "word": "不便",
+        "reading": "ふべん",
+        "meanings": [
+          "inconvenience"
+        ],
+        "meanings_id": [
+          "ketidaknyamanan",
+          "ketidakpraktisan",
+          "kurang praktis"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "作",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 103,
+    "jlpt": 4,
+    "meanings": [
+      "Make",
+      "Production",
+      "Prepare",
+      "Build"
+    ],
+    "readings_on": [
+      "サク",
+      "サ"
+    ],
+    "readings_kun": [
+      "つく.る",
+      "つく.り",
+      "-づく.り"
+    ],
+    "svgFile": "04f5c.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "membuat",
+      "produksi",
+      "mempersiapkan",
+      "membangun"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "用",
+    "strokes": 5,
+    "grade": 2,
+    "freq": 107,
+    "jlpt": 4,
+    "meanings": [
+      "Utilize",
+      "Business",
+      "Service",
+      "Use",
+      "Employ"
+    ],
+    "readings_on": [
+      "ヨウ"
+    ],
+    "readings_kun": [
+      "もち.いる"
+    ],
+    "svgFile": "07528.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "memanfaatkan",
+      "urusan",
+      "layanan",
+      "menggunakan",
+      "mempekerjakan"
+    ],
+    "vocab": [
+      {
+        "word": "用",
+        "reading": "よう",
+        "meanings": [
+          "use"
+        ],
+        "meanings_id": [
+          "urusan",
+          "tugas",
+          "keperluan",
+          "janji"
+        ]
+      },
+      {
+        "word": "用意",
+        "reading": "ようい",
+        "meanings": [
+          "preparation"
+        ],
+        "meanings_id": [
+          "persiapan",
+          "pengaturan",
+          "penyediaan",
+          "bersiap",
+          "menghidangkan (mis. makanan)"
+        ]
+      },
+      {
+        "word": "用事",
+        "reading": "ようじ",
+        "meanings": [
+          "things to do"
+        ],
+        "meanings_id": [
+          "urusan",
+          "pekerjaan",
+          "janji",
+          "keperluan",
+          "tugas"
+        ]
+      },
+      {
+        "word": "利用",
+        "reading": "りよう",
+        "meanings": [
+          "utilization"
+        ],
+        "meanings_id": [
+          "penggunaan",
+          "pemanfaatan",
+          "penerapan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "度",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 110,
+    "jlpt": 4,
+    "meanings": [
+      "Degrees",
+      "Occurrence",
+      "Time",
+      "Counter For Occurrences",
+      "Consider",
+      "Attitude"
+    ],
+    "readings_on": [
+      "ド",
+      "ト",
+      "タク"
+    ],
+    "readings_kun": [
+      "たび",
+      "-た.い"
+    ],
+    "svgFile": "05ea6.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "derajat",
+      "kejadian",
+      "waktu",
+      "satuan untuk kejadian",
+      "mempertimbangkan",
+      "sikap"
+    ],
+    "vocab": [
+      {
+        "word": "一度",
+        "reading": "いちど",
+        "meanings": [
+          "once"
+        ],
+        "meanings_id": [
+          "sekali",
+          "satu kali",
+          "pada satu kesempatan"
+        ]
+      },
+      {
+        "word": "今度",
+        "reading": "こんど",
+        "meanings": [
+          "now",
+          "next time"
+        ],
+        "meanings_id": [
+          "kali ini",
+          "sekarang"
+        ]
+      },
+      {
+        "word": "支度",
+        "reading": "したくする",
+        "meanings": [
+          "to prepare"
+        ],
+        "meanings_id": [
+          "persiapan",
+          "pengaturan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "強",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 112,
+    "jlpt": 4,
+    "meanings": [
+      "Strong"
+    ],
+    "readings_on": [
+      "キョウ",
+      "ゴウ"
+    ],
+    "readings_kun": [
+      "つよ.い",
+      "つよ.まる",
+      "つよ.める",
+      "し.いる",
+      "こわ.い"
+    ],
+    "svgFile": "05f37.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "kuat"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "公",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 118,
+    "jlpt": 4,
+    "meanings": [
+      "Public",
+      "Prince",
+      "Official",
+      "Governmental"
+    ],
+    "readings_on": [
+      "コウ",
+      "ク"
+    ],
+    "readings_kun": [
+      "おおやけ"
+    ],
+    "svgFile": "0516c.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "publik",
+      "pangeran",
+      "pejabat",
+      "pemerintahan"
+    ],
+    "vocab": [
+      {
+        "word": "公務員",
+        "reading": "こうむいん",
+        "meanings": [
+          "government worker"
+        ],
+        "meanings_id": [
+          "pegawai negeri",
+          "karyawan pemerintah",
+          "pekerja sektor publik",
+          "abdi negara"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "持",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 119,
+    "jlpt": 4,
+    "meanings": [
+      "Hold",
+      "Have"
+    ],
+    "readings_on": [
+      "ジ"
+    ],
+    "readings_kun": [
+      "も.つ",
+      "-も.ち",
+      "も.てる"
+    ],
+    "svgFile": "06301.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "memegang",
+      "memiliki"
+    ],
+    "vocab": [
+      {
+        "word": "お金持ち",
+        "reading": "かねもち/おかねもち",
+        "meanings": [
+          "rich man"
+        ],
+        "meanings_id": [
+          "orang kaya"
+        ]
+      },
+      {
+        "word": "気持ち",
+        "reading": "きもち",
+        "meanings": [
+          "feeling",
+          "mood"
+        ],
+        "meanings_id": [
+          "perasaan",
+          "sensasi",
+          "suasana hati",
+          "kondisi batin"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "野",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 120,
+    "jlpt": 4,
+    "meanings": [
+      "Plains",
+      "Field",
+      "Rustic",
+      "Civilian Life"
+    ],
+    "readings_on": [
+      "ヤ",
+      "ショ"
+    ],
+    "readings_kun": [
+      "の",
+      "の-"
+    ],
+    "svgFile": "091ce.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "dataran",
+      "ladang",
+      "pedesaan",
+      "kehidupan sipil"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "以",
+    "strokes": 5,
+    "grade": 4,
+    "freq": 126,
+    "jlpt": 4,
+    "meanings": [
+      "By Means Of",
+      "Because",
+      "In View Of",
+      "Compared With"
+    ],
+    "readings_on": [
+      "イ"
+    ],
+    "readings_kun": [
+      "もっ.て"
+    ],
+    "svgFile": "04ee5.svg",
+    "subLevel": 4,
+    "meanings_id": [
+      "dengan cara",
+      "karena",
+      "mengingat",
+      "dibandingkan dengan"
+    ],
+    "vocab": [
+      {
+        "word": "以下",
+        "reading": "いか",
+        "meanings": [
+          "less than"
+        ],
+        "meanings_id": [
+          "tidak melebihi ...",
+          "tidak lebih dari ...",
+          "... ke bawah",
+          "... dan di bawah",
+          "... atau kurang"
+        ]
+      },
+      {
+        "word": "以外",
+        "reading": "いがい",
+        "meanings": [
+          "with the exception of"
+        ],
+        "meanings_id": [
+          "tidak termasuk",
+          "kecuali",
+          "selain",
+          "di luar",
+          "di samping",
+          "sebagai tambahan"
+        ]
+      },
+      {
+        "word": "以上",
+        "reading": "いじょう",
+        "meanings": [
+          "more than",
+          "this is all"
+        ],
+        "meanings_id": [
+          "tidak kurang dari ...",
+          "... ke atas",
+          "... dan di atasnya",
+          "... atau lebih"
+        ]
+      },
+      {
+        "word": "以内",
+        "reading": "いない",
+        "meanings": [
+          "within"
+        ],
+        "meanings_id": [
+          "di dalam",
+          "di dalam batas",
+          "kurang dari"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "思",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 132,
+    "jlpt": 4,
+    "meanings": [
+      "Think"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "おも.う",
+      "おもえら.く",
+      "おぼ.す"
+    ],
+    "svgFile": "0601d.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "pikir"
+    ],
+    "vocab": [
+      {
+        "word": "思い出す",
+        "reading": "おもいだす",
+        "meanings": [
+          "to remember"
+        ],
+        "meanings_id": [
+          "mengingat kembali",
+          "teringat",
+          "mengenang"
+        ]
+      },
+      {
+        "word": "思う",
+        "reading": "おもう",
+        "meanings": [
+          "to think",
+          "to feel"
+        ],
+        "meanings_id": [
+          "berpikir",
+          "mempertimbangkan",
+          "percaya",
+          "menduga"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "家",
+    "strokes": 10,
+    "grade": 2,
+    "freq": 133,
+    "jlpt": 4,
+    "meanings": [
+      "House",
+      "Home",
+      "Family",
+      "Professional",
+      "Expert",
+      "Performer"
+    ],
+    "readings_on": [
+      "カ",
+      "ケ"
+    ],
+    "readings_kun": [
+      "いえ",
+      "や",
+      "うち"
+    ],
+    "svgFile": "05bb6.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "rumah",
+      "rumah tangga",
+      "keluarga",
+      "profesional",
+      "ahli",
+      "pelaku"
+    ],
+    "vocab": [
+      {
+        "word": "家内",
+        "reading": "かない",
+        "meanings": [
+          "housewife"
+        ],
+        "meanings_id": [
+          "(istri) saya"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "世",
+    "strokes": 5,
+    "grade": 3,
+    "freq": 135,
+    "jlpt": 4,
+    "meanings": [
+      "Generation",
+      "World",
+      "Society",
+      "Public"
+    ],
+    "readings_on": [
+      "セイ",
+      "セ",
+      "ソウ"
+    ],
+    "readings_kun": [
+      "よ"
+    ],
+    "svgFile": "04e16.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "generasi",
+      "dunia",
+      "masyarakat",
+      "publik"
+    ],
+    "vocab": [
+      {
+        "word": "世界",
+        "reading": "せかい",
+        "meanings": [
+          "the world"
+        ],
+        "meanings_id": [
+          "dunia",
+          "masyarakat",
+          "alam semesta"
+        ]
+      },
+      {
+        "word": "世話",
+        "reading": "せわする",
+        "meanings": [
+          "to look after"
+        ],
+        "meanings_id": [
+          "perawatan",
+          "mengurus",
+          "bantuan",
+          "pertolongan",
+          "dukungan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "多",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 139,
+    "jlpt": 4,
+    "meanings": [
+      "Many",
+      "Frequent",
+      "Much"
+    ],
+    "readings_on": [
+      "タ"
+    ],
+    "readings_kun": [
+      "おお.い",
+      "まさ.に",
+      "まさ.る"
+    ],
+    "svgFile": "0591a.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "banyak",
+      "sering",
+      "melimpah"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "正",
+    "strokes": 5,
+    "grade": 1,
+    "freq": 143,
+    "jlpt": 4,
+    "meanings": [
+      "Correct",
+      "Justice",
+      "Righteous",
+      "10**40"
+    ],
+    "readings_on": [
+      "セイ",
+      "ショウ"
+    ],
+    "readings_kun": [
+      "ただ.しい",
+      "ただ.す",
+      "まさ",
+      "まさ.に"
+    ],
+    "svgFile": "06b63.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "benar",
+      "keadilan",
+      "adil",
+      "10**40"
+    ],
+    "vocab": [
+      {
+        "word": "正しい",
+        "reading": "ただしい",
+        "meanings": [
+          "correct"
+        ],
+        "meanings_id": [
+          "benar",
+          "tepat"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "安",
+    "strokes": 6,
+    "grade": 3,
+    "freq": 144,
+    "jlpt": 4,
+    "meanings": [
+      "Relax",
+      "Cheap",
+      "Low",
+      "Quiet",
+      "Rested",
+      "Contented",
+      "Peaceful"
+    ],
+    "readings_on": [
+      "アン"
+    ],
+    "readings_kun": [
+      "やす.い",
+      "やす.まる",
+      "やす",
+      "やす.らか"
+    ],
+    "svgFile": "05b89.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "santai",
+      "murah",
+      "rendah",
+      "tenang",
+      "beristirahat",
+      "puas",
+      "damai"
+    ],
+    "vocab": [
+      {
+        "word": "安心",
+        "reading": "あんしん",
+        "meanings": [
+          "relief"
+        ],
+        "meanings_id": [
+          "memperoleh ketenangan pikiran melalui iman atau praktik pertapaan"
+        ]
+      },
+      {
+        "word": "安全",
+        "reading": "あんぜん",
+        "meanings": [
+          "safety"
+        ],
+        "meanings_id": [
+          "keamanan",
+          "keselamatan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "院",
+    "strokes": 10,
+    "grade": 3,
+    "freq": 150,
+    "jlpt": 4,
+    "meanings": [
+      "Inst.",
+      "Institution",
+      "Temple",
+      "Mansion",
+      "School"
+    ],
+    "readings_on": [
+      "イン"
+    ],
+    "readings_kun": [],
+    "svgFile": "09662.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "lembaga",
+      "institusi",
+      "kuil",
+      "gedung",
+      "sekolah"
+    ],
+    "vocab": [
+      {
+        "word": "退院",
+        "reading": "たいいんする",
+        "meanings": [
+          "to leave hospital"
+        ],
+        "meanings_id": [
+          "keluar dari rumah sakit",
+          "pemulangan dari rumah sakit"
+        ]
+      },
+      {
+        "word": "入院",
+        "reading": "にゅういんする",
+        "meanings": [
+          "to hospitalise"
+        ],
+        "meanings_id": [
+          "rawat inap",
+          "dirawat di rumah sakit"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "心",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 157,
+    "jlpt": 4,
+    "meanings": [
+      "Heart",
+      "Mind",
+      "Spirit",
+      "Heart Radical (no. 61)"
+    ],
+    "readings_on": [
+      "シン"
+    ],
+    "readings_kun": [
+      "こころ",
+      "-ごころ"
+    ],
+    "svgFile": "05fc3.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "hati",
+      "pikiran",
+      "jiwa",
+      "radikal hati (no. 61)"
+    ],
+    "vocab": [
+      {
+        "word": "安心",
+        "reading": "あんしん",
+        "meanings": [
+          "relief"
+        ],
+        "meanings_id": [
+          "memperoleh ketenangan pikiran melalui iman atau praktik pertapaan"
+        ]
+      },
+      {
+        "word": "心",
+        "reading": "こころ",
+        "meanings": [
+          "core",
+          "heart"
+        ],
+        "meanings_id": [
+          "hati",
+          "pikiran",
+          "jiwa",
+          "vitalitas",
+          "kekuatan batin"
+        ]
+      },
+      {
+        "word": "心配",
+        "reading": "しんぱいする",
+        "meanings": [
+          "to worry"
+        ],
+        "meanings_id": [
+          "kekhawatiran",
+          "kecemasan",
+          "ketakutan",
+          "kegelisahan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "界",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 158,
+    "jlpt": 4,
+    "meanings": [
+      "World",
+      "Boundary"
+    ],
+    "readings_on": [
+      "カイ"
+    ],
+    "readings_kun": [],
+    "svgFile": "0754c.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "dunia",
+      "batas"
+    ],
+    "vocab": [
+      {
+        "word": "世界",
+        "reading": "せかい",
+        "meanings": [
+          "the world"
+        ],
+        "meanings_id": [
+          "dunia",
+          "masyarakat",
+          "alam semesta"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "教",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 166,
+    "jlpt": 4,
+    "meanings": [
+      "Teach",
+      "Faith",
+      "Doctrine"
+    ],
+    "readings_on": [
+      "キョウ"
+    ],
+    "readings_kun": [
+      "おし.える",
+      "おそ.わる"
+    ],
+    "svgFile": "06559.svg",
+    "subLevel": 5,
+    "meanings_id": [
+      "mengajar",
+      "kepercayaan",
+      "ajaran"
+    ],
+    "vocab": [
+      {
+        "word": "教育",
+        "reading": "きょういく",
+        "meanings": [
+          "education"
+        ],
+        "meanings_id": [
+          "pendidikan",
+          "persekolahan",
+          "pelatihan",
+          "pengajaran",
+          "pembimbingan",
+          "pengasuhan"
+        ]
+      },
+      {
+        "word": "教会",
+        "reading": "きょうかい",
+        "meanings": [
+          "church"
+        ],
+        "meanings_id": [
+          "gereja",
+          "jemaat"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "文",
+    "strokes": 4,
+    "grade": 1,
+    "freq": 190,
+    "jlpt": 4,
+    "meanings": [
+      "Sentence",
+      "Literature",
+      "Style",
+      "Art",
+      "Decoration",
+      "Figures",
+      "Plan",
+      "Literary Radical (no. 67)"
+    ],
+    "readings_on": [
+      "ブン",
+      "モン"
+    ],
+    "readings_kun": [
+      "ふみ",
+      "あや"
+    ],
+    "svgFile": "06587.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "kalimat",
+      "sastra",
+      "gaya",
+      "seni",
+      "hiasan",
+      "lambang",
+      "rencana",
+      "radikal sastra (no. 67)"
+    ],
+    "vocab": [
+      {
+        "word": "文化",
+        "reading": "ぶんか",
+        "meanings": [
+          "culture"
+        ],
+        "meanings_id": [
+          "budaya",
+          "peradaban"
+        ]
+      },
+      {
+        "word": "文学",
+        "reading": "ぶんがく",
+        "meanings": [
+          "literature"
+        ],
+        "meanings_id": [
+          "sastra"
+        ]
+      },
+      {
+        "word": "文法",
+        "reading": "ぶんぽう",
+        "meanings": [
+          "grammar"
+        ],
+        "meanings_id": [
+          "tata bahasa",
+          "gramatika"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "元",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 192,
+    "jlpt": 4,
+    "meanings": [
+      "Beginning",
+      "Former Time",
+      "Origin"
+    ],
+    "readings_on": [
+      "ゲン",
+      "ガン"
+    ],
+    "readings_kun": [
+      "もと"
+    ],
+    "svgFile": "05143.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "permulaan",
+      "masa lalu",
+      "asal"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "重",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 193,
+    "jlpt": 4,
+    "meanings": [
+      "Heavy",
+      "Important",
+      "Esteem",
+      "Respect",
+      "Heap Up",
+      "Pile Up",
+      "Nest Of Boxes",
+      "-fold"
+    ],
+    "readings_on": [
+      "ジュウ",
+      "チョウ"
+    ],
+    "readings_kun": [
+      "え",
+      "おも.い",
+      "おも.り",
+      "おも.なう",
+      "かさ.ねる",
+      "かさ.なる",
+      "おも"
+    ],
+    "svgFile": "091cd.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "berat",
+      "penting",
+      "menghargai",
+      "menghormati",
+      "menumpuk",
+      "menimbun",
+      "kotak bertingkat",
+      "-lipat"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "近",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 194,
+    "jlpt": 4,
+    "meanings": [
+      "Near",
+      "Early",
+      "Akin",
+      "Tantamount"
+    ],
+    "readings_on": [
+      "キン",
+      "コン"
+    ],
+    "readings_kun": [
+      "ちか.い"
+    ],
+    "svgFile": "08fd1.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "dekat",
+      "awal",
+      "serumpun",
+      "hampir sama"
+    ],
+    "vocab": [
+      {
+        "word": "近所",
+        "reading": "きんじょ",
+        "meanings": [
+          "neighbourhood"
+        ],
+        "meanings_id": [
+          "lingkungan sekitar",
+          "tetangga",
+          "sekitarnya"
+        ]
+      },
+      {
+        "word": "最近",
+        "reading": "さいきん",
+        "meanings": [
+          "latest",
+          "nowadays"
+        ],
+        "meanings_id": [
+          "baru-baru ini",
+          "akhir-akhir ini",
+          "zaman sekarang",
+          "dewasa ini",
+          "saat ini"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "考",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 196,
+    "jlpt": 4,
+    "meanings": [
+      "Consider",
+      "Think Over"
+    ],
+    "readings_on": [
+      "コウ"
+    ],
+    "readings_kun": [
+      "かんが.える",
+      "かんが.え"
+    ],
+    "svgFile": "08003.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "mempertimbangkan",
+      "memikirkan"
+    ],
+    "vocab": [
+      {
+        "word": "考える",
+        "reading": "かんがえる",
+        "meanings": [
+          "to consider"
+        ],
+        "meanings_id": [
+          "memikirkan",
+          "merenungkan",
+          "mempertimbangkan",
+          "merefleksikan",
+          "bermeditasi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "画",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 199,
+    "jlpt": 4,
+    "meanings": [
+      "Brush-stroke",
+      "Picture"
+    ],
+    "readings_on": [
+      "ガ",
+      "カク",
+      "エ",
+      "カイ"
+    ],
+    "readings_kun": [
+      "えが.く",
+      "かく.する",
+      "かぎ.る",
+      "はかりごと",
+      "はか.る"
+    ],
+    "svgFile": "0753b.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "goresan kuas",
+      "gambar"
+    ],
+    "vocab": [
+      {
+        "word": "計画",
+        "reading": "けいかくする",
+        "meanings": [
+          "to plan"
+        ],
+        "meanings_id": [
+          "rencana",
+          "proyek",
+          "jadwal",
+          "skema",
+          "program"
+        ]
+      },
+      {
+        "word": "漫画",
+        "reading": "まんが",
+        "meanings": [
+          "comic"
+        ],
+        "meanings_id": [
+          "kartun",
+          "komik",
+          "komik strip",
+          "manga"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "海",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 200,
+    "jlpt": 4,
+    "meanings": [
+      "Sea",
+      "Ocean"
+    ],
+    "readings_on": [
+      "カイ"
+    ],
+    "readings_kun": [
+      "うみ"
+    ],
+    "svgFile": "06d77.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "laut",
+      "samudra"
+    ],
+    "vocab": [
+      {
+        "word": "海岸",
+        "reading": "かいがん",
+        "meanings": [
+          "coast"
+        ],
+        "meanings_id": [
+          "tepi laut",
+          "pantai",
+          "tepi pantai",
+          "tepi perairan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "売",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 202,
+    "jlpt": 4,
+    "meanings": [
+      "Sell"
+    ],
+    "readings_on": [
+      "バイ"
+    ],
+    "readings_kun": [
+      "う.る",
+      "う.れる"
+    ],
+    "svgFile": "058f2.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "jual"
+    ],
+    "vocab": [
+      {
+        "word": "売り場",
+        "reading": "うりば",
+        "meanings": [
+          "place where things are sold"
+        ],
+        "meanings_id": [
+          "area penjualan",
+          "kasir",
+          "seksi",
+          "departemen",
+          "lantai penjualan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "知",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 205,
+    "jlpt": 4,
+    "meanings": [
+      "Know",
+      "Wisdom"
+    ],
+    "readings_on": [
+      "チ"
+    ],
+    "readings_kun": [
+      "し.る",
+      "し.らせる"
+    ],
+    "svgFile": "077e5.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "tahu",
+      "kebijaksanaan"
+    ],
+    "vocab": [
+      {
+        "word": "承知",
+        "reading": "しょうちする",
+        "meanings": [
+          "to consent"
+        ],
+        "meanings_id": [
+          "pengetahuan",
+          "kesadaran"
+        ]
+      },
+      {
+        "word": "知らせる",
+        "reading": "しらせる",
+        "meanings": [
+          "to notify"
+        ],
+        "meanings_id": [
+          "memberitahu",
+          "memberi tahu",
+          "menginformasikan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "道",
+    "strokes": 12,
+    "grade": 2,
+    "freq": 207,
+    "jlpt": 4,
+    "meanings": [
+      "Road-way",
+      "Street",
+      "District",
+      "Journey",
+      "Course",
+      "Moral",
+      "Teachings"
+    ],
+    "readings_on": [
+      "ドウ",
+      "トウ"
+    ],
+    "readings_kun": [
+      "みち",
+      "いう"
+    ],
+    "svgFile": "09053.svg",
+    "subLevel": 6,
+    "meanings_id": [
+      "jalan",
+      "jalanan",
+      "distrik",
+      "perjalanan",
+      "arah",
+      "moral",
+      "ajaran"
+    ],
+    "vocab": [
+      {
+        "word": "柔道",
+        "reading": "じゅうどう",
+        "meanings": [
+          "judo"
+        ],
+        "meanings_id": [
+          "judo"
+        ]
+      },
+      {
+        "word": "水道",
+        "reading": "すいどう",
+        "meanings": [
+          "water supply"
+        ],
+        "meanings_id": [
+          "pasokan air",
+          "layanan air",
+          "sistem perpipaan air",
+          "air keran"
+        ]
+      },
+      {
+        "word": "道具",
+        "reading": "どうぐ",
+        "meanings": [
+          "tool",
+          "means"
+        ],
+        "meanings_id": [
+          "alat",
+          "perkakas",
+          "instrumen",
+          "peralatan",
+          "aparatus",
+          "perangkat"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "集",
+    "strokes": 12,
+    "grade": 3,
+    "freq": 210,
+    "jlpt": 4,
+    "meanings": [
+      "Gather",
+      "Meet",
+      "Congregate",
+      "Swarm",
+      "Flock"
+    ],
+    "readings_on": [
+      "シュウ"
+    ],
+    "readings_kun": [
+      "あつ.まる",
+      "あつ.める",
+      "つど.う"
+    ],
+    "svgFile": "096c6.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "berkumpul",
+      "bertemu",
+      "berkerumun",
+      "bergerombol",
+      "berbondong-bondong"
+    ],
+    "vocab": [
+      {
+        "word": "集める",
+        "reading": "あつめる",
+        "meanings": [
+          "to collect something"
+        ],
+        "meanings_id": [
+          "mengumpulkan",
+          "menghimpun"
+        ]
+      },
+      {
+        "word": "集る",
+        "reading": "あつまる",
+        "meanings": [
+          "to gather"
+        ],
+        "meanings_id": [
+          "berkumpul",
+          "berkerumun",
+          "bergerombol",
+          "berdatangan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "別",
+    "strokes": 7,
+    "grade": 4,
+    "freq": 214,
+    "jlpt": 4,
+    "meanings": [
+      "Separate",
+      "Branch Off",
+      "Diverge",
+      "Fork",
+      "Another",
+      "Extra",
+      "Specially"
+    ],
+    "readings_on": [
+      "ベツ"
+    ],
+    "readings_kun": [
+      "わか.れる",
+      "わ.ける"
+    ],
+    "svgFile": "05225.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "terpisah",
+      "bercabang",
+      "menyimpang",
+      "bercabang dua",
+      "lain",
+      "tambahan",
+      "khusus"
+    ],
+    "vocab": [
+      {
+        "word": "特別",
+        "reading": "とくべつ",
+        "meanings": [
+          "special"
+        ],
+        "meanings_id": [
+          "khusus",
+          "istimewa",
+          "luar biasa",
+          "pengecualian",
+          "spesial"
+        ]
+      },
+      {
+        "word": "別",
+        "reading": "べつ",
+        "meanings": [
+          "different"
+        ],
+        "meanings_id": [
+          "tuan (gelar turun-temurun untuk keturunan kekaisaran di daerah terpencil)"
+        ]
+      },
+      {
+        "word": "別れる",
+        "reading": "わかれる",
+        "meanings": [
+          "to separate"
+        ],
+        "meanings_id": [
+          "berpisah (biasanya orang)",
+          "berpisah dari",
+          "berpisah dengan",
+          "terpisah dari"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "物",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 215,
+    "jlpt": 4,
+    "meanings": [
+      "Thing",
+      "Object",
+      "Matter"
+    ],
+    "readings_on": [
+      "ブツ",
+      "モツ"
+    ],
+    "readings_kun": [
+      "もの",
+      "もの-"
+    ],
+    "svgFile": "07269.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "benda",
+      "objek",
+      "hal"
+    ],
+    "vocab": [
+      {
+        "word": "見物",
+        "reading": "けんぶつ",
+        "meanings": [
+          "sightseeing"
+        ],
+        "meanings_id": [
+          "tontonan",
+          "atraksi",
+          "pertunjukan",
+          "sesuatu yang layak dilihat"
+        ]
+      },
+      {
+        "word": "乗り物",
+        "reading": "のりもの",
+        "meanings": [
+          "vehicle"
+        ],
+        "meanings_id": [
+          "kendaraan",
+          "alat transportasi",
+          "(sarana) angkutan"
+        ]
+      },
+      {
+        "word": "贈り物",
+        "reading": "おくりもの",
+        "meanings": [
+          "gift"
+        ],
+        "meanings_id": [
+          "hadiah",
+          "pemberian"
+        ]
+      },
+      {
+        "word": "着物",
+        "reading": "きもの",
+        "meanings": [
+          "kimono"
+        ],
+        "meanings_id": [
+          "kimono",
+          "pakaian tradisional Jepang (esp. panjang)"
+        ]
+      },
+      {
+        "word": "動物園",
+        "reading": "どうぶつえん",
+        "meanings": [
+          "zoo"
+        ],
+        "meanings_id": [
+          "kebun binatang"
+        ]
+      },
+      {
+        "word": "品物",
+        "reading": "しなもの",
+        "meanings": [
+          "goods"
+        ],
+        "meanings_id": [
+          "artikel",
+          "barang",
+          "benda",
+          "produk",
+          "dagangan"
+        ]
+      },
+      {
+        "word": "忘れ物",
+        "reading": "わすれもの",
+        "meanings": [
+          "lost article"
+        ],
+        "meanings_id": [
+          "barang yang tertinggal",
+          "barang yang ketinggalan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "使",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 219,
+    "jlpt": 4,
+    "meanings": [
+      "Use",
+      "Send On A Mission",
+      "Order",
+      "Messenger",
+      "Envoy",
+      "Ambassador",
+      "Cause"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "つか.う",
+      "つか.い",
+      "-つか.い",
+      "-づか.い"
+    ],
+    "svgFile": "04f7f.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "gunakan",
+      "mengutus",
+      "memerintahkan",
+      "utusan",
+      "duta",
+      "duta besar",
+      "menyebabkan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "品",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 225,
+    "jlpt": 4,
+    "meanings": [
+      "Goods",
+      "Refinement",
+      "Dignity",
+      "Article",
+      "Counter For Meal Courses"
+    ],
+    "readings_on": [
+      "ヒン",
+      "ホン"
+    ],
+    "readings_kun": [
+      "しな"
+    ],
+    "svgFile": "054c1.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "barang",
+      "kehalusan",
+      "martabat",
+      "artikel",
+      "penanda jumlah hidangan"
+    ],
+    "vocab": [
+      {
+        "word": "食料品",
+        "reading": "しょくりょうひん",
+        "meanings": [
+          "groceries"
+        ],
+        "meanings_id": [
+          "bahan makanan",
+          "kebutuhan pokok",
+          "belanjaan"
+        ]
+      },
+      {
+        "word": "品物",
+        "reading": "しなもの",
+        "meanings": [
+          "goods"
+        ],
+        "meanings_id": [
+          "artikel",
+          "barang",
+          "benda",
+          "produk",
+          "dagangan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "計",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 228,
+    "jlpt": 4,
+    "meanings": [
+      "Plot",
+      "Plan",
+      "Scheme",
+      "Measure"
+    ],
+    "readings_on": [
+      "ケイ"
+    ],
+    "readings_kun": [
+      "はか.る",
+      "はか.らう"
+    ],
+    "svgFile": "08a08.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "rencana",
+      "siasat",
+      "skema",
+      "ukuran"
+    ],
+    "vocab": [
+      {
+        "word": "計画",
+        "reading": "けいかくする",
+        "meanings": [
+          "to plan"
+        ],
+        "meanings_id": [
+          "rencana",
+          "proyek",
+          "jadwal",
+          "skema",
+          "program"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "死",
+    "strokes": 6,
+    "grade": 3,
+    "freq": 229,
+    "jlpt": 4,
+    "meanings": [
+      "Death",
+      "Die"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "し.ぬ",
+      "し.に-"
+    ],
+    "svgFile": "06b7b.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "kematian",
+      "mati"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "特",
+    "strokes": 10,
+    "grade": 4,
+    "freq": 234,
+    "jlpt": 4,
+    "meanings": [
+      "Special"
+    ],
+    "readings_on": [
+      "トク"
+    ],
+    "readings_kun": [],
+    "svgFile": "07279.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "khusus"
+    ],
+    "vocab": [
+      {
+        "word": "特に",
+        "reading": "とくに",
+        "meanings": [
+          "particularly",
+          "especially"
+        ],
+        "meanings_id": [
+          "khususnya",
+          "terutama",
+          "secara khusus",
+          "dengan tegas"
+        ]
+      },
+      {
+        "word": "特急",
+        "reading": "とっきゅう",
+        "meanings": [
+          "limited express train (faster than an express train)"
+        ],
+        "meanings_id": [
+          "kereta ekspres terbatas (memerlukan tiket ekspres terbatas)"
+        ]
+      },
+      {
+        "word": "特別",
+        "reading": "とくべつ",
+        "meanings": [
+          "special"
+        ],
+        "meanings_id": [
+          "khusus",
+          "istimewa",
+          "luar biasa",
+          "pengecualian",
+          "spesial"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "私",
+    "strokes": 7,
+    "grade": 6,
+    "freq": 242,
+    "jlpt": 4,
+    "meanings": [
+      "Private",
+      "I",
+      "Me"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "わたくし",
+      "わたし"
+    ],
+    "svgFile": "079c1.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "pribadi",
+      "saya",
+      "aku"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "始",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 244,
+    "jlpt": 4,
+    "meanings": [
+      "Commence",
+      "Begin"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "はじ.める",
+      "-はじ.める",
+      "はじ.まる"
+    ],
+    "svgFile": "059cb.svg",
+    "subLevel": 7,
+    "meanings_id": [
+      "memulai",
+      "dimulai"
+    ],
+    "vocab": [
+      {
+        "word": "始める",
+        "reading": "はじめる",
+        "meanings": [
+          "to begin"
+        ],
+        "meanings_id": [
+          "memulai",
+          "mengawali",
+          "menginisiasi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "朝",
+    "strokes": 12,
+    "grade": 2,
+    "freq": 248,
+    "jlpt": 4,
+    "meanings": [
+      "Morning",
+      "Dynasty",
+      "Regime",
+      "Epoch",
+      "Period",
+      "(north) Korea"
+    ],
+    "readings_on": [
+      "チョウ"
+    ],
+    "readings_kun": [
+      "あさ"
+    ],
+    "svgFile": "0671d.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "pagi",
+      "dinasti",
+      "rezim",
+      "zaman",
+      "periode",
+      "Korea (Utara)"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "運",
+    "strokes": 12,
+    "grade": 3,
+    "freq": 255,
+    "jlpt": 4,
+    "meanings": [
+      "Carry",
+      "Luck",
+      "Destiny",
+      "Fate",
+      "Lot",
+      "Transport",
+      "Progress",
+      "Advance"
+    ],
+    "readings_on": [
+      "ウン"
+    ],
+    "readings_kun": [
+      "はこ.ぶ"
+    ],
+    "svgFile": "0904b.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "membawa",
+      "keberuntungan",
+      "takdir",
+      "nasib",
+      "peruntungan",
+      "mengangkut",
+      "kemajuan",
+      "maju"
+    ],
+    "vocab": [
+      {
+        "word": "運ぶ",
+        "reading": "はこぶ",
+        "meanings": [
+          "to transport"
+        ],
+        "meanings_id": [
+          "membawa",
+          "mengangkut",
+          "memindahkan",
+          "menyampaikan"
+        ]
+      },
+      {
+        "word": "運転",
+        "reading": "うんてんする",
+        "meanings": [
+          "to drive"
+        ],
+        "meanings_id": [
+          "pengoperasian (mesin)",
+          "berjalan",
+          "bekerja"
+        ]
+      },
+      {
+        "word": "運転手",
+        "reading": "うんてんしゅ",
+        "meanings": [
+          "driver"
+        ],
+        "meanings_id": [
+          "pengemudi",
+          "sopir"
+        ]
+      },
+      {
+        "word": "運動",
+        "reading": "うんどうする",
+        "meanings": [
+          "to exercise"
+        ],
+        "meanings_id": [
+          "olahraga",
+          "latihan fisik",
+          "latihan",
+          "atletik"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "終",
+    "strokes": 11,
+    "grade": 3,
+    "freq": 256,
+    "jlpt": 4,
+    "meanings": [
+      "End",
+      "Finish"
+    ],
+    "readings_on": [
+      "シュウ"
+    ],
+    "readings_kun": [
+      "お.わる",
+      "-お.わる",
+      "おわ.る",
+      "お.える",
+      "つい",
+      "つい.に"
+    ],
+    "svgFile": "07d42.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "akhir",
+      "selesai"
+    ],
+    "vocab": [
+      {
+        "word": "終わり",
+        "reading": "おわり",
+        "meanings": [
+          "the end"
+        ],
+        "meanings_id": [
+          "akhir",
+          "penutupan",
+          "kesimpulan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "台",
+    "strokes": 5,
+    "grade": 2,
+    "freq": 262,
+    "jlpt": 4,
+    "meanings": [
+      "Pedestal",
+      "A Stand",
+      "Counter For Machines And Vehicles"
+    ],
+    "readings_on": [
+      "ダイ",
+      "タイ"
+    ],
+    "readings_kun": [
+      "うてな",
+      "われ",
+      "つかさ"
+    ],
+    "svgFile": "053f0.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "alas",
+      "dudukan",
+      "satuan hitung mesin dan kendaraan"
+    ],
+    "vocab": [
+      {
+        "word": "台風",
+        "reading": "たいふう",
+        "meanings": [
+          "typhoon"
+        ],
+        "meanings_id": [
+          "topan",
+          "badai tropis"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "広",
+    "strokes": 5,
+    "grade": 2,
+    "freq": 263,
+    "jlpt": 4,
+    "meanings": [
+      "Wide",
+      "Broad",
+      "Spacious"
+    ],
+    "readings_on": [
+      "コウ"
+    ],
+    "readings_kun": [
+      "ひろ.い",
+      "ひろ.まる",
+      "ひろ.める",
+      "ひろ.がる",
+      "ひろ.げる"
+    ],
+    "svgFile": "05e83.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "luas",
+      "lapang",
+      "lebar"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "住",
+    "strokes": 7,
+    "grade": 3,
+    "freq": 270,
+    "jlpt": 4,
+    "meanings": [
+      "Dwell",
+      "Reside",
+      "Live",
+      "Inhabit"
+    ],
+    "readings_on": [
+      "ジュウ",
+      "ヂュウ",
+      "チュウ"
+    ],
+    "readings_kun": [
+      "す.む",
+      "す.まう",
+      "-ず.まい"
+    ],
+    "svgFile": "04f4f.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "tinggal",
+      "menetap",
+      "bermukim",
+      "mendiami"
+    ],
+    "vocab": [
+      {
+        "word": "住所",
+        "reading": "じゅうしょ",
+        "meanings": [
+          "an address",
+          "a residence"
+        ],
+        "meanings_id": [
+          "alamat (rumah, bisnis, dll.)",
+          "tempat tinggal",
+          "domisili"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "真",
+    "strokes": 10,
+    "grade": 3,
+    "freq": 279,
+    "jlpt": 4,
+    "meanings": [
+      "True",
+      "Reality",
+      "Buddhist Sect"
+    ],
+    "readings_on": [
+      "シン"
+    ],
+    "readings_kun": [
+      "ま",
+      "ま-",
+      "まこと"
+    ],
+    "svgFile": "0771f.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "sejati",
+      "kenyataan",
+      "aliran Buddha"
+    ],
+    "vocab": [
+      {
+        "word": "真中",
+        "reading": "まんなか",
+        "meanings": [
+          "middle"
+        ],
+        "meanings_id": [
+          "tengah",
+          "pusat",
+          "titik tengah",
+          "hati"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "有",
+    "strokes": 6,
+    "grade": 3,
+    "freq": 282,
+    "jlpt": 4,
+    "meanings": [
+      "Possess",
+      "Have",
+      "Exist",
+      "Happen",
+      "Occur",
+      "Approx"
+    ],
+    "readings_on": [
+      "ユウ",
+      "ウ"
+    ],
+    "readings_kun": [
+      "あ.る"
+    ],
+    "svgFile": "06709.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "memiliki",
+      "ada",
+      "terjadi",
+      "berlangsung",
+      "kira-kira"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "口",
+    "strokes": 3,
+    "grade": 1,
+    "freq": 284,
+    "jlpt": 4,
+    "meanings": [
+      "Mouth"
+    ],
+    "readings_on": [
+      "コウ",
+      "ク"
+    ],
+    "readings_kun": [
+      "くち"
+    ],
+    "svgFile": "053e3.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "mulut"
+    ],
+    "vocab": [
+      {
+        "word": "人口",
+        "reading": "じんこう",
+        "meanings": [
+          "population"
+        ],
+        "meanings_id": [
+          "populasi",
+          "jumlah penduduk"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "少",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 287,
+    "jlpt": 4,
+    "meanings": [
+      "Few",
+      "Little"
+    ],
+    "readings_on": [
+      "ショウ"
+    ],
+    "readings_kun": [
+      "すく.ない",
+      "すこ.し"
+    ],
+    "svgFile": "05c11.svg",
+    "subLevel": 8,
+    "meanings_id": [
+      "sedikit",
+      "segelintir"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "町",
+    "strokes": 7,
+    "grade": 1,
+    "freq": 292,
+    "jlpt": 4,
+    "meanings": [
+      "Town",
+      "Village",
+      "Block",
+      "Street"
+    ],
+    "readings_on": [
+      "チョウ"
+    ],
+    "readings_kun": [
+      "まち"
+    ],
+    "svgFile": "0753a.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "kota",
+      "desa",
+      "blok",
+      "jalan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "料",
+    "strokes": 10,
+    "grade": 4,
+    "freq": 295,
+    "jlpt": 4,
+    "meanings": [
+      "Fee",
+      "Materials"
+    ],
+    "readings_on": [
+      "リョウ"
+    ],
+    "readings_kun": [],
+    "svgFile": "06599.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "biaya",
+      "bahan"
+    ],
+    "vocab": [
+      {
+        "word": "食料品",
+        "reading": "しょくりょうひん",
+        "meanings": [
+          "groceries"
+        ],
+        "meanings_id": [
+          "bahan makanan",
+          "kebutuhan pokok",
+          "belanjaan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "工",
+    "strokes": 3,
+    "grade": 2,
+    "freq": 299,
+    "jlpt": 4,
+    "meanings": [
+      "Craft",
+      "Construction",
+      "Katakana E Radical (no. 48)"
+    ],
+    "readings_on": [
+      "コウ",
+      "ク",
+      "グ"
+    ],
+    "readings_kun": [],
+    "svgFile": "05de5.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "kerajinan",
+      "konstruksi",
+      "radikal katakana e (no. 48)"
+    ],
+    "vocab": [
+      {
+        "word": "工業",
+        "reading": "こうぎょう",
+        "meanings": [
+          "the manufacturing industry"
+        ],
+        "meanings_id": [
+          "industri (manufaktur)"
+        ]
+      },
+      {
+        "word": "工場",
+        "reading": "こうじょう",
+        "meanings": [
+          "factory"
+        ],
+        "meanings_id": [
+          "pabrik",
+          "kilang",
+          "pabrik (kecil)",
+          "bengkel"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "建",
+    "strokes": 9,
+    "grade": 4,
+    "freq": 300,
+    "jlpt": 4,
+    "meanings": [
+      "Build"
+    ],
+    "readings_on": [
+      "ケン",
+      "コン"
+    ],
+    "readings_kun": [
+      "た.てる",
+      "た.て",
+      "-だ.て",
+      "た.つ"
+    ],
+    "svgFile": "05efa.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "membangun"
+    ],
+    "vocab": [
+      {
+        "word": "建てる",
+        "reading": "たてる",
+        "meanings": [
+          "to build"
+        ],
+        "meanings_id": [
+          "membangun",
+          "mendirikan",
+          "mengkonstruksi"
+        ]
+      },
+      {
+        "word": "二階建て",
+        "reading": "にかいだて",
+        "meanings": [
+          "two storied"
+        ],
+        "meanings_id": [
+          "gedung bertingkat dua"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "空",
+    "strokes": 8,
+    "grade": 1,
+    "freq": 304,
+    "jlpt": 4,
+    "meanings": [
+      "Empty",
+      "Sky",
+      "Void",
+      "Vacant",
+      "Vacuum"
+    ],
+    "readings_on": [
+      "クウ"
+    ],
+    "readings_kun": [
+      "そら",
+      "あ.く",
+      "あ.き",
+      "あ.ける",
+      "から",
+      "す.く",
+      "す.かす",
+      "むな.しい"
+    ],
+    "svgFile": "07a7a.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "kosong",
+      "langit",
+      "hampa",
+      "lowong",
+      "vakum"
+    ],
+    "vocab": [
+      {
+        "word": "空く",
+        "reading": "あく",
+        "meanings": [
+          "to open",
+          "to become empty"
+        ],
+        "meanings_id": [
+          "menjadi tidak terlalu ramai",
+          "berkurang",
+          "menjadi kosong"
+        ]
+      },
+      {
+        "word": "空気",
+        "reading": "くうき",
+        "meanings": [
+          "air",
+          "atmosphere"
+        ],
+        "meanings_id": [
+          "udara",
+          "atmosfer"
+        ]
+      },
+      {
+        "word": "空港",
+        "reading": "くうこう",
+        "meanings": [
+          "airport"
+        ],
+        "meanings_id": [
+          "bandar udara"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "急",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 309,
+    "jlpt": 4,
+    "meanings": [
+      "Hurry",
+      "Emergency",
+      "Sudden",
+      "Steep"
+    ],
+    "readings_on": [
+      "キュウ"
+    ],
+    "readings_kun": [
+      "いそ.ぐ",
+      "いそ.ぎ",
+      "せ.く"
+    ],
+    "svgFile": "06025.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "tergesa-gesa",
+      "darurat",
+      "mendadak",
+      "curam"
+    ],
+    "vocab": [
+      {
+        "word": "急",
+        "reading": "きゅう",
+        "meanings": [
+          "urgent",
+          "steep"
+        ],
+        "meanings_id": [
+          "mendadak",
+          "tiba-tiba",
+          "tak terduga"
+        ]
+      },
+      {
+        "word": "急ぐ",
+        "reading": "いそぐ",
+        "meanings": [
+          "to hurry"
+        ],
+        "meanings_id": [
+          "bergegas",
+          "tergesa-gesa",
+          "terburu-buru",
+          "mempercepat sesuatu"
+        ]
+      },
+      {
+        "word": "急行",
+        "reading": "きゅうこう",
+        "meanings": [
+          "speedy",
+          "express"
+        ],
+        "meanings_id": [
+          "bergegas (ke suatu tempat)",
+          "terburu-buru",
+          "bergerak cepat"
+        ]
+      },
+      {
+        "word": "特急",
+        "reading": "とっきゅう",
+        "meanings": [
+          "limited express train (faster than an express train)"
+        ],
+        "meanings_id": [
+          "kereta ekspres terbatas (memerlukan tiket ekspres terbatas)"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "止",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 310,
+    "jlpt": 4,
+    "meanings": [
+      "Stop",
+      "Halt"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "と.まる",
+      "-ど.まり",
+      "と.める",
+      "-と.める",
+      "-ど.め",
+      "とど.める",
+      "とど.め",
+      "とど.まる",
+      "や.める",
+      "や.む",
+      "-や.む",
+      "よ.す",
+      "-さ.す",
+      "-さ.し"
+    ],
+    "svgFile": "06b62.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "berhenti",
+      "halt"
+    ],
+    "vocab": [
+      {
+        "word": "止む",
+        "reading": "やむ",
+        "meanings": [
+          "to stop"
+        ],
+        "meanings_id": [
+          "berhenti",
+          "berakhir",
+          "selesai"
+        ]
+      },
+      {
+        "word": "止める",
+        "reading": "とめる",
+        "meanings": [
+          "to stop something"
+        ],
+        "meanings_id": [
+          "menghentikan (suatu kegiatan)",
+          "berhenti",
+          "menghentikan",
+          "mengakhiri",
+          "keluar"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "送",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 311,
+    "jlpt": 4,
+    "meanings": [
+      "Escort",
+      "Send"
+    ],
+    "readings_on": [
+      "ソウ"
+    ],
+    "readings_kun": [
+      "おく.る"
+    ],
+    "svgFile": "09001.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "mengawal",
+      "mengirim"
+    ],
+    "vocab": [
+      {
+        "word": "送る",
+        "reading": "おくる",
+        "meanings": [
+          "to send"
+        ],
+        "meanings_id": [
+          "mengirim",
+          "mengirimkan",
+          "meneruskan",
+          "mentransmisikan",
+          "mengapalkan",
+          "meremitkan"
+        ]
+      },
+      {
+        "word": "放送",
+        "reading": "ほうそうする",
+        "meanings": [
+          "to broadcast"
+        ],
+        "meanings_id": [
+          "penyiaran",
+          "siaran",
+          "program",
+          "pengumuman"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "切",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 324,
+    "jlpt": 4,
+    "meanings": [
+      "Cut",
+      "Cutoff",
+      "Be Sharp"
+    ],
+    "readings_on": [
+      "セツ",
+      "サイ"
+    ],
+    "readings_kun": [
+      "き.る",
+      "-き.る",
+      "き.り",
+      "-き.り",
+      "-ぎ.り",
+      "き.れる",
+      "-き.れる",
+      "き.れ",
+      "-き.れ",
+      "-ぎ.れ"
+    ],
+    "svgFile": "05207.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "memotong",
+      "batas potongan",
+      "tajam"
+    ],
+    "vocab": [
+      {
+        "word": "親切",
+        "reading": "しんせつ",
+        "meanings": [
+          "kindness"
+        ],
+        "meanings_id": [
+          "baik hati",
+          "lemah lembut",
+          "penuh perhatian",
+          "dermawan",
+          "ramah",
+          "menyenangkan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "転",
+    "strokes": 11,
+    "grade": 3,
+    "freq": 327,
+    "jlpt": 4,
+    "meanings": [
+      "Revolve",
+      "Turn Around",
+      "Change"
+    ],
+    "readings_on": [
+      "テン"
+    ],
+    "readings_kun": [
+      "ころ.がる",
+      "ころ.げる",
+      "ころ.がす",
+      "ころ.ぶ",
+      "まろ.ぶ",
+      "うたた",
+      "うつ.る",
+      "くる.めく"
+    ],
+    "svgFile": "08ee2.svg",
+    "subLevel": 9,
+    "meanings_id": [
+      "berputar",
+      "berbalik",
+      "berubah"
+    ],
+    "vocab": [
+      {
+        "word": "運転",
+        "reading": "うんてんする",
+        "meanings": [
+          "to drive"
+        ],
+        "meanings_id": [
+          "pengoperasian (mesin)",
+          "berjalan",
+          "bekerja"
+        ]
+      },
+      {
+        "word": "運転手",
+        "reading": "うんてんしゅ",
+        "meanings": [
+          "driver"
+        ],
+        "meanings_id": [
+          "pengemudi",
+          "sopir"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "研",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 336,
+    "jlpt": 4,
+    "meanings": [
+      "Polish",
+      "Study Of",
+      "Sharpen"
+    ],
+    "readings_on": [
+      "ケン"
+    ],
+    "readings_kun": [
+      "と.ぐ"
+    ],
+    "svgFile": "07814.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "mengkilap",
+      "mempelajari",
+      "menajamkan"
+    ],
+    "vocab": [
+      {
+        "word": "研究",
+        "reading": "けんきゅう",
+        "meanings": [
+          "research"
+        ],
+        "meanings_id": [
+          "penelitian",
+          "studi",
+          "investigasi"
+        ]
+      },
+      {
+        "word": "研究室",
+        "reading": "けんきゅうしつ",
+        "meanings": [
+          "study room",
+          "laboratory"
+        ],
+        "meanings_id": [
+          "laboratorium"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "足",
+    "strokes": 7,
+    "grade": 1,
+    "freq": 343,
+    "jlpt": 4,
+    "meanings": [
+      "Leg",
+      "Foot",
+      "Be Sufficient",
+      "Counter For Pairs Of Footwear"
+    ],
+    "readings_on": [
+      "ソク"
+    ],
+    "readings_kun": [
+      "あし",
+      "た.りる",
+      "た.る",
+      "た.す"
+    ],
+    "svgFile": "08db3.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "kaki",
+      "kaki",
+      "cukup",
+      "penghitung pasang alas kaki"
+    ],
+    "vocab": [
+      {
+        "word": "足す",
+        "reading": "たす",
+        "meanings": [
+          "to add a number"
+        ],
+        "meanings_id": [
+          "menambahkan (angka)",
+          "menjumlahkan"
+        ]
+      },
+      {
+        "word": "足りる",
+        "reading": "たりる",
+        "meanings": [
+          "to be enough"
+        ],
+        "meanings_id": [
+          "cukup",
+          "memadai"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "究",
+    "strokes": 7,
+    "grade": 3,
+    "freq": 368,
+    "jlpt": 4,
+    "meanings": [
+      "Research",
+      "Study"
+    ],
+    "readings_on": [
+      "キュウ",
+      "ク"
+    ],
+    "readings_kun": [
+      "きわ.める"
+    ],
+    "svgFile": "07a76.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "penelitian",
+      "studi"
+    ],
+    "vocab": [
+      {
+        "word": "研究",
+        "reading": "けんきゅう",
+        "meanings": [
+          "research"
+        ],
+        "meanings_id": [
+          "penelitian",
+          "studi",
+          "investigasi"
+        ]
+      },
+      {
+        "word": "研究室",
+        "reading": "けんきゅうしつ",
+        "meanings": [
+          "study room",
+          "laboratory"
+        ],
+        "meanings_id": [
+          "laboratorium"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "楽",
+    "strokes": 13,
+    "grade": 2,
+    "freq": 373,
+    "jlpt": 4,
+    "meanings": [
+      "Music",
+      "Comfort",
+      "Ease"
+    ],
+    "readings_on": [
+      "ガク",
+      "ラク",
+      "ゴウ"
+    ],
+    "readings_kun": [
+      "たの.しい",
+      "たの.しむ",
+      "この.む"
+    ],
+    "svgFile": "0697d.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "musik",
+      "kenyamanan",
+      "kemudahan"
+    ],
+    "vocab": [
+      {
+        "word": "楽しみ",
+        "reading": "たのしみ",
+        "meanings": [
+          "joy"
+        ],
+        "meanings_id": [
+          "kesenangan",
+          "kenikmatan",
+          "hiburan",
+          "kegembiraan",
+          "kebahagiaan",
+          "keseruan",
+          "pengalihan",
+          "hobi"
+        ]
+      },
+      {
+        "word": "楽む",
+        "reading": "たのしむ",
+        "meanings": [
+          "to enjoy oneself"
+        ],
+        "meanings_id": []
+      }
+    ]
+  },
+  {
+    "character": "起",
+    "strokes": 10,
+    "grade": 3,
+    "freq": 374,
+    "jlpt": 4,
+    "meanings": [
+      "Rouse",
+      "Wake Up",
+      "Get Up"
+    ],
+    "readings_on": [
+      "キ"
+    ],
+    "readings_kun": [
+      "お.きる",
+      "お.こる",
+      "お.こす",
+      "おこ.す",
+      "た.つ"
+    ],
+    "svgFile": "08d77.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "membangkitkan",
+      "membangunkan",
+      "bangun"
+    ],
+    "vocab": [
+      {
+        "word": "起す",
+        "reading": "おこす",
+        "meanings": [
+          "to wake"
+        ],
+        "meanings_id": []
+      }
+    ]
+  },
+  {
+    "character": "着",
+    "strokes": 12,
+    "grade": 3,
+    "freq": 376,
+    "jlpt": 4,
+    "meanings": [
+      "Don",
+      "Arrive",
+      "Wear",
+      "Counter For Suits Of Clothing"
+    ],
+    "readings_on": [
+      "チャク",
+      "ジャク"
+    ],
+    "readings_kun": [
+      "き.る",
+      "-ぎ",
+      "き.せる",
+      "-き.せ",
+      "つ.く",
+      "つ.ける"
+    ],
+    "svgFile": "07740.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "mengenakan",
+      "tiba",
+      "memakai",
+      "penanda setelan pakaian"
+    ],
+    "vocab": [
+      {
+        "word": "下着",
+        "reading": "したぎ",
+        "meanings": [
+          "underwear"
+        ],
+        "meanings_id": [
+          "pakaian dalam",
+          "pakaian dalam wanita",
+          "lingeri"
+        ]
+      },
+      {
+        "word": "着物",
+        "reading": "きもの",
+        "meanings": [
+          "kimono"
+        ],
+        "meanings_id": [
+          "kimono",
+          "pakaian tradisional Jepang (esp. panjang)"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "店",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 378,
+    "jlpt": 4,
+    "meanings": [
+      "Store",
+      "Shop"
+    ],
+    "readings_on": [
+      "テン"
+    ],
+    "readings_kun": [
+      "みせ",
+      "たな"
+    ],
+    "svgFile": "05e97.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "toko",
+      "warung"
+    ],
+    "vocab": [
+      {
+        "word": "店員",
+        "reading": "てんいん",
+        "meanings": [
+          "shop assistant"
+        ],
+        "meanings_id": [
+          "karyawan (toko)",
+          "pramuniaga",
+          "pelayan toko",
+          "penjual"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "病",
+    "strokes": 10,
+    "grade": 3,
+    "freq": 384,
+    "jlpt": 4,
+    "meanings": [
+      "Ill",
+      "Sick"
+    ],
+    "readings_on": [
+      "ビョウ",
+      "ヘイ"
+    ],
+    "readings_kun": [
+      "や.む",
+      "-や.み",
+      "やまい"
+    ],
+    "svgFile": "075c5.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "sakit",
+      "tidak sehat"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "質",
+    "strokes": 15,
+    "grade": 5,
+    "freq": 389,
+    "jlpt": 4,
+    "meanings": [
+      "Substance",
+      "Quality",
+      "Matter",
+      "Temperament"
+    ],
+    "readings_on": [
+      "シツ",
+      "シチ",
+      "チ"
+    ],
+    "readings_kun": [
+      "たち",
+      "ただ.す",
+      "もと",
+      "わりふ"
+    ],
+    "svgFile": "08cea.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "zat",
+      "kualitas",
+      "materi",
+      "temperamen"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "待",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 391,
+    "jlpt": 4,
+    "meanings": [
+      "Wait",
+      "Depend On"
+    ],
+    "readings_on": [
+      "タイ"
+    ],
+    "readings_kun": [
+      "ま.つ",
+      "-ま.ち"
+    ],
+    "svgFile": "05f85.svg",
+    "subLevel": 10,
+    "meanings_id": [
+      "menunggu",
+      "bergantung pada"
+    ],
+    "vocab": [
+      {
+        "word": "招待",
+        "reading": "しょうたいする",
+        "meanings": [
+          "to invite"
+        ],
+        "meanings_id": [
+          "undangan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "試",
+    "strokes": 13,
+    "grade": 4,
+    "freq": 392,
+    "jlpt": 4,
+    "meanings": [
+      "Test",
+      "Try",
+      "Attempt",
+      "Experiment",
+      "Ordeal"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "こころ.みる",
+      "ため.す"
+    ],
+    "svgFile": "08a66.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "ujian",
+      "mencoba",
+      "upaya",
+      "eksperimen",
+      "cobaan"
+    ],
+    "vocab": [
+      {
+        "word": "試験",
+        "reading": "しけん",
+        "meanings": [
+          "examination"
+        ],
+        "meanings_id": [
+          "ujian",
+          "tes"
+        ]
+      },
+      {
+        "word": "試合",
+        "reading": "しあい",
+        "meanings": [
+          "match",
+          "game"
+        ],
+        "meanings_id": [
+          "pertandingan",
+          "permainan",
+          "bout",
+          "kompetisi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "族",
+    "strokes": 11,
+    "grade": 3,
+    "freq": 393,
+    "jlpt": 4,
+    "meanings": [
+      "Tribe",
+      "Family"
+    ],
+    "readings_on": [
+      "ゾク"
+    ],
+    "readings_kun": [],
+    "svgFile": "065cf.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "suku",
+      "keluarga"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "銀",
+    "strokes": 14,
+    "grade": 3,
+    "freq": 395,
+    "jlpt": 4,
+    "meanings": [
+      "Silver"
+    ],
+    "readings_on": [
+      "ギン"
+    ],
+    "readings_kun": [
+      "しろがね"
+    ],
+    "svgFile": "09280.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "perak"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "早",
+    "strokes": 6,
+    "grade": 1,
+    "freq": 402,
+    "jlpt": 4,
+    "meanings": [
+      "Early",
+      "Fast"
+    ],
+    "readings_on": [
+      "ソウ",
+      "サッ"
+    ],
+    "readings_kun": [
+      "はや.い",
+      "はや",
+      "はや-",
+      "はや.まる",
+      "はや.める",
+      "さ-"
+    ],
+    "svgFile": "065e9.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "awal",
+      "cepat"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "映",
+    "strokes": 9,
+    "grade": 6,
+    "freq": 404,
+    "jlpt": 4,
+    "meanings": [
+      "Reflect",
+      "Reflection",
+      "Projection"
+    ],
+    "readings_on": [
+      "エイ"
+    ],
+    "readings_kun": [
+      "うつ.る",
+      "うつ.す",
+      "は.える",
+      "-ば.え"
+    ],
+    "svgFile": "06620.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "memantulkan",
+      "pantulan",
+      "proyeksi"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "親",
+    "strokes": 16,
+    "grade": 2,
+    "freq": 406,
+    "jlpt": 4,
+    "meanings": [
+      "Parent",
+      "Intimacy",
+      "Relative",
+      "Familiarity",
+      "Dealer (cards)"
+    ],
+    "readings_on": [
+      "シン"
+    ],
+    "readings_kun": [
+      "おや",
+      "おや-",
+      "した.しい",
+      "した.しむ"
+    ],
+    "svgFile": "089aa.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "orang tua",
+      "keakraban",
+      "kerabat",
+      "familiaritas",
+      "bandar (kartu)"
+    ],
+    "vocab": [
+      {
+        "word": "親",
+        "reading": "おや",
+        "meanings": [
+          "parents"
+        ],
+        "meanings_id": [
+          "keintiman",
+          "kedekatan",
+          "keramahan"
+        ]
+      },
+      {
+        "word": "親切",
+        "reading": "しんせつ",
+        "meanings": [
+          "kindness"
+        ],
+        "meanings_id": [
+          "baik hati",
+          "lemah lembut",
+          "penuh perhatian",
+          "dermawan",
+          "ramah",
+          "menyenangkan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "験",
+    "strokes": 18,
+    "grade": 4,
+    "freq": 410,
+    "jlpt": 4,
+    "meanings": [
+      "Verification",
+      "Effect",
+      "Testing"
+    ],
+    "readings_on": [
+      "ケン",
+      "ゲン"
+    ],
+    "readings_kun": [
+      "あかし",
+      "しるし",
+      "ため.す",
+      "ためし"
+    ],
+    "svgFile": "09a13.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "verifikasi",
+      "efek",
+      "pengujian"
+    ],
+    "vocab": [
+      {
+        "word": "経験",
+        "reading": "けいけんする",
+        "meanings": [
+          "to experience"
+        ],
+        "meanings_id": [
+          "pengalaman"
+        ]
+      },
+      {
+        "word": "試験",
+        "reading": "しけん",
+        "meanings": [
+          "examination"
+        ],
+        "meanings_id": [
+          "ujian",
+          "tes"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "英",
+    "strokes": 8,
+    "grade": 4,
+    "freq": 430,
+    "jlpt": 4,
+    "meanings": [
+      "England",
+      "English",
+      "Hero",
+      "Outstanding",
+      "Calyx"
+    ],
+    "readings_on": [
+      "エイ"
+    ],
+    "readings_kun": [
+      "はなぶさ"
+    ],
+    "svgFile": "082f1.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "Inggris",
+      "bahasa Inggris",
+      "pahlawan",
+      "luar biasa",
+      "kelopak"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "医",
+    "strokes": 7,
+    "grade": 3,
+    "freq": 437,
+    "jlpt": 4,
+    "meanings": [
+      "Doctor",
+      "Medicine"
+    ],
+    "readings_on": [
+      "イ"
+    ],
+    "readings_kun": [
+      "い.やす",
+      "い.する",
+      "くすし"
+    ],
+    "svgFile": "0533b.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "dokter",
+      "kedokteran"
+    ],
+    "vocab": [
+      {
+        "word": "医学",
+        "reading": "いがく",
+        "meanings": [
+          "medical science"
+        ],
+        "meanings_id": [
+          "ilmu kedokteran",
+          "ilmu kedokteran (sains)"
+        ]
+      },
+      {
+        "word": "歯医者",
+        "reading": "はいしゃ",
+        "meanings": [
+          "dentist"
+        ],
+        "meanings_id": [
+          "dokter gigi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "仕",
+    "strokes": 5,
+    "grade": 3,
+    "freq": 439,
+    "jlpt": 4,
+    "meanings": [
+      "Attend",
+      "Doing",
+      "Official",
+      "Serve"
+    ],
+    "readings_on": [
+      "シ",
+      "ジ"
+    ],
+    "readings_kun": [
+      "つか.える"
+    ],
+    "svgFile": "04ed5.svg",
+    "subLevel": 11,
+    "meanings_id": [
+      "menghadiri",
+      "melakukan",
+      "resmi",
+      "melayani"
+    ],
+    "vocab": [
+      {
+        "word": "仕方",
+        "reading": "しかた",
+        "meanings": [
+          "method"
+        ],
+        "meanings_id": [
+          "cara",
+          "metode",
+          "sarana",
+          "sumber daya",
+          "langkah"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "去",
+    "strokes": 5,
+    "grade": 3,
+    "freq": 440,
+    "jlpt": 4,
+    "meanings": [
+      "Gone",
+      "Past",
+      "Quit",
+      "Leave",
+      "Elapse",
+      "Eliminate",
+      "Divorce"
+    ],
+    "readings_on": [
+      "キョ",
+      "コ"
+    ],
+    "readings_kun": [
+      "さ.る",
+      "-さ.る"
+    ],
+    "svgFile": "053bb.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "pergi",
+      "lalu",
+      "berhenti",
+      "tinggalkan",
+      "berlalu",
+      "hilangkan",
+      "cerai"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "味",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 442,
+    "jlpt": 4,
+    "meanings": [
+      "Flavor",
+      "Taste"
+    ],
+    "readings_on": [
+      "ミ"
+    ],
+    "readings_kun": [
+      "あじ",
+      "あじ.わう"
+    ],
+    "svgFile": "05473.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "rasa",
+      "cita rasa"
+    ],
+    "vocab": [
+      {
+        "word": "興味",
+        "reading": "きょうみ",
+        "meanings": [
+          "an interest"
+        ],
+        "meanings_id": [
+          "minat (pada sesuatu)",
+          "rasa ingin tahu (tentang sesuatu)",
+          "antusiasme (terhadap)"
+        ]
+      },
+      {
+        "word": "趣味",
+        "reading": "しゅみ",
+        "meanings": [
+          "hobby"
+        ],
+        "meanings_id": [
+          "hobi",
+          "kegiatan pengisi waktu"
+        ]
+      },
+      {
+        "word": "味",
+        "reading": "あじ",
+        "meanings": [
+          "flavour"
+        ],
+        "meanings_id": [
+          "(indra) perasa"
+        ]
+      },
+      {
+        "word": "味噌",
+        "reading": "みそ",
+        "meanings": [
+          "bean paste"
+        ],
+        "meanings_id": [
+          "miso",
+          "bumbu fermentasi biasanya terbuat dari kedelai"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "写",
+    "strokes": 5,
+    "grade": 3,
+    "freq": 453,
+    "jlpt": 4,
+    "meanings": [
+      "Copy",
+      "Be Photographed",
+      "Describe"
+    ],
+    "readings_on": [
+      "シャ",
+      "ジャ"
+    ],
+    "readings_kun": [
+      "うつ.す",
+      "うつ.る",
+      "うつ-",
+      "うつ.し"
+    ],
+    "svgFile": "05199.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "salin",
+      "difoto",
+      "gambarkan"
+    ],
+    "vocab": [
+      {
+        "word": "写す",
+        "reading": "うつす",
+        "meanings": [
+          "to copy or photograph"
+        ],
+        "meanings_id": [
+          "menyalin",
+          "menduplikasi",
+          "mereproduksi",
+          "menjiplak",
+          "mentranskrip"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "字",
+    "strokes": 6,
+    "grade": 1,
+    "freq": 485,
+    "jlpt": 4,
+    "meanings": [
+      "Character",
+      "Letter",
+      "Word",
+      "Section Of Village"
+    ],
+    "readings_on": [
+      "ジ"
+    ],
+    "readings_kun": [
+      "あざ",
+      "あざな",
+      "-な"
+    ],
+    "svgFile": "05b57.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "karakter",
+      "huruf",
+      "kata",
+      "bagian desa"
+    ],
+    "vocab": [
+      {
+        "word": "字",
+        "reading": "じ",
+        "meanings": [
+          "character"
+        ],
+        "meanings_id": [
+          "nama kehormatan Tiongkok (nama yang dahulu diberikan kepada pria dewasa Tiongkok, digunakan sebagai pengganti nama pemberian dalam situasi formal)"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "答",
+    "strokes": 12,
+    "grade": 2,
+    "freq": 486,
+    "jlpt": 4,
+    "meanings": [
+      "Solution",
+      "Answer"
+    ],
+    "readings_on": [
+      "トウ"
+    ],
+    "readings_kun": [
+      "こた.える",
+      "こた.え"
+    ],
+    "svgFile": "07b54.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "solusi",
+      "jawaban"
+    ],
+    "vocab": [
+      {
+        "word": "答",
+        "reading": "こたえ",
+        "meanings": [
+          "response"
+        ],
+        "meanings_id": []
+      }
+    ]
+  },
+  {
+    "character": "夜",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 487,
+    "jlpt": 4,
+    "meanings": [
+      "Night",
+      "Evening"
+    ],
+    "readings_on": [
+      "ヤ"
+    ],
+    "readings_kun": [
+      "よ",
+      "よる"
+    ],
+    "svgFile": "0591c.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "malam",
+      "petang"
+    ],
+    "vocab": [
+      {
+        "word": "今夜",
+        "reading": "こんや",
+        "meanings": [
+          "tonight"
+        ],
+        "meanings_id": [
+          "malam ini",
+          "nanti malam"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "音",
+    "strokes": 9,
+    "grade": 1,
+    "freq": 491,
+    "jlpt": 4,
+    "meanings": [
+      "Sound",
+      "Noise"
+    ],
+    "readings_on": [
+      "オン",
+      "イン",
+      "-ノン"
+    ],
+    "readings_kun": [
+      "おと",
+      "ね"
+    ],
+    "svgFile": "097f3.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "suara",
+      "kebisingan"
+    ],
+    "vocab": [
+      {
+        "word": "音",
+        "reading": "おと",
+        "meanings": [
+          "sound",
+          "note"
+        ],
+        "meanings_id": [
+          "suara",
+          "nada",
+          "not",
+          "dering",
+          "kicauan"
+        ]
+      },
+      {
+        "word": "発音",
+        "reading": "はつおん",
+        "meanings": [
+          "pronunciation"
+        ],
+        "meanings_id": [
+          "pengucapan",
+          "pelafalan"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "注",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 497,
+    "jlpt": 4,
+    "meanings": [
+      "Pour",
+      "Irrigate",
+      "Shed (tears)",
+      "Flow Into",
+      "Concentrate On",
+      "Notes",
+      "Comment",
+      "Annotate"
+    ],
+    "readings_on": [
+      "チュウ"
+    ],
+    "readings_kun": [
+      "そそ.ぐ",
+      "さ.す",
+      "つ.ぐ"
+    ],
+    "svgFile": "06ce8.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "tuangkan",
+      "airi",
+      "curahkan (air mata)",
+      "mengalir ke",
+      "konsentrasi pada",
+      "catatan",
+      "komentar",
+      "anotasi"
+    ],
+    "vocab": [
+      {
+        "word": "注意",
+        "reading": "ちゅうい",
+        "meanings": [
+          "caution"
+        ],
+        "meanings_id": [
+          "perhatian",
+          "kewaspadaan",
+          "kepedulian"
+        ]
+      },
+      {
+        "word": "注射",
+        "reading": "ちゅうしゃ",
+        "meanings": [
+          "injection"
+        ],
+        "meanings_id": [
+          "suntikan",
+          "injeksi"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "帰",
+    "strokes": 10,
+    "grade": 2,
+    "freq": 504,
+    "jlpt": 4,
+    "meanings": [
+      "Homecoming",
+      "Arrive At",
+      "Lead To",
+      "Result In"
+    ],
+    "readings_on": [
+      "キ"
+    ],
+    "readings_kun": [
+      "かえ.る",
+      "かえ.す",
+      "おく.る",
+      "とつ.ぐ"
+    ],
+    "svgFile": "05e30.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "pulang ke rumah",
+      "tiba di",
+      "mengarah ke",
+      "berujung pada"
+    ],
+    "vocab": [
+      {
+        "word": "帰り",
+        "reading": "かえり",
+        "meanings": [
+          "return"
+        ],
+        "meanings_id": [
+          "kepulangan",
+          "kembali"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "古",
+    "strokes": 5,
+    "grade": 2,
+    "freq": 509,
+    "jlpt": 4,
+    "meanings": [
+      "Old"
+    ],
+    "readings_on": [
+      "コ"
+    ],
+    "readings_kun": [
+      "ふる.い",
+      "ふる-",
+      "-ふる.す"
+    ],
+    "svgFile": "053e4.svg",
+    "subLevel": 12,
+    "meanings_id": [
+      "tua",
+      "kuno"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "歌",
+    "strokes": 14,
+    "grade": 2,
+    "freq": 519,
+    "jlpt": 4,
+    "meanings": [
+      "Song",
+      "Sing"
+    ],
+    "readings_on": [
+      "カ"
+    ],
+    "readings_kun": [
+      "うた",
+      "うた.う"
+    ],
+    "svgFile": "06b4c.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "lagu",
+      "menyanyi"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "買",
+    "strokes": 12,
+    "grade": 2,
+    "freq": 520,
+    "jlpt": 4,
+    "meanings": [
+      "Buy"
+    ],
+    "readings_on": [
+      "バイ"
+    ],
+    "readings_kun": [
+      "か.う"
+    ],
+    "svgFile": "08cb7.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "beli"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "悪",
+    "strokes": 11,
+    "grade": 3,
+    "freq": 530,
+    "jlpt": 4,
+    "meanings": [
+      "Bad",
+      "Vice",
+      "Rascal",
+      "False",
+      "Evil",
+      "Wrong"
+    ],
+    "readings_on": [
+      "アク",
+      "オ"
+    ],
+    "readings_kun": [
+      "わる.い",
+      "わる-",
+      "あ.し",
+      "にく.い",
+      "-にく.い",
+      "ああ",
+      "いずくに",
+      "いずくんぞ",
+      "にく.む"
+    ],
+    "svgFile": "060aa.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "buruk",
+      "kejahatan",
+      "bajingan",
+      "palsu",
+      "jahat",
+      "salah"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "図",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 539,
+    "jlpt": 4,
+    "meanings": [
+      "Map",
+      "Drawing",
+      "Plan",
+      "Extraordinary",
+      "Audacious"
+    ],
+    "readings_on": [
+      "ズ",
+      "ト"
+    ],
+    "readings_kun": [
+      "え",
+      "はか.る"
+    ],
+    "svgFile": "056f3.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "peta",
+      "gambar",
+      "rencana",
+      "luar biasa",
+      "berani"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "週",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 540,
+    "jlpt": 4,
+    "meanings": [
+      "Week"
+    ],
+    "readings_on": [
+      "シュウ"
+    ],
+    "readings_kun": [],
+    "svgFile": "09031.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "minggu"
+    ],
+    "vocab": [
+      {
+        "word": "さ来週",
+        "reading": "さらいしゅう",
+        "meanings": [
+          "the week after next"
+        ],
+        "meanings_id": []
+      }
+    ]
+  },
+  {
+    "character": "室",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 550,
+    "jlpt": 4,
+    "meanings": [
+      "Room",
+      "Apartment",
+      "Chamber",
+      "Greenhouse",
+      "Cellar"
+    ],
+    "readings_on": [
+      "シツ"
+    ],
+    "readings_kun": [
+      "むろ"
+    ],
+    "svgFile": "05ba4.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "ruangan",
+      "apartemen",
+      "kamar",
+      "rumah kaca",
+      "ruang bawah tanah"
+    ],
+    "vocab": [
+      {
+        "word": "会議室",
+        "reading": "かいぎしつ",
+        "meanings": [
+          "meeting room"
+        ],
+        "meanings_id": [
+          "ruang rapat",
+          "ruang konferensi"
+        ]
+      },
+      {
+        "word": "研究室",
+        "reading": "けんきゅうしつ",
+        "meanings": [
+          "study room",
+          "laboratory"
+        ],
+        "meanings_id": [
+          "laboratorium"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "歩",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 554,
+    "jlpt": 4,
+    "meanings": [
+      "Walk",
+      "Counter For Steps"
+    ],
+    "readings_on": [
+      "ホ",
+      "ブ",
+      "フ"
+    ],
+    "readings_kun": [
+      "ある.く",
+      "あゆ.む"
+    ],
+    "svgFile": "06b69.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "berjalan",
+      "satuan hitung langkah"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "風",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 558,
+    "jlpt": 4,
+    "meanings": [
+      "Wind",
+      "Air",
+      "Style",
+      "Manner"
+    ],
+    "readings_on": [
+      "フウ",
+      "フ"
+    ],
+    "readings_kun": [
+      "かぜ",
+      "かざ-",
+      "-かぜ"
+    ],
+    "svgFile": "098a8.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "angin",
+      "udara",
+      "gaya",
+      "cara"
+    ],
+    "vocab": [
+      {
+        "word": "台風",
+        "reading": "たいふう",
+        "meanings": [
+          "typhoon"
+        ],
+        "meanings_id": [
+          "topan",
+          "badai tropis"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "紙",
+    "strokes": 10,
+    "grade": 2,
+    "freq": 559,
+    "jlpt": 4,
+    "meanings": [
+      "Paper"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "かみ"
+    ],
+    "svgFile": "07d19.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "kertas"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "黒",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 573,
+    "jlpt": 4,
+    "meanings": [
+      "Black"
+    ],
+    "readings_on": [
+      "コク"
+    ],
+    "readings_kun": [
+      "くろ",
+      "くろ.ずむ",
+      "くろ.い"
+    ],
+    "svgFile": "09ed2.svg",
+    "subLevel": 13,
+    "meanings_id": [
+      "hitam"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "花",
+    "strokes": 7,
+    "grade": 1,
+    "freq": 578,
+    "jlpt": 4,
+    "meanings": [
+      "Flower"
+    ],
+    "readings_on": [
+      "カ",
+      "ケ"
+    ],
+    "readings_kun": [
+      "はな"
+    ],
+    "svgFile": "082b1.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "bunga"
+    ],
+    "vocab": [
+      {
+        "word": "花見",
+        "reading": "はなみ",
+        "meanings": [
+          "cherry-blossom viewing"
+        ],
+        "meanings_id": [
+          "melihat bunga sakura",
+          "melihat bunga"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "春",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 579,
+    "jlpt": 4,
+    "meanings": [
+      "Springtime",
+      "Spring (season)"
+    ],
+    "readings_on": [
+      "シュン"
+    ],
+    "readings_kun": [
+      "はる"
+    ],
+    "svgFile": "06625.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "musim semi"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "赤",
+    "strokes": 7,
+    "grade": 1,
+    "freq": 584,
+    "jlpt": 4,
+    "meanings": [
+      "Red"
+    ],
+    "readings_on": [
+      "セキ",
+      "シャク"
+    ],
+    "readings_kun": [
+      "あか",
+      "あか-",
+      "あか.い",
+      "あか.らむ",
+      "あか.らめる"
+    ],
+    "svgFile": "08d64.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "merah"
+    ],
+    "vocab": [
+      {
+        "word": "赤ん坊",
+        "reading": "あかんぼう",
+        "meanings": [
+          "baby"
+        ],
+        "meanings_id": [
+          "bayi",
+          "anak kecil"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "青",
+    "strokes": 8,
+    "grade": 1,
+    "freq": 589,
+    "jlpt": 4,
+    "meanings": [
+      "Blue",
+      "Green"
+    ],
+    "readings_on": [
+      "セイ",
+      "ショウ"
+    ],
+    "readings_kun": [
+      "あお",
+      "あお-",
+      "あお.い"
+    ],
+    "svgFile": "09752.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "biru",
+      "hijau"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "館",
+    "strokes": 16,
+    "grade": 3,
+    "freq": 613,
+    "jlpt": 4,
+    "meanings": [
+      "Building",
+      "Mansion",
+      "Large Building",
+      "Palace"
+    ],
+    "readings_on": [
+      "カン"
+    ],
+    "readings_kun": [
+      "やかた",
+      "たて"
+    ],
+    "svgFile": "09928.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "gedung",
+      "mansion",
+      "gedung besar",
+      "istana"
+    ],
+    "vocab": [
+      {
+        "word": "美術館",
+        "reading": "びじゅつかん",
+        "meanings": [
+          "art gallery"
+        ],
+        "meanings_id": [
+          "museum seni",
+          "galeri seni"
+        ]
+      },
+      {
+        "word": "旅館",
+        "reading": "りょかん",
+        "meanings": [
+          "Japanese hotel"
+        ],
+        "meanings_id": [
+          "ryokan",
+          "penginapan tradisional Jepang"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "屋",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 616,
+    "jlpt": 4,
+    "meanings": [
+      "Roof",
+      "House",
+      "Shop",
+      "Dealer",
+      "Seller"
+    ],
+    "readings_on": [
+      "オク"
+    ],
+    "readings_kun": [
+      "や"
+    ],
+    "svgFile": "05c4b.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "atap",
+      "rumah",
+      "toko",
+      "pedagang",
+      "penjual"
+    ],
+    "vocab": [
+      {
+        "word": "屋上",
+        "reading": "おくじょう",
+        "meanings": [
+          "rooftop"
+        ],
+        "meanings_id": [
+          "atap",
+          "rooftop"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "色",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 621,
+    "jlpt": 4,
+    "meanings": [
+      "Color"
+    ],
+    "readings_on": [
+      "ショク",
+      "シキ"
+    ],
+    "readings_kun": [
+      "いろ"
+    ],
+    "svgFile": "08272.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "warna"
+    ],
+    "vocab": [
+      {
+        "word": "景色",
+        "reading": "けしき",
+        "meanings": [
+          "scene",
+          "landscape"
+        ],
+        "meanings_id": [
+          "pemandangan",
+          "panorama",
+          "lanskap"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "走",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 626,
+    "jlpt": 4,
+    "meanings": [
+      "Run"
+    ],
+    "readings_on": [
+      "ソウ"
+    ],
+    "readings_kun": [
+      "はし.る"
+    ],
+    "svgFile": "08d70.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "berlari"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "秋",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 635,
+    "jlpt": 4,
+    "meanings": [
+      "Autumn"
+    ],
+    "readings_on": [
+      "シュウ"
+    ],
+    "readings_kun": [
+      "あき",
+      "とき"
+    ],
+    "svgFile": "079cb.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "musim gugur"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "夏",
+    "strokes": 10,
+    "grade": 2,
+    "freq": 659,
+    "jlpt": 4,
+    "meanings": [
+      "Summer"
+    ],
+    "readings_on": [
+      "カ",
+      "ガ",
+      "ゲ"
+    ],
+    "readings_kun": [
+      "なつ"
+    ],
+    "svgFile": "0590f.svg",
+    "subLevel": 14,
+    "meanings_id": [
+      "musim panas"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "習",
+    "strokes": 11,
+    "grade": 3,
+    "freq": 706,
+    "jlpt": 4,
+    "meanings": [
+      "Learn"
+    ],
+    "readings_on": [
+      "シュウ",
+      "ジュ"
+    ],
+    "readings_kun": [
+      "なら.う",
+      "なら.い"
+    ],
+    "svgFile": "07fd2.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "belajar"
+    ],
+    "vocab": [
+      {
+        "word": "習慣",
+        "reading": "しゅうかん",
+        "meanings": [
+          "custom",
+          "manners"
+        ],
+        "meanings_id": [
+          "kebiasaan"
+        ]
+      },
+      {
+        "word": "復習",
+        "reading": "ふくしゅう",
+        "meanings": [
+          "revision"
+        ],
+        "meanings_id": [
+          "mengulang pelajaran",
+          "revisi materi"
+        ]
+      },
+      {
+        "word": "予習",
+        "reading": "よしゅう",
+        "meanings": [
+          "preparation for a lesson"
+        ],
+        "meanings_id": [
+          "persiapan pelajaran"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "駅",
+    "strokes": 14,
+    "grade": 3,
+    "freq": 724,
+    "jlpt": 4,
+    "meanings": [
+      "Station"
+    ],
+    "readings_on": [
+      "エキ"
+    ],
+    "readings_kun": [],
+    "svgFile": "099c5.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "stasiun"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "洋",
+    "strokes": 9,
+    "grade": 3,
+    "freq": 763,
+    "jlpt": 4,
+    "meanings": [
+      "Ocean",
+      "Sea",
+      "Foreign",
+      "Western Style"
+    ],
+    "readings_on": [
+      "ヨウ"
+    ],
+    "readings_kun": [],
+    "svgFile": "06d0b.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "samudra",
+      "laut",
+      "asing",
+      "gaya Barat"
+    ],
+    "vocab": [
+      {
+        "word": "西洋",
+        "reading": "せいよう",
+        "meanings": [
+          "western countries"
+        ],
+        "meanings_id": [
+          "Barat",
+          "Oksiden",
+          "negara-negara Barat"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "旅",
+    "strokes": 10,
+    "grade": 3,
+    "freq": 783,
+    "jlpt": 4,
+    "meanings": [
+      "Trip",
+      "Travel"
+    ],
+    "readings_on": [
+      "リョ"
+    ],
+    "readings_kun": [
+      "たび"
+    ],
+    "svgFile": "065c5.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "perjalanan",
+      "bepergian"
+    ],
+    "vocab": [
+      {
+        "word": "旅館",
+        "reading": "りょかん",
+        "meanings": [
+          "Japanese hotel"
+        ],
+        "meanings_id": [
+          "ryokan",
+          "penginapan tradisional Jepang"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "服",
+    "strokes": 8,
+    "grade": 3,
+    "freq": 873,
+    "jlpt": 4,
+    "meanings": [
+      "Clothing",
+      "Admit",
+      "Obey",
+      "Discharge"
+    ],
+    "readings_on": [
+      "フク"
+    ],
+    "readings_kun": [],
+    "svgFile": "0670d.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "pakaian",
+      "mengakui",
+      "mematuhi",
+      "melepaskan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "夕",
+    "strokes": 3,
+    "grade": 1,
+    "freq": 924,
+    "jlpt": 4,
+    "meanings": [
+      "Evening"
+    ],
+    "readings_on": [
+      "セキ"
+    ],
+    "readings_kun": [
+      "ゆう"
+    ],
+    "svgFile": "05915.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "sore"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "借",
+    "strokes": 10,
+    "grade": 4,
+    "freq": 932,
+    "jlpt": 4,
+    "meanings": [
+      "Borrow",
+      "Rent"
+    ],
+    "readings_on": [
+      "シャク"
+    ],
+    "readings_kun": [
+      "か.りる"
+    ],
+    "svgFile": "0501f.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "meminjam",
+      "menyewa"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "曜",
+    "strokes": 18,
+    "grade": 2,
+    "freq": 940,
+    "jlpt": 4,
+    "meanings": [
+      "Weekday"
+    ],
+    "readings_on": [
+      "ヨウ"
+    ],
+    "readings_kun": [],
+    "svgFile": "066dc.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "hari dalam seminggu"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "飲",
+    "strokes": 12,
+    "grade": 3,
+    "freq": 969,
+    "jlpt": 4,
+    "meanings": [
+      "Drink",
+      "Smoke",
+      "Take"
+    ],
+    "readings_on": [
+      "イン",
+      "オン"
+    ],
+    "readings_kun": [
+      "の.む",
+      "-の.み"
+    ],
+    "svgFile": "098f2.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "minum",
+      "merokok",
+      "mengonsumsi"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "肉",
+    "strokes": 6,
+    "grade": 2,
+    "freq": 986,
+    "jlpt": 4,
+    "meanings": [
+      "Meat"
+    ],
+    "readings_on": [
+      "ニク"
+    ],
+    "readings_kun": [
+      "しし"
+    ],
+    "svgFile": "08089.svg",
+    "subLevel": 15,
+    "meanings_id": [
+      "daging"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "貸",
+    "strokes": 12,
+    "grade": 5,
+    "freq": 995,
+    "jlpt": 4,
+    "meanings": [
+      "Lend"
+    ],
+    "readings_on": [
+      "タイ"
+    ],
+    "readings_kun": [
+      "か.す",
+      "か.し-",
+      "かし-"
+    ],
+    "svgFile": "08cb8.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "meminjamkan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "堂",
+    "strokes": 11,
+    "grade": 4,
+    "freq": 1010,
+    "jlpt": 4,
+    "meanings": [
+      "Public Chamber",
+      "Hall"
+    ],
+    "readings_on": [
+      "ドウ"
+    ],
+    "readings_kun": [],
+    "svgFile": "05802.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "ruang publik",
+      "aula"
+    ],
+    "vocab": [
+      {
+        "word": "講堂",
+        "reading": "こうどう",
+        "meanings": [
+          "auditorium"
+        ],
+        "meanings_id": [
+          "auditorium",
+          "aula kuliah"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "鳥",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 1043,
+    "jlpt": 4,
+    "meanings": [
+      "Bird",
+      "Chicken"
+    ],
+    "readings_on": [
+      "チョウ"
+    ],
+    "readings_kun": [
+      "とり"
+    ],
+    "svgFile": "09ce5.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "burung",
+      "ayam"
+    ],
+    "vocab": [
+      {
+        "word": "小鳥",
+        "reading": "ことり",
+        "meanings": [
+          "small bird"
+        ],
+        "meanings_id": [
+          "burung kecil",
+          "burung mungil"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "飯",
+    "strokes": 12,
+    "grade": 4,
+    "freq": 1046,
+    "jlpt": 4,
+    "meanings": [
+      "Meal",
+      "Boiled Rice"
+    ],
+    "readings_on": [
+      "ハン"
+    ],
+    "readings_kun": [
+      "めし"
+    ],
+    "svgFile": "098ef.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "makanan",
+      "nasi matang"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "勉",
+    "strokes": 10,
+    "grade": 3,
+    "freq": 1066,
+    "jlpt": 4,
+    "meanings": [
+      "Exertion",
+      "Endeavour",
+      "Encourage",
+      "Strive",
+      "Make Effort",
+      "Diligent"
+    ],
+    "readings_on": [
+      "ベン"
+    ],
+    "readings_kun": [
+      "つと.める"
+    ],
+    "svgFile": "052c9.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "ketekunan",
+      "usaha",
+      "mendorong",
+      "berjuang",
+      "berupaya",
+      "rajin"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "冬",
+    "strokes": 5,
+    "grade": 2,
+    "freq": 1090,
+    "jlpt": 4,
+    "meanings": [
+      "Winter"
+    ],
+    "readings_on": [
+      "トウ"
+    ],
+    "readings_kun": [
+      "ふゆ"
+    ],
+    "svgFile": "051ac.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "musim dingin"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "昼",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 1115,
+    "jlpt": 4,
+    "meanings": [
+      "Daytime",
+      "Noon"
+    ],
+    "readings_on": [
+      "チュウ"
+    ],
+    "readings_kun": [
+      "ひる"
+    ],
+    "svgFile": "0663c.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "siang hari",
+      "tengah hari"
+    ],
+    "vocab": [
+      {
+        "word": "昼間",
+        "reading": "ひるま",
+        "meanings": [
+          "daytime",
+          "during the day"
+        ],
+        "meanings_id": [
+          "siang hari",
+          "sepanjang hari",
+          "waktu dari matahari terbit hingga terbenam",
+          "periode siang"
+        ]
+      },
+      {
+        "word": "昼休み",
+        "reading": "ひるやすみ",
+        "meanings": [
+          "noon break"
+        ],
+        "meanings_id": [
+          "istirahat makan siang",
+          "rehat siang"
+        ]
+      }
+    ]
+  },
+  {
+    "character": "茶",
+    "strokes": 9,
+    "grade": 2,
+    "freq": 1116,
+    "jlpt": 4,
+    "meanings": [
+      "Tea"
+    ],
+    "readings_on": [
+      "チャ",
+      "サ"
+    ],
+    "readings_kun": [],
+    "svgFile": "08336.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "teh"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "弟",
+    "strokes": 7,
+    "grade": 2,
+    "freq": 1161,
+    "jlpt": 4,
+    "meanings": [
+      "Younger Brother",
+      "Faithful Service To Elders"
+    ],
+    "readings_on": [
+      "テイ",
+      "ダイ",
+      "デ"
+    ],
+    "readings_kun": [
+      "おとうと"
+    ],
+    "svgFile": "05f1f.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "adik laki-laki",
+      "pengabdian setia kepada yang lebih tua"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "牛",
+    "strokes": 4,
+    "grade": 2,
+    "freq": 1202,
+    "jlpt": 4,
+    "meanings": [
+      "Cow"
+    ],
+    "readings_on": [
+      "ギュウ"
+    ],
+    "readings_kun": [
+      "うし"
+    ],
+    "svgFile": "0725b.svg",
+    "subLevel": 16,
+    "meanings_id": [
+      "sapi"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "魚",
+    "strokes": 11,
+    "grade": 2,
+    "freq": 1208,
+    "jlpt": 4,
+    "meanings": [
+      "Fish"
+    ],
+    "readings_on": [
+      "ギョ"
+    ],
+    "readings_kun": [
+      "うお",
+      "さかな",
+      "-ざかな"
+    ],
+    "svgFile": "09b5a.svg",
+    "subLevel": 17,
+    "meanings_id": [
+      "ikan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "兄",
+    "strokes": 5,
+    "grade": 2,
+    "freq": 1219,
+    "jlpt": 4,
+    "meanings": [
+      "Elder Brother",
+      "Big Brother"
+    ],
+    "readings_on": [
+      "ケイ",
+      "キョウ"
+    ],
+    "readings_kun": [
+      "あに"
+    ],
+    "svgFile": "05144.svg",
+    "subLevel": 17,
+    "meanings_id": [
+      "kakak laki-laki",
+      "abang"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "犬",
+    "strokes": 4,
+    "grade": 1,
+    "freq": 1326,
+    "jlpt": 4,
+    "meanings": [
+      "Dog"
+    ],
+    "readings_on": [
+      "ケン"
+    ],
+    "readings_kun": [
+      "いぬ",
+      "いぬ-"
+    ],
+    "svgFile": "072ac.svg",
+    "subLevel": 17,
+    "meanings_id": [
+      "anjing"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "妹",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 1446,
+    "jlpt": 4,
+    "meanings": [
+      "Younger Sister"
+    ],
+    "readings_on": [
+      "マイ"
+    ],
+    "readings_kun": [
+      "いもうと"
+    ],
+    "svgFile": "059b9.svg",
+    "subLevel": 17,
+    "meanings_id": [
+      "adik perempuan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "姉",
+    "strokes": 8,
+    "grade": 2,
+    "freq": 1473,
+    "jlpt": 4,
+    "meanings": [
+      "Elder Sister"
+    ],
+    "readings_on": [
+      "シ"
+    ],
+    "readings_kun": [
+      "あね",
+      "はは"
+    ],
+    "svgFile": "059c9.svg",
+    "subLevel": 17,
+    "meanings_id": [
+      "kakak perempuan"
+    ],
+    "vocab": []
+  },
+  {
+    "character": "漢",
+    "strokes": 13,
+    "grade": 3,
+    "freq": 1487,
+    "jlpt": 4,
+    "meanings": [
+      "Sino-",
+      "China"
+    ],
+    "readings_on": [
+      "カン"
+    ],
+    "readings_kun": [],
+    "svgFile": "06f22.svg",
+    "subLevel": 17,
+    "meanings_id": [
+      "Sino-",
+      "Tiongkok"
+    ],
+    "vocab": []
+  }
+]
