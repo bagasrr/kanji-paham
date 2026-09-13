@@ -29,10 +29,10 @@ export default async function KanjiDetailPage({
   const baseUrl = `/learn/${level}/${subLevel}`
 
   return (
-    <div className="px-4 py-6">
+    <div className="py-4 pb-20">
       <Link
         href={baseUrl}
-        className="flex items-center gap-2 text-sm text-text-muted mb-6 hover:text-primary transition-colors"
+        className="inline-flex items-center gap-2 text-sm text-text-muted mb-6 hover:text-primary transition-colors font-medium bg-surface px-4 py-2 rounded-full border border-border-color shadow-sm"
       >
         <ArrowLeft size={16} /> Kembali ke {getSubLevelTitle(levelNum, subLevelNum)}
       </Link>

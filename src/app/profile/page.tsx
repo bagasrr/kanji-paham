@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { auth, signOut } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
+import { LogOut, LayoutDashboard, UserCheck, Flame, BookMarked, Trophy } from 'lucide-react'
 
 export default async function ProfilePage() {
   const session = await auth()
@@ -15,72 +16,103 @@ export default async function ProfilePage() {
     })
     
     return (
-      <div className="px-4 py-6">
-        <h1 className="text-2xl font-bold text-text-main mb-6">Profil</h1>
-        <div className="bg-surface rounded-2xl border border-border-color p-6 text-center shadow-sm mb-6">
-          {session.user.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={session.user.image} alt={session.user.name || 'User'} className="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-border-color" />
-          ) : (
-            <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-white text-3xl mx-auto mb-4">
-              👤
+      <div className="py-2 pb-24 max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold text-text-main mb-8 tracking-tight text-center">Profil Saya</h1>
+        
+        <div className="bg-surface rounded-3xl border border-border-color p-8 text-center shadow-lg shadow-black/5 mb-8 relative overflow-hidden">
+          <div className="pattern-washi absolute inset-0 z-0"></div>
+          <div className="relative z-10">
+            {session.user.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={session.user.image} alt={session.user.name || 'User'} className="w-24 h-24 rounded-full mx-auto mb-5 border-4 border-white shadow-md object-cover" />
+            ) : (
+              <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-white text-4xl mx-auto mb-5 shadow-md border-4 border-white">
+                👤
+              </div>
+            )}
+            <h2 className="text-2xl text-text-main font-bold mb-1">{session.user.name || 'User'}</h2>
+            <p className="text-sm text-text-muted mb-6 font-medium">{session.user.email}</p>
+            
+            {/* Role Badges */}
+            <div className="mb-8">
+              <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border shadow-sm ${
+                session.user.role === 'ADMIN' ? 'bg-purple-100 text-purple-700 border-purple-200' :
+                session.user.role === 'SENSEI' ? 'bg-blue-100 text-blue-700 border-blue-200' :
+                'bg-card-muted text-text-muted border-border-color'
+              }`}>
+                {session.user.role === 'ADMIN' && <UserCheck size={14} />}
+                {session.user.role === 'SENSEI' && <BookMarked size={14} />}
+                {session.user.role || 'GAKUSEI'}
+              </span>
             </div>
-          )}
-          <p className="text-xl text-text-main font-semibold mb-1">{session.user.name || 'User'}</p>
-          <p className="text-sm text-text-muted mb-6">{session.user.email}</p>
-          
-          {/* Role Badges & Actions */}
-          <div className="mb-6">
-            <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border ${
-              session.user.role === 'ADMIN' ? 'bg-purple-100 text-purple-700 border-purple-200' :
-              session.user.role === 'SENSEI' ? 'bg-blue-100 text-blue-700 border-blue-200' :
-              'bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700'
-            }`}>
-              {session.user.role || 'GAKUSEI'}
-            </span>
-          </div>
 
-          <div className="space-y-3 mb-6">
-            {(session.user.role === 'SENSEI' || session.user.role === 'ADMIN') && (
-              <Link
-                href="/dashboard"
-                className="block w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
-              >
-                Dashboard {session.user.role === 'ADMIN' ? 'Admin' : 'Sensei'}
-              </Link>
-            )}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="bg-card-muted/50 rounded-2xl p-4 border border-border-color text-center">
+                <div className="flex items-center justify-center gap-2 text-primary mb-1">
+                  <BookMarked size={18} />
+                  <span className="font-bold">Kanji</span>
+                </div>
+                <div className="text-2xl font-bold text-text-main">0</div>
+                <div className="text-xs text-text-muted">Dikuasai</div>
+              </div>
+              <div className="bg-card-muted/50 rounded-2xl p-4 border border-border-color text-center">
+                <div className="flex items-center justify-center gap-2 text-secondary mb-1">
+                  <Flame size={18} />
+                  <span className="font-bold">Streak</span>
+                </div>
+                <div className="text-2xl font-bold text-text-main">0</div>
+                <div className="text-xs text-text-muted">Hari</div>
+              </div>
+            </div>
 
-            {session.user.role !== 'SENSEI' && session.user.role !== 'ADMIN' && (
-              <Link
-                href="/profile/apply-sensei"
-                className="block w-full py-3 rounded-xl border border-blue-600 text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-colors"
+            <div className="space-y-3 mb-8">
+              {(session.user.role === 'SENSEI' || session.user.role === 'ADMIN') && (
+                <Link
+                  href="/dashboard"
+                  className="w-full py-3.5 rounded-2xl bg-secondary text-white font-bold flex items-center justify-center gap-2 hover:bg-secondary/90 transition-colors shadow-sm hover:shadow-md"
+                >
+                  <LayoutDashboard size={18} />
+                  Dashboard {session.user.role === 'ADMIN' ? 'Admin' : 'Sensei'}
+                </Link>
+              )}
+
+              {session.user.role !== 'SENSEI' && session.user.role !== 'ADMIN' && (
+                <Link
+                  href="/profile/apply-sensei"
+                  className="w-full py-3.5 rounded-2xl border-2 border-secondary text-secondary font-bold flex items-center justify-center gap-2 hover:bg-secondary/10 transition-colors"
+                >
+                  <Trophy size={18} />
+                  Daftar Jadi Sensei
+                </Link>
+              )}
+            </div>
+            
+            <form action={async () => {
+              'use server'
+              await signOut({ redirectTo: '/auth/login' })
+            }}>
+              <button
+                type="submit"
+                className="w-full py-3.5 rounded-2xl bg-card-muted text-text-main font-bold flex items-center justify-center gap-2 hover:bg-border transition-colors"
               >
-                Daftar Jadi Sensei
-              </Link>
-            )}
+                <LogOut size={18} />
+                Keluar
+              </button>
+            </form>
           </div>
-          
-          <form action={async () => {
-            'use server'
-            await signOut({ redirectTo: '/auth/login' })
-          }}>
-            <button
-              type="submit"
-              className="block w-full py-3 rounded-xl border border-[#E5E7EB] dark:border-slate-600 text-[#1F2937] dark:text-[#F8FAFC] font-medium hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
-            >
-              Keluar
-            </button>
-          </form>
         </div>
 
         {weakKanjis.length > 0 && (
-          <div>
-            <h2 className="text-lg font-bold text-text-main mb-3">Kanji yang Perlu Dilatih</h2>
-            <div className="grid grid-cols-5 gap-2">
+          <div className="bg-surface rounded-3xl border border-border-color p-8 shadow-sm">
+            <h2 className="text-lg font-bold text-text-main mb-4 flex items-center gap-2">
+              <span className="text-primary">🔥</span> Fokus Belajar
+            </h2>
+            <p className="text-sm text-text-muted mb-6">Kanji berikut butuh lebih banyak perhatian darimu.</p>
+            <div className="grid grid-cols-4 md:grid-cols-5 gap-3">
               {weakKanjis.map(wk => (
-                <div key={wk.character} className="aspect-square bg-surface border border-border-color rounded-xl flex flex-col items-center justify-center relative">
-                  <span className="text-2xl font-serif text-text-main">{wk.character}</span>
-                  <span className="absolute -top-1 -right-1 bg-red-100 dark:bg-red-900/50 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-red-200 dark:border-red-800">
+                <div key={wk.character} className="aspect-square bg-card-muted/30 border border-border-color rounded-2xl flex flex-col items-center justify-center relative hover:border-primary transition-colors group cursor-default">
+                  <span className="text-3xl font-serif text-text-main group-hover:text-primary transition-colors" style={{ fontFamily: "'Noto Serif JP', serif" }}>{wk.character}</span>
+                  <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm border border-white">
                     {wk.mistakeCount}x
                   </span>
                 </div>
@@ -93,20 +125,24 @@ export default async function ProfilePage() {
   }
 
   return (
-    <div className="px-4 py-6">
-      <h1 className="text-2xl font-bold text-text-main mb-6">Profil</h1>
-      <div className="bg-surface rounded-2xl border border-border-color p-6 text-center shadow-sm">
-        <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-2xl mx-auto mb-4">
-          👤
+    <div className="py-2 pb-24 max-w-lg mx-auto">
+      <div className="bg-surface rounded-3xl border border-border-color p-8 md:p-12 text-center shadow-lg shadow-black/5 relative overflow-hidden mt-8">
+        <div className="pattern-washi absolute inset-0 z-0"></div>
+        <div className="relative z-10">
+          <div className="w-24 h-24 rounded-full bg-card-muted flex items-center justify-center mx-auto mb-6 shadow-inner border-4 border-white text-6xl text-primary font-serif select-none" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            大
+          </div>
+          <h2 className="text-2xl font-bold text-text-main mb-2">Belum Masuk</h2>
+          <p className="text-text-muted mb-8 font-medium leading-relaxed">
+            Simpan progres belajarmu, ikuti simulasi ujian, dan kuasai ratusan Kanji dengan mendaftar gratis.
+          </p>
+          <Link
+            href="/auth/login"
+            className="w-full py-4 rounded-2xl bg-primary text-white font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-hover transition-colors shadow-md hover:shadow-lg"
+          >
+            Masuk / Daftar
+          </Link>
         </div>
-        <p className="text-text-main font-semibold mb-1">Tamu</p>
-        <p className="text-sm text-text-muted mb-6">Masuk untuk menyimpan progres belajar Anda</p>
-        <Link
-          href="/auth/login"
-          className="block w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-red-700 transition-colors"
-        >
-          Masuk / Daftar
-        </Link>
       </div>
     </div>
   )

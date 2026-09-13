@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useToast } from '@/components/Toast'
 
 function LoginForm() {
@@ -86,9 +87,19 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-background px-4 w-full">
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-center text-text-main mb-6">
-          🇯🇵 KanjiPaham
-        </h1>
+        <div className="flex flex-col items-center mb-6">
+          <Image
+            src="/assets/KanjiPahamLogo.png"
+            alt="KanjiPaham Logo"
+            width={64}
+            height={64}
+            className="w-16 h-16 rounded-2xl object-contain mb-2 shadow-sm"
+            priority
+          />
+          <h1 className="text-2xl font-bold text-center text-text-main">
+            KanjiPaham
+          </h1>
+        </div>
         <Suspense fallback={<div className="p-6 text-center">Memuat form login...</div>}>
           <LoginForm />
         </Suspense>

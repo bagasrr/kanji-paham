@@ -27,27 +27,33 @@ export function KanjiNavigation({ prevUrl, nextUrl }: Props) {
   }, [prevUrl, nextUrl, router])
 
   return (
-    <div className="flex items-center justify-between mt-6 max-w-4xl mx-auto">
-      {prevUrl ? (
-        <Link
-          href={prevUrl}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border-color bg-surface hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-text-main font-medium"
-        >
-          <ChevronLeft size={20} /> Sebelumnya
-        </Link>
-      ) : (
-        <div />
-      )}
-      {nextUrl ? (
-        <Link
-          href={nextUrl}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border-color bg-surface hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-text-main font-medium"
-        >
-          Selanjutnya <ChevronRight size={20} />
-        </Link>
-      ) : (
-        <div />
-      )}
+    <div className="mt-8 max-w-4xl mx-auto flex flex-col items-center">
+      <div className="w-full flex flex-row items-center justify-between gap-4">
+        {prevUrl ? (
+          <Link
+            href={prevUrl}
+            className="flex-1 flex justify-center items-center gap-2 px-6 py-4 rounded-2xl border border-border-color bg-surface hover:bg-card-muted transition-colors text-text-main font-medium shadow-sm hover:shadow"
+          >
+            <ChevronLeft size={20} /> <span className="hidden sm:inline">Sebelumnya</span>
+          </Link>
+        ) : (
+          <div className="flex-1" />
+        )}
+        
+        {nextUrl ? (
+          <Link
+            href={nextUrl}
+            className="flex-1 flex justify-center items-center gap-2 px-6 py-4 rounded-2xl bg-primary text-white hover:bg-primary-hover transition-colors font-bold shadow-md hover:shadow-lg"
+          >
+            <span className="hidden sm:inline">Berikutnya</span> <ChevronRight size={20} className="text-white" />
+          </Link>
+        ) : (
+          <div className="flex-1" />
+        )}
+      </div>
+      <p className="mt-4 text-xs text-text-subtle hidden md:block">
+        Gunakan tombol <kbd className="px-1.5 py-0.5 bg-surface border border-border-color rounded text-[10px]">←</kbd> dan <kbd className="px-1.5 py-0.5 bg-surface border border-border-color rounded text-[10px]">→</kbd> untuk navigasi cepat
+      </p>
     </div>
   )
 }

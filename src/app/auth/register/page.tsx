@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useToast } from '@/components/Toast'
 
 export default function RegisterPage() {
@@ -35,7 +36,19 @@ export default function RegisterPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-center text-text-main mb-6">🇯🇵 KanjiPaham</h1>
+        <div className="flex flex-col items-center mb-6">
+          <Image
+            src="/assets/KanjiPahamLogo.png"
+            alt="KanjiPaham Logo"
+            width={64}
+            height={64}
+            className="w-16 h-16 rounded-2xl object-contain mb-2 shadow-sm"
+            priority
+          />
+          <h1 className="text-2xl font-bold text-center text-text-main">
+            KanjiPaham
+          </h1>
+        </div>
         <div className="bg-surface rounded-2xl shadow-sm border border-border-color p-6">
           <h2 className="text-lg font-semibold text-text-main mb-4">Daftar Akun</h2>
           <form onSubmit={handleSubmit} className="space-y-4">

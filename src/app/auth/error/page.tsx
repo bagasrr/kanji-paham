@@ -2,6 +2,7 @@
 
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { AlertCircle, ArrowLeft } from 'lucide-react'
 import { Suspense } from 'react'
 
@@ -52,9 +53,19 @@ export default function AuthErrorPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-[#FAF9F6] dark:bg-[#0F172A] px-4">
       <div className="w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center text-[#1F2937] dark:text-[#F8FAFC] mb-6">
-          🇯🇵 KanjiPaham
-        </h1>
+        <div className="flex flex-col items-center mb-6">
+          <Image
+            src="/assets/KanjiPahamLogo.png"
+            alt="KanjiPaham Logo"
+            width={64}
+            height={64}
+            className="w-16 h-16 rounded-2xl object-contain mb-2 shadow-sm"
+            priority
+          />
+          <h1 className="text-2xl font-bold text-center text-text-main">
+            KanjiPaham
+          </h1>
+        </div>
         <Suspense fallback={<div className="text-center p-8">Memuat...</div>}>
           <AuthErrorContent />
         </Suspense>

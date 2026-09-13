@@ -1,54 +1,69 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { BookOpen, AlignJustify, Brain, User, Sun, Moon } from 'lucide-react'
-import { useTheme } from '@/components/ThemeProvider'
+import { Home, BookOpen, Brain, User, AlignJustify } from 'lucide-react'
 
 const NAV_ITEMS = [
+  { href: '/learn', icon: Home, label: 'Beranda' },
   { href: '/kana', icon: AlignJustify, label: 'Kana' },
-  { href: '/learn', icon: BookOpen, label: 'Kanji' },
   { href: '/quiz', icon: Brain, label: 'Quiz' },
-  { href: '/profile', icon: User, label: 'Profile' },
+  { href: '/profile', icon: User, label: 'Profil' },
 ] as const
 
 export function BottomNav() {
   const pathname = usePathname()
-  const { theme, toggle } = useTheme()
 
   return (
-    <nav
-      className="fixed bottom-0 left-0 right-0 md:top-0 md:bottom-auto md:w-64 md:h-screen md:border-r z-50 bg-surface border-t md:border-t-0 border-border-color md:p-6 flex flex-col justify-between"
-      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-    >
-      <div className="hidden md:flex mb-8 px-4 justify-between items-start">
-        <div>
-          <h1 className="text-2xl font-bold text-text-main">🇯🇵 KanjiPaham</h1>
-          <p className="text-xs text-text-muted mt-1">Belajar Bahasa Jepang</p>
-        </div>
+    <nav className="fixed bottom-0 left-0 right-0 md:top-0 md:bottom-auto md:w-60 md:h-screen md:border-r z-50 bg-surface border-t md:border-t-0 border-border-color pb-[env(safe-area-inset-bottom)] md:pb-0 md:flex md:flex-col justify-between shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.05)] md:shadow-none">
+      <div className="hidden md:block px-6 pt-8 pb-6 border-b border-border-color/50">
+        <Link href="/learn" className="flex items-center gap-3 group">
+          <Image
+            src="/assets/KanjiPahamLogo.png"
+            alt="KanjiPaham Logo"
+            width={48}
+            height={48}
+            className="w-12 h-12 rounded-2xl object-contain shadow-sm group-hover:scale-105 transition-transform"
+            priority
+          />
+          <div>
+            <h1 className="text-xl font-bold text-primary tracking-tight leading-none">KanjiPaham</h1>
+            <p className="text-xs text-text-muted mt-1 font-medium">Belajar Kanji</p>
+          </div>
+        </Link>
       </div>
 
-      <div className="w-full flex md:flex-col justify-around md:justify-start gap-2 relative">
+      <div className="w-full h-16 md:h-auto flex md:flex-col justify-around md:justify-start items-center md:items-stretch gap-1 md:gap-3 p-2 md:p-6 md:pt-8">
         {NAV_ITEMS.map(({ href, icon: Icon, label }) => {
           const active = pathname.startsWith(href)
           return (
             <Link
               key={href}
               href={href}
-              className={`flex-1 md:flex-none flex md:flex-row flex-col items-center md:justify-start gap-1 md:gap-4 py-3 md:px-4 md:py-4 rounded-xl transition-colors ${
+              className={`flex-1 md:flex-none flex md:flex-row flex-col items-center md:justify-start gap-1 md:gap-4 py-1 md:py-3.5 px-2 md:px-5 rounded-2xl md:rounded-xl transition-all duration-300 ${
                 active
-                  ? 'text-primary md:bg-red-50 md:dark:bg-red-950/20'
-                  : 'text-text-muted/80 hover:text-[#1F2937] dark:hover:text-[#F8FAFC] md:hover:bg-slate-50 md:dark:hover:bg-slate-800/50'
+                  ? 'text-primary md:bg-primary/10 md:text-primary md:font-semibold'
+                  : 'text-text-muted hover:text-text-main hover:bg-surface/80 md:hover:bg-card-muted/50'
               }`}
             >
-              <Icon size={24} strokeWidth={active ? 2.5 : 1.8} />
-              <span className="text-[10px] md:text-sm font-medium">{label}</span>
+              <Icon 
+                size={22} 
+                strokeWidth={active ? 2.5 : 2} 
+                className={`transition-transform duration-300 ${active ? 'scale-110 md:scale-100' : ''}`}
+              />
+              <span className="text-[10px] md:text-sm font-medium tracking-wide">{label}</span>
             </Link>
           )
         })}
       </div>
-      <div className="hidden md:block mt-auto text-xs text-text-muted/80 px-4">
-        &copy; {new Date().getFullYear()} KanjiPaham
+      
+      <div className="hidden md:block mt-auto p-6 text-center">
+        <div className="pattern-washi absolute inset-0 z-[-1]"></div>
+        <p className="text-xs text-text-subtle font-serif italic mb-2 tracking-widest text-sakura">桜が咲くように</p>
+        <p className="text-xs text-text-muted/60">
+          &copy; {new Date().getFullYear()} KanjiPaham
+        </p>
       </div>
     </nav>
   )
