@@ -3,7 +3,7 @@ import { auth } from '@/lib/auth'
 import * as mammoth from 'mammoth'
 const pdfParse = require('pdf-parse')
 
-// Next.js App Router defaults to Node.js runtime for API routes
+export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
   const session = await auth()

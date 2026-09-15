@@ -1,6 +1,8 @@
 import { NextRequest } from 'next/server'
 import { getKanjiBySubLevel } from '@/lib/kanji'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl
   const level = parseInt(searchParams.get('level') ?? '5', 10) as 1 | 2 | 3 | 4 | 5
