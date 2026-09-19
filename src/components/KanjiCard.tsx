@@ -139,28 +139,36 @@ export function KanjiCard({ entry }: Props) {
           </div>
 
           {/* ── Vocabulary Examples ───────────────────────── */}
-          <div className="px-6 py-5 md:px-8 md:py-5 flex-1 flex flex-col min-h-0">
-            <div className="flex items-center justify-between mb-4 flex-shrink-0">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
-                <span>📖</span> Contoh Kosakata
+          <div className="px-5 py-4 sm:px-6 md:px-8 sm:py-5 flex-1 flex flex-col min-h-0">
+            <div className="flex items-center justify-between gap-3 mb-4 flex-wrap sm:flex-nowrap flex-shrink-0">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-sm flex-shrink-0">📖</span>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-text-muted">
+                  Contoh Kosakata
+                </h3>
                 {entry.vocab && entry.vocab.length > 0 && (
-                  <span className="text-xs font-normal text-text-subtle">
-                    ({entry.vocab.length})
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-card-muted text-text-subtle flex-shrink-0">
+                    {entry.vocab.length}
                   </span>
                 )}
-              </h3>
-              <div className="flex items-center gap-2.5">
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0 ml-auto sm:ml-0">
                 <button
                   onClick={() => setShowFurigana((v) => !v)}
-                  className="text-xs px-3.5 py-1.5 rounded-full border border-border-color text-text-main hover:bg-card-muted transition-colors font-bold shadow-sm"
+                  aria-pressed={showFurigana}
+                  className={`text-xs px-3.5 py-1.5 rounded-full border font-bold transition-all duration-200 shadow-sm active:scale-95 ${
+                    showFurigana
+                      ? 'bg-primary text-white border-primary hover:bg-primary-hover shadow-primary/20'
+                      : 'border-border-color bg-surface text-text-muted hover:text-text-main hover:bg-card-muted'
+                  }`}
                 >
-                  Furigana: {showFurigana ? 'ON' : 'OFF'}
+                  Furigana
                 </button>
                 {isSupported && (
                   <button
                     onClick={handleAudio}
                     aria-label={isPlaying ? 'Stop audio' : 'Play audio'}
-                    className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-hover hover:scale-105 transition-all shadow-sm"
+                    className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-hover hover:scale-105 transition-all shadow-sm active:scale-95 flex-shrink-0"
                   >
                     {isPlaying ? <VolumeX size={15} /> : <Volume2 size={15} />}
                   </button>
@@ -171,32 +179,53 @@ export function KanjiCard({ entry }: Props) {
             <div className="space-y-3 max-h-[300px] md:max-h-[340px] overflow-y-auto pr-2 scrollbar-thin">
               {entry.vocab && entry.vocab.length > 0 ? (
                 entry.vocab.map((v, i) => (
-                  <div key={i} className="flex flex-col p-3.5 rounded-2xl border border-border-color bg-card-muted/20 hover:bg-card-muted transition-colors">
-                    <div className="flex items-start justify-between mb-1.5">
-                      <ruby className="text-2xl font-medium text-text-main tracking-wide">
+                  <div
+                    key={i}
+                    className="flex items-center justify-between p-3 sm:p-3.5 rounded-2xl border border-border-color bg-card-muted/20 hover:bg-card-muted transition-colors gap-2.5 sm:gap-3.5"
+                  >
+                    {/* 1. Kanji & Furigana */}
+                    <div className="flex-shrink-0 min-w-[65px] sm:min-w-[85px] flex items-center justify-start">
+                      <ruby className="text-xl sm:text-2xl font-medium text-text-main tracking-wide">
                         {v.word}
                         {showFurigana && v.reading && (
-                          <rt className="text-xs text-text-muted mb-0.5 font-normal tracking-normal">{v.reading}</rt>
+                          <rt className="text-[10px] sm:text-xs text-text-muted mb-0.5 font-normal tracking-normal">
+                            {v.reading}
+                          </rt>
                         )}
                       </ruby>
-                      {isSupported && (
-                        <button
-                          onClick={() => {
-                            if (isPlaying) stop()
-                            speak(v.word)
-                          }}
-                          className="w-8 h-8 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center transition-all shadow-sm"
-                          title={`Dengarkan ${v.word}`}
-                        >
-                          <Volume2 size={14} />
-                        </button>
-                      )}
                     </div>
-                    <p className="text-xs text-text-muted capitalize font-medium">
-                      {lang === 'id' && v.meanings_id && v.meanings_id.length > 0
-                        ? v.meanings_id.join(', ')
-                        : v.meanings.join(', ')}
-                    </p>
+
+                    {/* Divider */}
+                    <div className="w-px h-7 bg-border-color flex-shrink-0" />
+
+                    {/* 2. Arti (bisa di scroll kalo banyak) */}
+                    <div className="flex-1 min-w-0 max-h-12 overflow-y-auto pr-1 scrollbar-thin">
+                      <p className="text-xs sm:text-sm text-text-muted capitalize font-medium leading-snug">
+                        {lang === 'id' && v.meanings_id && v.meanings_id.length > 0
+                          ? v.meanings_id.join(', ')
+                          : v.meanings.join(', ')}
+                      </p>
+                    </div>
+
+                    {/* 3. Sound Button */}
+                    {isSupported && (
+                      <>
+                        <div className="w-px h-7 bg-border-color flex-shrink-0" />
+                        <div className="flex-shrink-0 flex items-center justify-center">
+                          <button
+                            onClick={() => {
+                              if (isPlaying) stop()
+                              speak(v.word)
+                            }}
+                            className="w-8 h-8 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center transition-all shadow-sm active:scale-95 flex-shrink-0"
+                            title={`Dengarkan ${v.word}`}
+                            aria-label={`Dengarkan ${v.word}`}
+                          >
+                            <Volume2 size={14} />
+                          </button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 ))
               ) : (
