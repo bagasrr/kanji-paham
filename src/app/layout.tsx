@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import NextTopLoader from 'nextjs-toploader'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { LanguageProvider } from '@/components/LanguageProvider'
 import { BottomNav } from '@/components/BottomNav'
@@ -29,6 +30,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="id" suppressHydrationWarning>
       <body className="bg-background min-h-screen antialiased flex flex-col md:flex-row relative">
+        <NextTopLoader
+          color="#D62828"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px rgba(214, 40, 40, 0.5), 0 0 5px rgba(214, 40, 40, 0.3)"
+        />
         <LanguageProvider>
           <ThemeProvider>
             <ToastProvider>

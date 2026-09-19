@@ -3,23 +3,22 @@ import type { NextRequest } from 'next/server'
 import { auth } from '@/lib/auth'
 
 export async function proxy(request: NextRequest) {
-  const session = await auth()
   const { pathname } = request.nextUrl
 
   const protectedPaths = ['/api/user', '/dashboard', '/profile/apply-sensei']
   const isProtected = protectedPaths.some((p) => pathname.startsWith(p))
 
-  if (isProtected && !session) {
+  // Fast path: if route is not protected, bypass immediately without running auth()
+  if (!isProtected) {
+    return NextResponse.next()
+  }
+
+  const session = await auth()
+
+  if (!session) {
     const loginUrl = new URL('/auth/login', request.url)
     loginUrl.searchParams.set('callbackUrl', pathname)
     return NextResponse.redirect(loginUrl)
-  }
-
-  // Redirect OAuth users to set-password if they don't have one
-  const hasPasswordSet = request.cookies.get('password_set')
-  // @ts-ignore
-  if (session && session.user && session.user.hasPassword === false && !hasPasswordSet && pathname !== '/auth/set-password') {
-    return NextResponse.redirect(new URL('/auth/set-password', request.url))
   }
 
   // Role-based protection for /dashboard
@@ -36,7 +35,6 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/learn/:path*',
     '/api/user/:path*',
     '/dashboard/:path*',
     '/profile/apply-sensei',
