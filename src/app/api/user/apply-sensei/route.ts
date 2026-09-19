@@ -5,6 +5,11 @@ import { prisma } from '@/lib/prisma'
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
+  const isRegisterSensei = process.env.isRegisterSensei === 'true' || process.env.NEXT_PUBLIC_IS_REGISTER_SENSEI === 'true' || process.env.IS_REGISTER_SENSEI === 'true'
+  if (!isRegisterSensei) {
+    return NextResponse.json({ error: 'Pendaftaran Sensei sedang ditutup' }, { status: 403 })
+  }
+
   const session = await auth()
   
   if (!session?.user?.id) {

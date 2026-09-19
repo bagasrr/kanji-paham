@@ -76,7 +76,7 @@ export default async function ProfilePage() {
                 </Link>
               )}
 
-              {session.user.role !== 'SENSEI' && session.user.role !== 'ADMIN' && (
+              {session.user.role !== 'SENSEI' && session.user.role !== 'ADMIN' && (process.env.isRegisterSensei === 'true' || process.env.NEXT_PUBLIC_IS_REGISTER_SENSEI === 'true' || process.env.IS_REGISTER_SENSEI === 'true') && (
                 <Link
                   href="/profile/apply-sensei"
                   className="w-full py-3.5 rounded-2xl border-2 border-secondary text-secondary font-bold flex items-center justify-center gap-2 hover:bg-secondary/10 transition-colors"
