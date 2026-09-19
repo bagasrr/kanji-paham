@@ -10,7 +10,10 @@ export const metadata: Metadata = {
   title: 'KanjiPaham',
   description: 'Belajar Kanji dan Kana Jepang secara mobile-first, terstruktur, dan efektif.',
   icons: {
-    icon: '/assets/KanjiPahamLogo.png',
+    icon: [
+      { url: '/assets/KanjiPahamLogo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
     shortcut: '/assets/KanjiPahamLogo.png',
     apple: '/assets/KanjiPahamLogo.png',
   },
