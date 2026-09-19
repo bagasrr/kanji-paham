@@ -23,24 +23,24 @@ function AuthErrorContent() {
   }
 
   return (
-    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-sm border border-[#E5E7EB] dark:border-slate-700 p-8 text-center">
+    <div className="bg-surface rounded-2xl shadow-sm border border-border-color p-8 text-center">
       <div className="flex justify-center mb-4">
-        <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-full">
-          <AlertCircle className="w-8 h-8 text-[#DC2626]" />
+        <div className="p-3 bg-error/15 rounded-full">
+          <AlertCircle className="w-8 h-8 text-error" />
         </div>
       </div>
       
-      <h2 className="text-xl font-semibold text-[#1F2937] dark:text-[#F8FAFC] mb-3">
+      <h2 className="text-xl font-semibold text-text-main mb-3">
         Otentikasi Gagal
       </h2>
       
-      <p className="text-slate-600 dark:text-slate-300 mb-8 text-sm">
+      <p className="text-text-muted mb-8 text-sm">
         {errorMessage}
       </p>
 
       <Link
         href="/auth/login"
-        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#DC2626] text-white font-semibold hover:bg-red-700 transition-colors"
+        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover transition-colors"
       >
         <ArrowLeft size={18} />
         Kembali ke Login
@@ -51,7 +51,7 @@ function AuthErrorContent() {
 
 export default function AuthErrorPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#FAF9F6] dark:bg-[#0F172A] px-4">
+    <main className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md">
         <div className="flex flex-col items-center mb-6">
           <Image

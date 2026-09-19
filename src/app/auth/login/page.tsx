@@ -40,38 +40,38 @@ function LoginForm() {
       <h2 className="text-lg font-semibold text-text-main mb-4">Masuk</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-[#1F2937] dark:text-slate-300 mb-1">Email</label>
+          <label className="block text-sm font-medium text-text-main mb-1">Email</label>
           <input
             type="email"
             required
             value={email}
             onChange={e => setEmail(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-xl border border-border-color bg-surface text-text-main focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
+            className="w-full px-4 py-2.5 rounded-xl border border-border-color bg-surface text-text-main focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="email@example.com"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-[#1F2937] dark:text-slate-300 mb-1">Password</label>
+          <label className="block text-sm font-medium text-text-main mb-1">Password</label>
           <input
             type="password"
             required
             value={password}
             onChange={e => setPassword(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-xl border border-border-color bg-surface text-text-main focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
+            className="w-full px-4 py-2.5 rounded-xl border border-border-color bg-surface text-text-main focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="••••••••"
           />
         </div>
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-red-700 disabled:opacity-50 transition-colors"
+          className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-hover disabled:opacity-50 transition-colors"
         >
           {loading ? 'Memuat...' : 'Masuk'}
         </button>
       </form>
       <button
         onClick={() => signIn('google', { callbackUrl: '/learn' })}
-        className="mt-3 w-full py-3 rounded-xl border border-border-color text-text-main font-medium hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+        className="mt-3 w-full py-3 rounded-xl border border-border-color text-text-main font-medium hover:bg-card-muted transition-colors"
       >
         Masuk dengan Google
       </button>

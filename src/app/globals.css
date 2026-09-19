@@ -53,6 +53,7 @@
   --color-text-main: var(--text-main);
   --color-text-muted: var(--text-muted);
   --color-text-subtle: var(--text-subtle);
+  --color-border: var(--border);
   --color-border-color: var(--border);
   --color-sakura: var(--sakura);
   --color-gold: var(--gold);
