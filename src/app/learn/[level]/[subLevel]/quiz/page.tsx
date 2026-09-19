@@ -13,7 +13,17 @@ type AnswerState = 'unanswered' | 'correct' | 'wrong'
 
 // Detect if text is primarily kanji/kana (for large display)
 function isKanjiLike(text: string): boolean {
-  return text.length <= 4 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
+  return text.length <= 6 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
+}
+
+// Adjust font size dynamically per option based on character length
+function getKanjiOptionFontSize(text: string): string {
+  const len = text.length
+  if (len <= 1) return 'text-3xl sm:text-4xl md:text-5xl'
+  if (len === 2) return 'text-xl sm:text-2xl md:text-3xl'
+  if (len === 3) return 'text-base sm:text-lg md:text-xl'
+  if (len === 4) return 'text-sm sm:text-base md:text-lg'
+  return 'text-xs sm:text-sm md:text-base'
 }
 
 // ──────────────────────────────────────────────────────────────
@@ -150,8 +160,8 @@ export default function QuizPage() {
     const isOk = pct >= 50
 
     return (
-      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center z-50 px-4 pb-4 sm:pb-0">
-        <div className="w-full max-w-md bg-surface rounded-3xl shadow-2xl overflow-hidden border border-border-color">
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div className="w-full max-w-md bg-surface rounded-3xl shadow-2xl overflow-hidden border border-border-color my-auto max-h-[90vh] overflow-y-auto">
           {/* Top accent */}
           <div className={`h-1.5 w-full ${isGreat ? 'bg-success' : isOk ? 'bg-warning' : 'bg-primary'}`} />
 
@@ -472,7 +482,7 @@ export default function QuizPage() {
                   disabled:cursor-default active:scale-[0.98]
                   ${stateClass}
                   ${optionsAreKanji
-                    ? 'flex flex-col items-center justify-center py-5 px-3 min-h-[90px]'
+                    ? 'flex flex-col items-center justify-center py-5 px-2 sm:px-4 min-h-[84px]'
                     : 'flex items-center gap-3 p-4'
                   }
                 `}
@@ -494,7 +504,9 @@ export default function QuizPage() {
                 </span>
 
                 <span
-                  className={`font-semibold leading-snug ${optionsAreKanji ? 'text-4xl' : 'text-base'}`}
+                  className={`font-semibold leading-snug whitespace-nowrap text-center max-w-full overflow-hidden text-ellipsis px-1 ${
+                    optionsAreKanji ? getKanjiOptionFontSize(option) : 'text-base'
+                  }`}
                   style={optionsAreKanji ? { fontFamily: "'Noto Serif JP', serif" } : undefined}
                 >
                   {option}

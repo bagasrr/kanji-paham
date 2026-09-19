@@ -59,9 +59,19 @@ const LEVEL_DATA = [
   },
 ]
 
-// Detect if an option looks like a kanji character (≤4 chars, CJK)
+// Detect if an option looks like a kanji character (≤6 chars, CJK)
 function isKanji(text: string): boolean {
-  return text.length <= 4 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
+  return text.length <= 6 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
+}
+
+// Adjust font size dynamically per option based on character length
+function getKanjiOptionFontSize(text: string): string {
+  const len = text.length
+  if (len <= 1) return 'text-3xl sm:text-4xl md:text-5xl'
+  if (len === 2) return 'text-xl sm:text-2xl md:text-3xl'
+  if (len === 3) return 'text-base sm:text-lg md:text-xl'
+  if (len === 4) return 'text-sm sm:text-base md:text-lg'
+  return 'text-xs sm:text-sm md:text-base'
 }
 
 export default function GlobalQuizPage() {
@@ -142,8 +152,8 @@ export default function GlobalQuizPage() {
     const currentLevel = LEVEL_DATA.find(l => l.level === level)
 
     return (
-      <div className="py-8 px-4">
-        <div className="max-w-md mx-auto">
+      <div className="min-h-[70vh] flex flex-col justify-center py-8 px-4">
+        <div className="w-full max-w-md mx-auto">
           {/* Sakura decoration */}
           <div className="text-center mb-2 text-4xl opacity-30 select-none">🌸 🌸 🌸</div>
 
@@ -291,7 +301,7 @@ export default function GlobalQuizPage() {
                   relative border-2 rounded-2xl transition-all duration-200 text-left
                   disabled:cursor-default active:scale-[0.98]
                   ${stateClass}
-                  ${optionsAreKanji ? 'flex flex-col items-center justify-center py-6 px-4 min-h-[100px]' : 'flex items-center gap-4 p-4'}
+                  ${optionsAreKanji ? 'flex flex-col items-center justify-center py-5 px-2 sm:px-4 min-h-[84px]' : 'flex items-center gap-4 p-4'}
                 `}
               >
                 {/* Option label badge */}
@@ -307,7 +317,9 @@ export default function GlobalQuizPage() {
                 </span>
 
                 <span
-                  className={`font-semibold leading-snug ${optionsAreKanji ? 'text-5xl mt-1' : 'text-base md:text-lg'}`}
+                  className={`font-semibold leading-snug whitespace-nowrap text-center max-w-full overflow-hidden text-ellipsis px-1 ${
+                    optionsAreKanji ? getKanjiOptionFontSize(option) : 'text-base md:text-lg'
+                  }`}
                   style={optionsAreKanji ? { fontFamily: "'Noto Serif JP', serif" } : undefined}
                 >
                   {option}
