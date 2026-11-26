@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowLeft, RotateCcw, Zap, BookOpen, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowLeft, RotateCcw, Zap, BookOpen, ChevronRight, FileText, Languages } from 'lucide-react'
 import { useLanguage } from '@/components/LanguageProvider'
 
 type JLPTQuestion = {
@@ -399,6 +400,70 @@ export default function GlobalQuizPage() {
               ? 'Latihan sedikit hari ini, biar besok makin paham.'
               : 'A little daily practice makes mastery effortless.'}
           </p>
+        </div>
+      </div>
+
+      {/* New Exercise Modes: Dokkai & Contextual Vocab */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted">
+            {lang === 'id' ? 'Latihan Baru · Bacaan & Konteks' : 'New Practice · Reading & Context'}
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <Link
+            href="/quiz/dokkai"
+            className="group rounded-2xl border-2 border-border-color bg-surface p-5 hover:border-primary hover:shadow-md transition-all flex items-center justify-between gap-3"
+          >
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="px-2.5 py-0.5 rounded-lg bg-primary/10 text-primary text-xs font-bold">
+                  読解 Dokkai
+                </span>
+                <span className="text-xs font-semibold text-text-subtle">
+                  {lang === 'id' ? '97 wacana' : '97 passages'}
+                </span>
+              </div>
+              <h3 className="text-base font-bold text-text-main group-hover:text-primary transition-colors">
+                {lang === 'id' ? 'Latihan Membaca (Dokkai)' : 'Reading Comprehension'}
+              </h3>
+              <p className="text-xs text-text-muted mt-1">
+                {lang === 'id'
+                  ? 'Bacaan pendek, info, hingga panjang lengkap dengan audio & pembahasan'
+                  : 'Short, notice, medium & long passages with audio & explanations'}
+              </p>
+            </div>
+            <div className="w-9 h-9 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors">
+              <FileText size={17} />
+            </div>
+          </Link>
+
+          <Link
+            href="/quiz/vocab"
+            className="group rounded-2xl border-2 border-border-color bg-surface p-5 hover:border-secondary hover:shadow-md transition-all flex items-center justify-between gap-3"
+          >
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="px-2.5 py-0.5 rounded-lg bg-secondary/15 text-secondary text-xs font-bold">
+                  文脈 Vocab
+                </span>
+                <span className="text-xs font-semibold text-text-subtle">
+                  {lang === 'id' ? '772 soal' : '772 questions'}
+                </span>
+              </div>
+              <h3 className="text-base font-bold text-text-main group-hover:text-secondary transition-colors">
+                {lang === 'id' ? 'Kosakata Kontekstual' : 'Contextual Vocabulary'}
+              </h3>
+              <p className="text-xs text-text-muted mt-1">
+                {lang === 'id'
+                  ? 'Latihan parafrasa & ketepatan pemakaian kata dalam kalimat'
+                  : 'Paraphrase & correct sentence usage drills with fixes'}
+              </p>
+            </div>
+            <div className="w-9 h-9 rounded-full bg-secondary/15 text-secondary group-hover:bg-secondary group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors">
+              <Languages size={17} />
+            </div>
+          </Link>
         </div>
       </div>
 

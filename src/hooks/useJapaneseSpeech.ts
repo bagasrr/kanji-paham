@@ -15,7 +15,14 @@
 
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useRef, useSyncExternalStore } from "react";
+
+const noopSubscribe = () => () => {};
+const getSpeechSupportSnapshot = (): boolean =>
+  typeof window !== "undefined" &&
+  "speechSynthesis" in window &&
+  typeof SpeechSynthesisUtterance !== "undefined";
+const getSpeechSupportServerSnapshot = (): boolean => false;
 
 export interface UseJapaneseSpeechReturn {
   /** Speak the given Japanese text. No-op if already playing or unsupported. */
@@ -34,11 +41,11 @@ export interface UseJapaneseSpeechReturn {
 export function useJapaneseSpeech(): UseJapaneseSpeechReturn {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Detect support once on mount (avoids SSR window access)
-  const isSupported =
-    typeof window !== "undefined" &&
-    "speechSynthesis" in window &&
-    typeof SpeechSynthesisUtterance !== "undefined";
+  const isSupported = useSyncExternalStore(
+    noopSubscribe,
+    getSpeechSupportSnapshot,
+    getSpeechSupportServerSnapshot
+  );
 
   // Keep a ref to the active utterance so we can cancel it
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);

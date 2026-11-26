@@ -70,4 +70,32 @@
 - **Outstanding issues or blockers:**
   - **PostgreSQL database injection (`prisma db push` & `npm run seed:db`) is blocked** because `.env` (`aws-0-ap-southeast-1.pooler.supabase.com:6543`) rejects startup with `CXX000 (ENOTFOUND) tenant/user ... not found` and `.env.local` (`localhost:5432`) has no active Docker/Postgres daemon running (`Connection refused`).
 
+---
+
+## 2026-11-26 — Supabase DB Seed Completion & Tahap 1 UI Implementation (Dokkai, Contextual Vocab, KanjiCard Enrichment)
+
+### Proposed Plan & User Approval
+- User restored Supabase DB and instructed running the DB injection, asked about official JLPT sections & public dataset availability/licensing (`NOASSERTION` dual-license analysis for `gauravhq/JLPTSuccess`), reviewed the phased proposal, and approved **"gas run tahap 1 dulu"**.
+
+### Implementation & Completion Report
+- **Database Seeding:**
+  - Pushed Prisma schema via Supabase session pooler (`port 5432`) and executed `npm run seed:db`.
+  - Verified row counts in PostgreSQL: `kanji: 2211`, `vocab: 2741`, `dokkaiPassage: 97`, `dokkaiQuestion: 173`, `vocabExam: 772`.
+- **Tahap 1 UI & API Implementation:**
+  - Created `src/app/api/exercises/dokkai/route.ts` and `src/app/api/exercises/vocab/route.ts`.
+  - Created `src/lib/ruby.tsx` (`renderFuriganaText`) for `{漢字|かんじ}` `<ruby>/<rt>` rendering.
+  - Created `src/components/DokkaiPractice.tsx` & `src/app/quiz/dokkai/page.tsx` (category/status filters, search, font-size control, TTS audio, EN translation toggle, per-option `wrong` & `why` feedback, `localStorage` completion).
+  - Created `src/components/VocabExamPractice.tsx` & `src/app/quiz/vocab/page.tsx` (`all` / `para` / `usage` modes, 20-question randomized drills, detailed `why` + `wrong` + corrected sentence `fix` feedback).
+  - Updated `src/app/quiz/page.tsx` hub with links to `/quiz/dokkai` and `/quiz/vocab`.
+  - Updated `src/components/KanjiCard.tsx` with collapsible **Mnemonic & Komponen** (keyword, components, mnemonic story, soundHooks) and expandable per-vocab **Tip & Contoh Kalimat** (`<ruby>` furigana + sentence audio).
+  - Fixed SSR hydration mismatch (#418) in `src/hooks/useJapaneseSpeech.ts` using `useSyncExternalStore`.
+  - Added Open Data Sources & Attribution section (`CC BY-SA 4.0` / `CC BY-SA 3.0` / `MIT`) in `src/app/info/page.tsx`.
+- **Verification Results:**
+  - `npx eslint` on all modified/created files: passed (0 errors/warnings).
+  - `npx tsc --noEmit`: passed (0 errors).
+  - `npx next build --webpack`: passed (exit 0).
+  - Playwright real-browser verification across `/quiz`, `/quiz/dokkai`, `/quiz/vocab`, `/learn/5/1/一`, and `/info` on mobile (`390x844`) and desktop (`1280x800`): **PASS** (0 console/page errors, 0 horizontal overflow, interactive flows verified).
+  - `graphify update .`: rebuilt (`493` nodes, `825` edges, `39` communities).
+
+
 

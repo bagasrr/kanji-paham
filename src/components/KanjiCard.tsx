@@ -7,11 +7,12 @@
  */
 
 import { useState } from 'react'
-import { Volume2, VolumeX } from 'lucide-react'
+import { ChevronDown, Lightbulb, MessageSquareQuote, Volume2, VolumeX } from 'lucide-react'
 import type { KanjiEntry } from '@/lib/types'
 import { useJapaneseSpeech } from '@/hooks/useJapaneseSpeech'
 import { kanjiSvgPath } from '@/lib/kanji'
 import { useLanguage } from '@/components/LanguageProvider'
+import { renderFuriganaText } from '@/lib/ruby'
 
 interface Props {
   entry: KanjiEntry
@@ -19,8 +20,15 @@ interface Props {
 
 export function KanjiCard({ entry }: Props) {
   const [showFurigana, setShowFurigana] = useState(true)
+  const [showMnemonic, setShowMnemonic] = useState(false)
+  const [expandedVocabIdx, setExpandedVocabIdx] = useState<number | null>(null)
   const { speak, stop, isPlaying, isSupported } = useJapaneseSpeech()
   const { lang } = useLanguage()
+  const hasMnemonicData = Boolean(
+    entry.mnemonic ||
+      (entry.components && entry.components.length > 0) ||
+      (entry.soundHooks && entry.soundHooks.length > 0)
+  )
 
   function handleAudio() {
     if (isPlaying) {
@@ -138,6 +146,77 @@ export function KanjiCard({ entry }: Props) {
             </div>
           </div>
 
+          {/* ── Mnemonic & Components ─────────────────────── */}
+          {hasMnemonicData && (
+            <div className="px-6 py-3.5 md:px-8 border-b border-border-color bg-card-muted/15">
+              <button
+                type="button"
+                onClick={() => setShowMnemonic((v) => !v)}
+                aria-expanded={showMnemonic}
+                className="w-full flex items-center justify-between gap-2 text-left cursor-pointer"
+              >
+                <div className="flex items-center gap-2 min-w-0">
+                  <Lightbulb size={15} className="text-warning flex-shrink-0" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-text-muted">
+                    {lang === 'id' ? 'Mnemonic & Komponen' : 'Mnemonic & Components'}
+                  </span>
+                  {entry.keyword && (
+                    <span className="px-2 py-0.5 rounded-full bg-warning/15 text-warning text-[11px] font-bold truncate">
+                      {entry.keyword}
+                    </span>
+                  )}
+                </div>
+                <ChevronDown
+                  size={16}
+                  className={`text-text-muted transition-transform flex-shrink-0 ${
+                    showMnemonic ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+
+              {showMnemonic && (
+                <div className="mt-3 space-y-2.5 text-xs sm:text-sm">
+                  {entry.components && entry.components.length > 0 && (
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="text-[11px] font-bold uppercase text-text-subtle mr-1">
+                        {lang === 'id' ? 'Bagian:' : 'Parts:'}
+                      </span>
+                      {entry.components.map((c) => (
+                        <span
+                          key={c}
+                          className="px-2 py-0.5 rounded-lg bg-surface border border-border-color text-text-main text-xs font-medium"
+                        >
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {entry.mnemonic && (
+                    <p className="text-text-main leading-relaxed bg-surface/80 rounded-xl p-3 border border-border-color/70">
+                      {entry.mnemonic}
+                    </p>
+                  )}
+
+                  {entry.soundHooks && entry.soundHooks.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {entry.soundHooks.map((sh, sIdx) => (
+                        <span
+                          key={`${sh.r}-${sIdx}`}
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-semibold"
+                        >
+                          {sh.emoji && <span>{sh.emoji}</span>}
+                          <span>{sh.r}</span>
+                          <span className="text-text-muted">→ {sh.hook}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+
           {/* ── Vocabulary Examples ───────────────────────── */}
           <div className="px-5 py-4 sm:px-6 md:px-8 sm:py-5 flex-1 flex flex-col min-h-0">
             <div className="flex items-center justify-between gap-3 mb-4 flex-wrap sm:flex-nowrap flex-shrink-0">
@@ -178,56 +257,119 @@ export function KanjiCard({ entry }: Props) {
 
             <div className="space-y-3 max-h-[300px] md:max-h-[340px] overflow-y-auto pr-2 scrollbar-thin">
               {entry.vocab && entry.vocab.length > 0 ? (
-                entry.vocab.map((v, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between p-3 sm:p-3.5 rounded-2xl border border-border-color bg-card-muted/20 hover:bg-card-muted transition-colors gap-2.5 sm:gap-3.5"
-                  >
-                    {/* 1. Kanji & Furigana */}
-                    <div className="flex-shrink-0 min-w-[65px] sm:min-w-[85px] flex items-center justify-start">
-                      <ruby className="text-xl sm:text-2xl font-medium text-text-main tracking-wide">
-                        {v.word}
-                        {showFurigana && v.reading && (
-                          <rt className="text-[10px] sm:text-xs text-text-muted mb-0.5 font-normal tracking-normal">
-                            {v.reading}
-                          </rt>
-                        )}
-                      </ruby>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="w-px h-7 bg-border-color flex-shrink-0" />
-
-                    {/* 2. Arti (bisa di scroll kalo banyak) */}
-                    <div className="flex-1 min-w-0 max-h-12 overflow-y-auto pr-1 scrollbar-thin">
-                      <p className="text-xs sm:text-sm text-text-muted capitalize font-medium leading-snug">
-                        {lang === 'id' && v.meanings_id && v.meanings_id.length > 0
-                          ? v.meanings_id.join(', ')
-                          : v.meanings.join(', ')}
-                      </p>
-                    </div>
-
-                    {/* 3. Sound Button */}
-                    {isSupported && (
-                      <>
-                        <div className="w-px h-7 bg-border-color flex-shrink-0" />
-                        <div className="flex-shrink-0 flex items-center justify-center">
-                          <button
-                            onClick={() => {
-                              if (isPlaying) stop()
-                              speak(v.word)
-                            }}
-                            className="w-8 h-8 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center transition-all shadow-sm active:scale-95 flex-shrink-0"
-                            title={`Dengarkan ${v.word}`}
-                            aria-label={`Dengarkan ${v.word}`}
-                          >
-                            <Volume2 size={14} />
-                          </button>
+                entry.vocab.map((v, i) => {
+                  const hasExtras = Boolean((v.examples && v.examples.length > 0) || v.mnemonic)
+                  const isExpanded = expandedVocabIdx === i
+                  return (
+                    <div
+                      key={i}
+                      className="rounded-2xl border border-border-color bg-card-muted/20 hover:bg-card-muted/60 transition-colors overflow-hidden"
+                    >
+                      <div className="flex items-center justify-between p-3 sm:p-3.5 gap-2.5 sm:gap-3.5">
+                        {/* 1. Kanji & Furigana */}
+                        <div className="flex-shrink-0 min-w-[65px] sm:min-w-[85px] flex items-center justify-start">
+                          <ruby className="text-xl sm:text-2xl font-medium text-text-main tracking-wide">
+                            {v.word}
+                            {showFurigana && v.reading && (
+                              <rt className="text-[10px] sm:text-xs text-text-muted mb-0.5 font-normal tracking-normal">
+                                {v.reading}
+                              </rt>
+                            )}
+                          </ruby>
                         </div>
-                      </>
-                    )}
-                  </div>
-                ))
+
+                        {/* Divider */}
+                        <div className="w-px h-7 bg-border-color flex-shrink-0" />
+
+                        {/* 2. Arti (bisa di scroll kalo banyak) */}
+                        <div className="flex-1 min-w-0 max-h-12 overflow-y-auto pr-1 scrollbar-thin">
+                          <p className="text-xs sm:text-sm text-text-muted capitalize font-medium leading-snug">
+                            {lang === 'id' && v.meanings_id && v.meanings_id.length > 0
+                              ? v.meanings_id.join(', ')
+                              : v.meanings.join(', ')}
+                          </p>
+                        </div>
+
+                        {/* 3. Sentence / Mnemonic Toggle & Sound Button */}
+                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                          {hasExtras && (
+                            <button
+                              type="button"
+                              onClick={() => setExpandedVocabIdx(isExpanded ? null : i)}
+                              aria-expanded={isExpanded}
+                              title={lang === 'id' ? 'Contoh kalimat & catatan' : 'Example sentences & tip'}
+                              className={`px-2 py-1 rounded-lg border text-[11px] font-bold flex items-center gap-1 transition-colors cursor-pointer ${
+                                isExpanded
+                                  ? 'bg-primary text-white border-primary'
+                                  : 'bg-surface border-border-color text-text-muted hover:text-primary'
+                              }`}
+                            >
+                              <MessageSquareQuote size={12} />
+                              <span className="hidden sm:inline">
+                                {v.examples && v.examples.length > 0
+                                  ? `${v.examples.length}`
+                                  : 'Tip'}
+                              </span>
+                            </button>
+                          )}
+
+                          {isSupported && (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (isPlaying) stop()
+                                speak(v.word)
+                              }}
+                              className="w-8 h-8 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center transition-all shadow-sm active:scale-95 flex-shrink-0 cursor-pointer"
+                              title={`Dengarkan ${v.word}`}
+                              aria-label={`Dengarkan ${v.word}`}
+                            >
+                              <Volume2 size={14} />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      {hasExtras && isExpanded && (
+                        <div className="px-3.5 pb-3.5 pt-2 border-t border-border-color/60 bg-surface/60 space-y-2">
+                          {v.mnemonic && (
+                            <p className="text-xs text-text-main bg-warning/10 border border-warning/20 rounded-xl px-3 py-2 leading-relaxed">
+                              <span className="font-bold text-warning mr-1">Tip:</span>
+                              {v.mnemonic}
+                            </p>
+                          )}
+                          {v.examples?.map((ex, eIdx) => (
+                            <div
+                              key={eIdx}
+                              className="flex items-start justify-between gap-2 text-xs bg-card-muted/30 rounded-xl px-3 py-2 border border-border-color/50"
+                            >
+                              <div className="min-w-0 flex-1">
+                                <p className="text-sm text-text-main font-medium leading-loose">
+                                  {renderFuriganaText(ex.furigana ?? ex.ja, showFurigana)}
+                                </p>
+                                <p className="text-text-muted mt-0.5">{ex.en}</p>
+                              </div>
+                              {isSupported && (
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    if (isPlaying) stop()
+                                    speak(ex.ja)
+                                  }}
+                                  className="w-7 h-7 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center flex-shrink-0 mt-0.5 cursor-pointer"
+                                  title={lang === 'id' ? 'Putar kalimat' : 'Play sentence'}
+                                  aria-label={lang === 'id' ? 'Putar kalimat' : 'Play sentence'}
+                                >
+                                  <Volume2 size={13} />
+                                </button>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })
               ) : (
                 <div className="p-6 text-center border border-dashed border-border-color rounded-2xl">
                   <p className="text-sm text-text-subtle font-medium">Belum ada contoh kosakata.</p>

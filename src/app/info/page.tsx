@@ -239,6 +239,36 @@ export default function InfoPage() {
         </div>
       </div>
 
+      {/* ── DATA SOURCES & LICENSES ─────────────────────────────────────────── */}
+      <div className="rounded-3xl border border-border-color bg-surface p-6 md:p-8 shadow-sm mb-8">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted mb-3 flex items-center gap-2">
+          <span>📚</span> {isId ? "Sumber Data & Lisensi Terbuka" : "Open Data Sources & Attribution"}
+        </h2>
+        <p className="text-xs text-text-muted leading-relaxed mb-4">
+          {isId
+            ? "Materi Kanji, mnemonic, contoh kalimat, serta latihan Dokkai & Kosakata menggunakan dataset terbuka berlisensi CC BY-SA 4.0 / CC BY-SA 3.0 / MIT:"
+            : "Kanji metadata, mnemonics, example sentences, and Dokkai & Vocabulary exercises incorporate open-source datasets under CC BY-SA 4.0 / CC BY-SA 3.0 / MIT:"}
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-text-main">
+          <li className="p-3 rounded-xl bg-card-muted/30 border border-border-color">
+            <span className="font-bold block">lczanna/kanji_mnemonic</span>
+            <span className="text-text-muted">Mnemonics, Dokkai &amp; Vocab Exam (CC BY-SA 4.0)</span>
+          </li>
+          <li className="p-3 rounded-xl bg-card-muted/30 border border-border-color">
+            <span className="font-bold block">evanclan/OpenJLPT</span>
+            <span className="text-text-muted">JLPT Vocab &amp; Tatoeba Sentences (CC BY-SA 4.0)</span>
+          </li>
+          <li className="p-3 rounded-xl bg-card-muted/30 border border-border-color">
+            <span className="font-bold block">KanjiVG &amp; davidluzgouveia/kanji-data</span>
+            <span className="text-text-muted">Stroke SVGs (CC BY-SA 3.0) &amp; KANJIDIC2</span>
+          </li>
+          <li className="p-3 rounded-xl bg-card-muted/30 border border-border-color">
+            <span className="font-bold block">JaIsho &amp; EDRDG / Tatoeba</span>
+            <span className="text-text-muted">Indonesian Glossary, JMdict &amp; Corpus (CC BY / BY-SA)</span>
+          </li>
+        </ul>
+      </div>
+
       {/* ── APP FEATURES HIGHLIGHT ──────────────────────────────────────────── */}
       <div className="rounded-2xl border border-border-color bg-card-muted/30 p-6 text-center">
         <div className="flex items-center justify-center gap-2 mb-2 text-primary font-bold text-sm">
