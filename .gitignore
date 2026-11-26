@@ -42,3 +42,7 @@ env
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# graphify local cache & machine paths
+graphify-out/.graphify_*
+graphify-out/cache/
