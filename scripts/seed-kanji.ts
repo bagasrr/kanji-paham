@@ -2,18 +2,26 @@
  * scripts/seed-kanji.ts
  *
  * Downloads raw kanji dataset from davidluzgouveia/kanji-data,
- * filters by JLPT level, assigns subLevel (10 kanji per group),
- * and writes the result to src/data/kanji/n<level>.json.
+ * vocab + Tatoeba example sentences from evanclan/OpenJLPT (CC BY-SA 4.0),
+ * kanji/vocab mnemonics & fallback sentences from lczanna/kanji_mnemonic (CC BY-SA 4.0),
+ * and maps Indonesian meanings from local scripts/jaisho-*.ndjson,
+ * then writes enriched JSON files to src/data/kanji/n<level>.json.
  *
  * Usage:
  *   npx tsx scripts/seed-kanji.ts          # seeds all levels
  *   npx tsx scripts/seed-kanji.ts --level=5  # seeds N5 only
  */
 
-import { writeFileSync, mkdirSync } from "fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
+import type {
+  KanjiEntry,
+  KanjiSoundHook,
+  KanjiVocab,
+  VocabExample,
+} from "../src/lib/types";
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// ── Remote Dataset Types ─────────────────────────────────────────────────────
 
 interface RawKanjiEntry {
   strokes: number;
@@ -26,73 +34,136 @@ interface RawKanjiEntry {
   readings_kun: string[];
 }
 
-interface RawKanjiData {
-  [character: string]: RawKanjiEntry;
+type RawKanjiData = Record<string, RawKanjiEntry>;
+
+interface OpenJlptExample {
+  ja?: string;
+  furigana?: string;
+  en?: string;
+  tatoeba_id?: number;
 }
 
-export interface KanjiVocab {
-  word: string;
-  reading: string;
-  meanings: string[];
-  meanings_id?: string[];
+interface OpenJlptVocabItem {
+  word?: string;
+  reading?: string;
+  meanings?: string[];
+  examples?: OpenJlptExample[];
 }
 
-export interface KanjiEntry {
-  character: string;
-  strokes: number;
-  grade: number | null;
-  freq: number | null;
-  jlpt: number;
-  meanings: string[];
-  meanings_id?: string[];
-  readings_on: string[];
-  readings_kun: string[];
-  /** SVG filename derived from UTF-16 hex code, e.g. "065e5.svg" */
-  svgFile: string;
-  /** 1-based group index; 10 kanji per subLevel */
-  subLevel: number;
-  vocab?: KanjiVocab[];
+interface MnemonicKanjiCard {
+  kanji: string;
+  keyword?: string;
+  story?: string;
+  components?: string[];
+  sound?: KanjiSoundHook[];
 }
+
+interface MnemonicKanjiFile {
+  cards?: MnemonicKanjiCard[];
+}
+
+interface MnemonicVocabItem {
+  w?: string;
+  mn?: string;
+}
+
+type WordMnemonicsFile = Record<string, string>;
+type MnemonicExamplesFile = Record<string, Array<[string, string, unknown?]>>;
+
+interface JaishoKanjiLine {
+  c?: string;
+  id?: string[];
+}
+
+interface JaishoVocabLine {
+  k?: string[];
+  s?: Array<{ id?: string[] }>;
+}
+
+// ── Constants ────────────────────────────────────────────────────────────────
+
+const RAW_URL =
+  "https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji.json";
+const MNEMONIC_BASE =
+  "https://raw.githubusercontent.com/lczanna/kanji_mnemonic/main";
+
+const KANJI_PER_SUBLEVEL = 10;
+const MAX_VOCAB_PER_KANJI = 20;
+const MAX_EXAMPLES_PER_VOCAB = 3;
+
+const N5_GROUPS = [
+  { id: 1, title: "Angka & Bilangan", kanji: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "百", "千", "万", "半"] },
+  { id: 2, title: "Waktu & Hari", kanji: ["日", "月", "火", "水", "木", "金", "土", "年", "今", "時", "毎", "午", "後", "前", "間"] },
+  { id: 3, title: "Orang & Keluarga", kanji: ["人", "子", "女", "男", "父", "母", "友", "生", "先", "名"] },
+  { id: 4, title: "Arah & Posisi", kanji: ["上", "下", "左", "右", "東", "西", "南", "北", "中", "外"] },
+  { id: 5, title: "Alam & Ruang", kanji: ["山", "川", "天", "雨", "電", "気", "車", "国", "校"] },
+  { id: 6, title: "Kata Sifat Dasar", kanji: ["大", "小", "高", "長", "白"] },
+  { id: 7, title: "Kata Kerja 1", kanji: ["行", "来", "出", "入", "休", "見", "聞", "読", "書"] },
+  { id: 8, title: "Kata Kerja 2 & Lainnya", kanji: ["食", "話", "語", "学", "円", "本", "何"] },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-/**
- * Convert a kanji character to its KanjiVG SVG filename.
- * KanjiVG uses zero-padded 5-digit hex of the Unicode code point.
- * e.g. "日" (U+65E5) → "065e5.svg"
- */
 function toSvgFilename(char: string): string {
   const codePoint = char.codePointAt(0);
   if (codePoint === undefined) throw new Error(`Invalid character: ${char}`);
   return codePoint.toString(16).padStart(5, "0") + ".svg";
 }
 
-const RAW_URL =
-  "https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji.json";
-
-const KANJI_PER_SUBLEVEL = 10;
-
-// ── Main ─────────────────────────────────────────────────────────────────────
-
-async function fetchRawData(): Promise<RawKanjiData> {
-  console.log(`⬇  Fetching kanji data from GitHub…`);
-  const res = await fetch(RAW_URL);
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-  const data = (await res.json()) as RawKanjiData;
-  console.log(`✓  Fetched ${Object.keys(data).length} total kanji entries.`);
-  return data;
+function convertToKatakana(str: string): string {
+  return str.replace(/[\u3041-\u3096]/g, (match) =>
+    String.fromCharCode(match.charCodeAt(0) + 0x60)
+  );
 }
 
-const N5_GROUPS = [
-  { id: 1, title: 'Angka & Bilangan', kanji: ['一','二','三','四','五','六','七','八','九','十','百','千','万','半'] },
-  { id: 2, title: 'Waktu & Hari', kanji: ['日','月','火','水','木','金','土','年','今','時','毎','午','後','前','間'] },
-  { id: 3, title: 'Orang & Keluarga', kanji: ['人','子','女','男','父','母','友','生','先','名'] },
-  { id: 4, title: 'Arah & Posisi', kanji: ['上','下','左','右','東','西','南','北','中','外'] },
-  { id: 5, title: 'Alam & Ruang', kanji: ['山','川','天','雨','電','気','車','国','校'] },
-  { id: 6, title: 'Kata Sifat Dasar', kanji: ['大','小','高','長','白'] },
-  { id: 7, title: 'Kata Kerja 1', kanji: ['行','来','出','入','休','見','聞','読','書'] },
-  { id: 8, title: 'Kata Kerja 2 & Lainnya', kanji: ['食','話','語','学','円','本','何'] }
-];
+async function fetchJson<T>(url: string, fallback: T): Promise<T> {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      console.warn(`!  HTTP ${res.status} fetching ${url}`);
+      return fallback;
+    }
+    return (await res.json()) as T;
+  } catch (err) {
+    console.warn(`!  Failed fetching ${url}:`, err);
+    return fallback;
+  }
+}
+
+function loadJaishoDictionaries(): {
+  jaishoKanji: Record<string, string[]>;
+  jaishoVocab: Record<string, string[]>;
+} {
+  const jaishoKanji: Record<string, string[]> = {};
+  const jaishoVocab: Record<string, string[]> = {};
+
+  const kanjiPath = join(process.cwd(), "scripts", "jaisho-kanji.ndjson");
+  if (existsSync(kanjiPath)) {
+    const raw = readFileSync(kanjiPath, "utf-8");
+    for (const line of raw.split("\n")) {
+      if (!line.trim()) continue;
+      const parsed = JSON.parse(line) as JaishoKanjiLine;
+      if (parsed.c && parsed.id) jaishoKanji[parsed.c] = parsed.id;
+    }
+  }
+
+  const vocabPath = join(process.cwd(), "scripts", "jaisho-vocab.ndjson");
+  if (existsSync(vocabPath)) {
+    const raw = readFileSync(vocabPath, "utf-8");
+    for (const line of raw.split("\n")) {
+      if (!line.trim()) continue;
+      const parsed = JSON.parse(line) as JaishoVocabLine;
+      if (parsed.k?.[0] && parsed.s?.[0]?.id) {
+        jaishoVocab[parsed.k[0]] = parsed.s[0].id;
+      }
+    }
+  }
+
+  console.log(
+    `✓  Loaded JaIsho Dictionary (Kanji: ${Object.keys(jaishoKanji).length}, Vocab: ${Object.keys(jaishoVocab).length})`
+  );
+  return { jaishoKanji, jaishoVocab };
+}
 
 function filterByJlpt(raw: RawKanjiData, level: number): KanjiEntry[] {
   const entries: KanjiEntry[] = [];
@@ -102,16 +173,9 @@ function filterByJlpt(raw: RawKanjiData, level: number): KanjiEntry[] {
 
     let subLevel = 0;
     if (level === 5) {
-      const group = N5_GROUPS.find(g => g.kanji.includes(character));
+      const group = N5_GROUPS.find((g) => g.kanji.includes(character));
       if (group) subLevel = group.id;
     }
-
-    // Convert hiragana to katakana for On'yomi
-    const convertToKatakana = (str: string) => {
-      return str.replace(/[\u3041-\u3096]/g, (match) =>
-        String.fromCharCode(match.charCodeAt(0) + 0x60)
-      );
-    };
 
     entries.push({
       character,
@@ -128,11 +192,9 @@ function filterByJlpt(raw: RawKanjiData, level: number): KanjiEntry[] {
   }
 
   if (level === 5) {
-    // Put ungrouped N5 kanji into a generic subLevel 9
     entries.forEach((e) => {
       if (e.subLevel === 0) e.subLevel = 9;
     });
-    // Sort by subLevel, then frequency
     entries.sort((a, b) => {
       if (a.subLevel !== b.subLevel) return a.subLevel - b.subLevel;
       if (a.freq === null && b.freq === null) return 0;
@@ -141,7 +203,6 @@ function filterByJlpt(raw: RawKanjiData, level: number): KanjiEntry[] {
       return a.freq - b.freq;
     });
   } else {
-    // Other levels: sort by frequency and group by 10
     entries.sort((a, b) => {
       if (a.freq === null && b.freq === null) return 0;
       if (a.freq === null) return 1;
@@ -156,85 +217,138 @@ function filterByJlpt(raw: RawKanjiData, level: number): KanjiEntry[] {
   return entries;
 }
 
-async function fetchVocabData(level: number) {
-  try {
-    const url = `https://raw.githubusercontent.com/evanclan/OpenJLPT/main/data/json/vocab/n${level}.json`;
-    const res = await fetch(url);
-    if (!res.ok) return [];
-    return await res.json();
-  } catch (err) {
-    console.warn(`!  Could not fetch vocab for N${level}:`, err);
-    return [];
+function mapExamples(
+  openExamples: OpenJlptExample[] | undefined,
+  fallbackExamples: Array<[string, string, unknown?]> | undefined
+): VocabExample[] | undefined {
+  const out: VocabExample[] = [];
+
+  if (openExamples && openExamples.length > 0) {
+    for (const ex of openExamples.slice(0, MAX_EXAMPLES_PER_VOCAB)) {
+      if (ex.ja && ex.en) {
+        out.push({
+          ja: ex.ja,
+          en: ex.en,
+          ...(ex.furigana ? { furigana: ex.furigana } : {}),
+          ...(typeof ex.tatoeba_id === "number" ? { tatoebaId: ex.tatoeba_id } : {}),
+        });
+      }
+    }
+  } else if (fallbackExamples && fallbackExamples.length > 0) {
+    for (const item of fallbackExamples.slice(0, MAX_EXAMPLES_PER_VOCAB)) {
+      const [ja, en] = item;
+      if (typeof ja === "string" && typeof en === "string") {
+        out.push({ ja, en });
+      }
+    }
   }
+
+  return out.length > 0 ? out : undefined;
 }
 
-async function seed(levels: number[]): Promise<void> {
-  const raw = await fetchRawData();
+// ── Main ─────────────────────────────────────────────────────────────────────
 
-  // Save raw snapshot for reference
+async function seed(levels: number[]): Promise<void> {
+  console.log("⬇  Fetching base kanji data & mnemonic datasets…");
+  const [raw, mnemonicKanji, mnemonicVocabList, wordMnemonics, mnemonicExamples] =
+    await Promise.all([
+      fetchJson<RawKanjiData>(RAW_URL, {}),
+      fetchJson<MnemonicKanjiFile>(`${MNEMONIC_BASE}/kanji.json`, {}),
+      fetchJson<MnemonicVocabItem[]>(`${MNEMONIC_BASE}/vocab.json`, []),
+      fetchJson<WordMnemonicsFile>(`${MNEMONIC_BASE}/data/word_mnemonics.json`, {}),
+      fetchJson<MnemonicExamplesFile>(`${MNEMONIC_BASE}/examples.json`, {}),
+    ]);
+
+  if (Object.keys(raw).length === 0) {
+    throw new Error("Failed to download raw kanji dataset.");
+  }
+
+  // Index kanji mnemonics by character
+  const kanjiMnemonicMap = new Map<string, MnemonicKanjiCard>();
+  for (const card of mnemonicKanji.cards ?? []) {
+    if (card.kanji) kanjiMnemonicMap.set(card.kanji, card);
+  }
+
+  // Index vocab mnemonics by word (vocab.json + data/word_mnemonics.json)
+  const vocabMnemonicMap = new Map<string, string>();
+  for (const [word, mn] of Object.entries(wordMnemonics)) {
+    if (word !== "_about" && typeof mn === "string" && mn.trim()) {
+      vocabMnemonicMap.set(word, mn.trim());
+    }
+  }
+  for (const item of mnemonicVocabList) {
+    if (item.w && item.mn && item.mn.trim()) {
+      vocabMnemonicMap.set(item.w, item.mn.trim());
+    }
+  }
+
+  console.log(
+    `✓  Loaded mnemonics (Kanji cards: ${kanjiMnemonicMap.size}, Vocab hooks: ${vocabMnemonicMap.size}, Fallback sentences: ${Object.keys(mnemonicExamples).length})`
+  );
+
+  // Save raw snapshot
   const rawDir = join(process.cwd(), "src", "data", "raw");
   mkdirSync(rawDir, { recursive: true });
-  writeFileSync(
-    join(rawDir, "kanji.json"),
-    JSON.stringify(raw, null, 2),
-    "utf-8"
-  );
-  console.log(`✓  Raw data saved to src/data/raw/kanji.json`);
+  writeFileSync(join(rawDir, "kanji.json"), JSON.stringify(raw, null, 2), "utf-8");
 
+  const { jaishoKanji, jaishoVocab } = loadJaishoDictionaries();
   const kanjiDir = join(process.cwd(), "src", "data", "kanji");
   mkdirSync(kanjiDir, { recursive: true });
 
   for (const level of levels) {
     const entries = filterByJlpt(raw, level);
-    
-    // Fetch vocab and inject
-    console.log(`⬇  Fetching vocab data for N${level} from OpenJLPT…`);
-    const vocabData = await fetchVocabData(level);
+    console.log(`⬇  Fetching OpenJLPT vocab + examples for N${level}…`);
+    const vocabData = await fetchJson<OpenJlptVocabItem[]>(
+      `https://raw.githubusercontent.com/evanclan/OpenJLPT/main/data/json/vocab/n${level}.json`,
+      []
+    );
 
-    // Read JaIsho Dictionary files if available
-    let jaishoKanji: Record<string, string[]> = {};
-    let jaishoVocab: Record<string, string[]> = {};
-    try {
-      const fs = require('fs')
-      
-      const kanjiRaw = fs.readFileSync(join(process.cwd(), 'scripts', 'jaisho-kanji.ndjson'), 'utf-8')
-      for (const line of kanjiRaw.split('\n')) {
-        if (!line.trim()) continue;
-        const parsed = JSON.parse(line)
-        if (parsed.c && parsed.id) jaishoKanji[parsed.c] = parsed.id
+    let kanjiWithMnemonic = 0;
+    let vocabWithExamples = 0;
+    let vocabWithMnemonic = 0;
+
+    for (const entry of entries) {
+      if (jaishoKanji[entry.character]) {
+        entry.meanings_id = jaishoKanji[entry.character];
       }
-      
-      const vocabRaw = fs.readFileSync(join(process.cwd(), 'scripts', 'jaisho-vocab.ndjson'), 'utf-8')
-      for (const line of vocabRaw.split('\n')) {
-        if (!line.trim()) continue;
-        const parsed = JSON.parse(line)
-        if (parsed.k && parsed.k[0] && parsed.s && parsed.s[0] && parsed.s[0].id) {
-          // just taking the first kanji and first sense's ID array
-          jaishoVocab[parsed.k[0]] = parsed.s[0].id
+
+      const mnCard = kanjiMnemonicMap.get(entry.character);
+      if (mnCard) {
+        if (mnCard.keyword) entry.keyword = mnCard.keyword;
+        if (mnCard.story) {
+          entry.mnemonic = mnCard.story;
+          kanjiWithMnemonic++;
+        }
+        if (mnCard.components && mnCard.components.length > 0) {
+          entry.components = mnCard.components;
+        }
+        if (mnCard.sound && mnCard.sound.length > 0) {
+          entry.soundHooks = mnCard.sound;
         }
       }
-      console.log(`✓  Loaded JaIsho Dictionary (Kanji: ${Object.keys(jaishoKanji).length}, Vocab: ${Object.keys(jaishoVocab).length})`)
-    } catch (e: any) {
-      console.log('!  JaIsho dictionary files not found or failed to parse. Skipping Indonesian mapping. Error:', e.message)
-    }
 
-    if (vocabData.length > 0) {
-      entries.forEach(entry => {
-        // Map Kanji ID meaning
-        if (jaishoKanji[entry.character]) {
-          entry.meanings_id = jaishoKanji[entry.character]
-        }
+      if (vocabData.length > 0) {
+        const matched = vocabData.filter(
+          (v): v is Required<Pick<OpenJlptVocabItem, "word">> & OpenJlptVocabItem =>
+            Boolean(v.word && v.word.includes(entry.character))
+        );
 
-        // Find vocab that contains this kanji
-        const matched = vocabData.filter((v: any) => v.word && v.word.includes(entry.character));
-        entry.vocab = matched.slice(0, 20).map((v: any) => ({
-          word: v.word,
-          reading: v.reading || '',
-          meanings: v.meanings || [],
-          meanings_id: jaishoVocab[v.word] || []
-        }));
-      });
-      console.log(`✓  Injected vocab examples and Indonesian meanings for N${level}.`);
+        entry.vocab = matched.slice(0, MAX_VOCAB_PER_KANJI).map((v): KanjiVocab => {
+          const mnemonic = vocabMnemonicMap.get(v.word);
+          const examples = mapExamples(v.examples, mnemonicExamples[v.word]);
+          if (mnemonic) vocabWithMnemonic++;
+          if (examples && examples.length > 0) vocabWithExamples++;
+
+          return {
+            word: v.word,
+            reading: v.reading ?? "",
+            meanings: v.meanings ?? [],
+            meanings_id: jaishoVocab[v.word] ?? [],
+            ...(mnemonic ? { mnemonic } : {}),
+            ...(examples ? { examples } : {}),
+          };
+        });
+      }
     }
 
     const outPath = join(kanjiDir, `n${level}.json`);
@@ -242,18 +356,14 @@ async function seed(levels: number[]): Promise<void> {
 
     const subLevels = entries[entries.length - 1]?.subLevel ?? 0;
     console.log(
-      `✓  N${level}: ${entries.length} kanji → ${subLevels} sub-levels saved to src/data/kanji/n${level}.json`
+      `✓  N${level}: ${entries.length} kanji (${subLevels} sublevels, ${kanjiWithMnemonic} kanji mnemonics, ${vocabWithExamples} vocab w/ sentences, ${vocabWithMnemonic} vocab w/ mnemonics)`
     );
   }
 }
 
-// ── CLI entry ────────────────────────────────────────────────────────────────
-
 const args = process.argv.slice(2);
 const levelArg = args.find((a) => a.startsWith("--level="));
-const levels = levelArg
-  ? [parseInt(levelArg.split("=")[1], 10)]
-  : [5, 4, 3, 2, 1];
+const levels = levelArg ? [parseInt(levelArg.split("=")[1], 10)] : [5, 4, 3, 2, 1];
 
 seed(levels).catch((err) => {
   console.error("✗  Seed failed:", err);

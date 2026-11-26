@@ -102,6 +102,10 @@ model Kanji {
   readings_kun String[]
   svgFile      String
   subLevel     Int
+  keyword      String?
+  mnemonic     String?
+  components   String[] @default([])
+  soundHooks   Json?
   vocab        Vocab[]
   weakBy       WeakKanji[]
 }
@@ -114,6 +118,49 @@ model Vocab {
   reading     String
   meanings    String[]
   meanings_id String[]
+  mnemonic    String?
+  examples    Json?
+}
+
+model DokkaiPassage {
+  id        String           @id
+  kind      String
+  title     String
+  text      String
+  en        String
+  questions DokkaiQuestion[]
+  createdAt DateTime         @default(now())
+}
+
+model DokkaiQuestion {
+  id        String        @id @default(cuid())
+  passageId String
+  orderIdx  Int
+  prompt    String
+  options   String[]
+  optsEn    String[]      @default([])
+  answer    Int
+  why       String?
+  wrong     Json?
+  passage   DokkaiPassage @relation(fields: [passageId], references: [id], onDelete: Cascade)
+
+  @@unique([passageId, orderIdx])
+}
+
+model VocabExamQuestion {
+  id         String   @id @default(cuid())
+  targetWord String
+  mode       String
+  prompt     String
+  options    String[]
+  optsEn     String[] @default([])
+  answer     Int
+  why        String?
+  en         String?
+  wrong      Json?
+  createdAt  DateTime @default(now())
+
+  @@unique([targetWord, mode])
 }
 
 model WeakKanji {

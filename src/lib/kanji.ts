@@ -6,7 +6,8 @@
  * - Data loading helpers for JSON assets
  */
 
-import type { KanjiEntry } from "@/lib/types";
+import type { KanjiEntry, KanjiSoundHook, VocabExample } from "@/lib/types";
+import type { Prisma } from "@prisma/client";
 
 // ── SVG ──────────────────────────────────────────────────────────────────────
 
@@ -49,6 +50,43 @@ export async function getN5Kanji(): Promise<KanjiEntry[]> {
   return getKanjiByLevel(5)
 }
 
+function parseSoundHooks(value: Prisma.JsonValue | null | undefined): KanjiSoundHook[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  const hooks: KanjiSoundHook[] = [];
+  for (const item of value) {
+    if (typeof item === "object" && item !== null && !Array.isArray(item)) {
+      const rec = item as Record<string, unknown>;
+      if (typeof rec.r === "string" && typeof rec.hook === "string") {
+        hooks.push({
+          r: rec.r,
+          hook: rec.hook,
+          ...(typeof rec.emoji === "string" ? { emoji: rec.emoji } : {}),
+        });
+      }
+    }
+  }
+  return hooks.length > 0 ? hooks : undefined;
+}
+
+function parseVocabExamples(value: Prisma.JsonValue | null | undefined): VocabExample[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  const examples: VocabExample[] = [];
+  for (const item of value) {
+    if (typeof item === "object" && item !== null && !Array.isArray(item)) {
+      const rec = item as Record<string, unknown>;
+      if (typeof rec.ja === "string" && typeof rec.en === "string") {
+        examples.push({
+          ja: rec.ja,
+          en: rec.en,
+          ...(typeof rec.furigana === "string" ? { furigana: rec.furigana } : {}),
+          ...(typeof rec.tatoebaId === "number" ? { tatoebaId: rec.tatoebaId } : {}),
+        });
+      }
+    }
+  }
+  return examples.length > 0 ? examples : undefined;
+}
+
 /**
  * Load kanji entries for any JLPT level (1–5) with Database fallback strategy.
  */
@@ -74,13 +112,19 @@ export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEn
         readings_kun: k.readings_kun,
         svgFile: k.svgFile,
         subLevel: k.subLevel,
+        ...(k.keyword ? { keyword: k.keyword } : {}),
+        ...(k.mnemonic ? { mnemonic: k.mnemonic } : {}),
+        ...(k.components.length > 0 ? { components: k.components } : {}),
+        ...(parseSoundHooks(k.soundHooks) ? { soundHooks: parseSoundHooks(k.soundHooks) } : {}),
         vocab: k.vocab.map(v => ({
           word: v.word,
           reading: v.reading,
           meanings: v.meanings,
-          meanings_id: v.meanings_id
+          meanings_id: v.meanings_id,
+          ...(v.mnemonic ? { mnemonic: v.mnemonic } : {}),
+          ...(parseVocabExamples(v.examples) ? { examples: parseVocabExamples(v.examples) } : {}),
         }))
-      })) as KanjiEntry[];
+      }));
     }
   } catch (error) {
     console.warn(`[kanji.ts] Database query failed for level ${level}, falling back to JSON.`, error);
