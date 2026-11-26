@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, RotateCcw, Zap, BookOpen, ChevronRight, FileText, Languages } from 'lucide-react'
 import { useLanguage } from '@/components/LanguageProvider'
+import { MondaiInstruction } from '@/components/MondaiInstruction'
 
 type JLPTQuestion = {
   prompt: string
@@ -73,6 +74,19 @@ function getKanjiOptionFontSize(text: string): string {
   if (len === 3) return 'text-base sm:text-lg md:text-xl'
   if (len === 4) return 'text-sm sm:text-base md:text-lg'
   return 'text-xs sm:text-sm md:text-base'
+}
+
+function renderUnderlinedPrompt(text: string) {
+  const parts = text.split(/(__[^_]+__)/g)
+  return parts.map((part, i) =>
+    part.startsWith('__') && part.endsWith('__') ? (
+      <span key={i} className="underline decoration-primary decoration-2 underline-offset-4 text-primary">
+        {part.slice(2, -2)}
+      </span>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  )
 }
 
 export default function GlobalQuizPage() {
@@ -265,13 +279,21 @@ export default function GlobalQuizPage() {
           </div>
         </div>
 
+        {/* JLPT Instruction Banner */}
+        <MondaiInstruction
+          jp="問題：次の質問に最もよいものを、1・2・3・4から一つ選びなさい。"
+          guideId="Cara mengerjakan: Baca pertanyaan di bawah, lalu pilih 1 jawaban yang paling tepat dari opsi 1, 2, 3, atau 4."
+          guideEn="How to answer: Read the prompt below and choose the 1 best answer from options 1, 2, 3, or 4."
+          lang={lang}
+        />
+
         {/* Question Card */}
         <div className="bg-surface rounded-3xl border border-border-color p-6 md:p-10 mb-6 text-center shadow-sm min-h-[160px] flex flex-col items-center justify-center">
           <p
             className="text-xl md:text-2xl font-bold text-text-main leading-relaxed"
             style={{ fontFamily: "'Noto Serif JP', serif" }}
           >
-            {q.prompt}
+            {renderUnderlinedPrompt(q.prompt)}
           </p>
         </div>
 
@@ -297,7 +319,7 @@ export default function GlobalQuizPage() {
                 key={i}
                 onClick={() => selectAnswer(i)}
                 disabled={answerState !== 'unanswered'}
-                aria-label={`${lang === 'id' ? 'Pilihan' : 'Option'} ${['A','B','C','D'][i]}: ${option}`}
+                aria-label={`${lang === 'id' ? 'Pilihan' : 'Option'} ${['1','2','3','4'][i]}: ${option}`}
                 className={`
                   relative border-2 rounded-2xl transition-all duration-200 text-left
                   disabled:cursor-default active:scale-[0.98]
@@ -314,7 +336,7 @@ export default function GlobalQuizPage() {
                     'bg-card-muted text-text-subtle'}
                   ${optionsAreKanji ? 'absolute top-2 left-2 w-6 h-6 text-[10px]' : ''}
                 `}>
-                  {selected !== null && isCorrect ? '✓' : selected !== null && isWrong ? '✕' : ['A','B','C','D'][i]}
+                  {selected !== null && isCorrect ? '✓' : selected !== null && isWrong ? '✕' : ['1','2','3','4'][i]}
                 </span>
 
                 <span

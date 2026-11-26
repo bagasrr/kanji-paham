@@ -18,6 +18,7 @@ import {
 import type { DokkaiPassage } from '@/lib/types'
 import { useLanguage } from '@/components/LanguageProvider'
 import { useJapaneseSpeech } from '@/hooks/useJapaneseSpeech'
+import { MondaiInstruction } from '@/components/MondaiInstruction'
 
 const STORAGE_KEY = 'kanjipaham-dokkai-done'
 
@@ -246,6 +247,13 @@ export function DokkaiPractice({ passages }: Props) {
         </div>
 
         {/* Questions */}
+        <MondaiInstruction
+          jp="問題：次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。"
+          guideId="Cara mengerjakan: Baca wacana di atas, lalu pilih 1 jawaban paling tepat dari opsi 1, 2, 3, atau 4 untuk setiap pertanyaan."
+          guideEn="How to answer: Read the passage above and choose the 1 best answer from options 1, 2, 3, or 4 for each question."
+          lang={lang}
+        />
+
         <div className="space-y-5">
           {activePassage.questions.map((q, qIdx) => {
             const chosen = answers[qIdx]
@@ -308,7 +316,7 @@ export function DokkaiPractice({ passages }: Props) {
                               : 'bg-card-muted text-text-subtle'
                           }`}
                         >
-                          {isAnswered && optCorrect ? '✓' : isAnswered && optWrong ? '✕' : ['A', 'B', 'C', 'D'][optIdx]}
+                          {isAnswered && optCorrect ? '✓' : isAnswered && optWrong ? '✕' : ['1', '2', '3', '4'][optIdx]}
                         </span>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm sm:text-base font-medium leading-snug">{opt}</p>

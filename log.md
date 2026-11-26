@@ -97,5 +97,27 @@
   - Playwright real-browser verification across `/quiz`, `/quiz/dokkai`, `/quiz/vocab`, `/learn/5/1/一`, and `/info` on mobile (`390x844`) and desktop (`1280x800`): **PASS** (0 console/page errors, 0 horizontal overflow, interactive flows verified).
   - `graphify update .`: rebuilt (`493` nodes, `825` edges, `39` communities).
 
+---
+
+## 2026-11-27 — Add JLPT Mondai Instructions & Option Numbering (`1・2・3・4`)
+
+### Proposed Plan & User Request
+- User noted that exercise questions lacked explicit Japanese JLPT instructions (e.g., `1・2・3・4から一つ選びなさい`) and clear Indonesian/English how-to-answer guidance so learners know exactly what to do.
+
+### Implementation & Completion Report
+- **What was implemented:**
+  - Created `src/components/MondaiInstruction.tsx` displaying authentic Japanese JLPT question instructions (`問題：... 1・2・3・4から一つ選びなさい`) paired with concise Indonesian/English guidance.
+  - Integrated `MondaiInstruction` and JLPT `1–4` option badges across:
+    - `src/components/DokkaiPractice.tsx`
+    - `src/components/VocabExamPractice.tsx` (distinct rubrics for `para` and `usage` modes + visual `【...】` highlight)
+    - `src/app/quiz/page.tsx` (plus clean underline rendering for `__word__` instead of raw underscores)
+- **Verification Results:**
+  - `npx eslint` on modified/created files: passed (0 errors/warnings).
+  - `npx tsc --noEmit`: passed (0 errors).
+  - `npx next build --webpack`: passed (exit 0).
+  - Playwright verification on mobile (`390x844`) and desktop (`1280x800`): **PASS** (`0 console errors`, `0 horizontal overflow`, verified `1・2・3・4から一つ選びなさい` visible on `/quiz`, `/quiz/dokkai`, and `/quiz/vocab`).
+  - `graphify update .`: rebuilt (`501` nodes, `845` edges, `33` communities).
+
+
 
 

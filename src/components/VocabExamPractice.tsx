@@ -13,12 +13,29 @@ import {
 } from 'lucide-react'
 import type { VocabExamQuestion, VocabExamUsageWrongDetail } from '@/lib/types'
 import { useLanguage } from '@/components/LanguageProvider'
+import { MondaiInstruction } from '@/components/MondaiInstruction'
 
 type QuizModeFilter = 'all' | 'para' | 'usage'
 type AnswerState = 'unanswered' | 'correct' | 'wrong'
 
 interface Props {
   counts: { all: number; para: number; usage: number }
+}
+
+function renderBracketHighlight(text: string) {
+  const parts = text.split(/(【[^】]+】)/g)
+  return parts.map((part, i) =>
+    part.startsWith('【') && part.endsWith('】') ? (
+      <span
+        key={i}
+        className="mx-0.5 px-1.5 py-0.5 rounded-md bg-primary/15 text-primary border-b-2 border-primary"
+      >
+        {part}
+      </span>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  )
 }
 
 function isUsageDetail(
@@ -171,6 +188,26 @@ export function VocabExamPractice({ counts }: Props) {
           </div>
         </div>
 
+        {/* JLPT Instruction Banner */}
+        <MondaiInstruction
+          jp={
+            q.mode === 'para'
+              ? '問題：【　】の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。'
+              : '問題：次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。'
+          }
+          guideId={
+            q.mode === 'para'
+              ? 'Cara mengerjakan: Perhatikan kata di dalam tanda 【　】, lalu pilih 1 jawaban (1–4) yang artinya paling dekat.'
+              : `Cara mengerjakan: Pilih 1 kalimat (1–4) yang menggunakan kata 「${q.targetWord}」 secara paling tepat dan alami.`
+          }
+          guideEn={
+            q.mode === 'para'
+              ? 'How to answer: Look at the word inside 【　】 and pick 1 option (1–4) closest in meaning.'
+              : `How to answer: Pick the 1 sentence (1–4) that uses 「${q.targetWord}」 most accurately and naturally.`
+          }
+          lang={lang}
+        />
+
         {/* Prompt Card */}
         <div className="bg-surface rounded-3xl border border-border-color p-5 sm:p-7 mb-5 shadow-sm">
           <div className="flex items-center justify-between gap-2 mb-3">
@@ -189,7 +226,7 @@ export function VocabExamPractice({ counts }: Props) {
             className="text-lg sm:text-xl font-bold text-text-main leading-relaxed"
             style={{ fontFamily: "'Noto Serif JP', serif" }}
           >
-            {q.prompt}
+            {q.mode === 'para' ? renderBracketHighlight(q.prompt) : q.prompt}
           </p>
           {(showGloss || isAnswered) && q.en && (
             <p className="mt-3 text-xs sm:text-sm text-text-muted border-t border-border-color/60 pt-2.5">
@@ -235,7 +272,7 @@ export function VocabExamPractice({ counts }: Props) {
                       : 'bg-card-muted text-text-subtle'
                   }`}
                 >
-                  {isAnswered && optCorrect ? '✓' : isAnswered && optWrong ? '✕' : ['A', 'B', 'C', 'D'][optIdx]}
+                  {isAnswered && optCorrect ? '✓' : isAnswered && optWrong ? '✕' : ['1', '2', '3', '4'][optIdx]}
                 </span>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm sm:text-base font-medium leading-relaxed">{opt}</p>
