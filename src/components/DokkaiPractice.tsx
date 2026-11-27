@@ -7,15 +7,17 @@ import {
   BookOpen,
   CheckCircle2,
   ChevronRight,
+  ExternalLink,
   Eye,
   EyeOff,
+  Grid2x2,
   RotateCcw,
   Search,
   Type,
   Volume2,
   VolumeX,
 } from 'lucide-react'
-import type { DokkaiPassage } from '@/lib/types'
+import type { DokkaiPassage, KanjiReferenceItem } from '@/lib/types'
 import { useLanguage } from '@/components/LanguageProvider'
 import { useJapaneseSpeech } from '@/hooks/useJapaneseSpeech'
 import { MondaiInstruction } from '@/components/MondaiInstruction'
@@ -30,12 +32,31 @@ const KIND_LABELS: Record<string, { id: string; en: string; badge: string }> = {
 }
 
 const FONT_SIZES = ['text-base leading-loose', 'text-lg leading-loose', 'text-xl leading-loose'] as const
+const KANJI_CHAR_REGEX = /[\u4e00-\u9faf\u3400-\u4dbf]/g
+
+function extractUniqueKanji(passage: DokkaiPassage): string[] {
+  const combined = [
+    passage.text,
+    ...passage.questions.flatMap((q) => [q.prompt, ...q.options]),
+  ].join(' ')
+  const seen = new Set<string>()
+  const ordered: string[] = []
+  for (const match of combined.matchAll(KANJI_CHAR_REGEX)) {
+    const ch = match[0]
+    if (!seen.has(ch)) {
+      seen.add(ch)
+      ordered.push(ch)
+    }
+  }
+  return ordered
+}
 
 interface Props {
   passages: DokkaiPassage[]
+  kanjiMap: Record<string, KanjiReferenceItem>
 }
 
-export function DokkaiPractice({ passages }: Props) {
+export function DokkaiPractice({ passages, kanjiMap }: Props) {
   const { lang } = useLanguage()
   const isId = lang === 'id'
   const { speak, stop, isPlaying, isSupported } = useJapaneseSpeech()
@@ -49,6 +70,7 @@ export function DokkaiPractice({ passages }: Props) {
   const [fontIdx, setFontIdx] = useState<number>(1)
   const [showTranslation, setShowTranslation] = useState(false)
   const [showOptionEn, setShowOptionEn] = useState(false)
+  const [showKanjiRef, setShowKanjiRef] = useState(false)
   const [answers, setAnswers] = useState<Record<number, number>>({})
 
   useEffect(() => {
@@ -97,11 +119,17 @@ export function DokkaiPractice({ passages }: Props) {
     [passages, activeId]
   )
 
+  const passageKanjiChars = useMemo(
+    () => (activePassage ? extractUniqueKanji(activePassage) : []),
+    [activePassage]
+  )
+
   function openPassage(id: string) {
     stop()
     setActiveId(id)
     setShowTranslation(false)
     setShowOptionEn(false)
+    setShowKanjiRef(false)
     setAnswers({})
   }
 
@@ -234,6 +262,23 @@ export function DokkaiPractice({ passages }: Props) {
                 {isId ? 'Arti Opsi' : 'Option Gloss'}
               </span>
             </button>
+
+            <button
+              onClick={() => setShowKanjiRef((v) => !v)}
+              aria-expanded={showKanjiRef}
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border text-xs font-bold transition-colors cursor-pointer ${
+                showKanjiRef
+                  ? 'bg-primary text-white border-primary'
+                  : 'bg-surface border-border-color text-primary hover:bg-primary/5'
+              }`}
+            >
+              <Grid2x2 size={14} />
+              <span>
+                {isId
+                  ? `Referensi Kanji (${passageKanjiChars.length})`
+                  : `Kanji Reference (${passageKanjiChars.length})`}
+              </span>
+            </button>
           </div>
 
           {showTranslation && (
@@ -242,6 +287,87 @@ export function DokkaiPractice({ passages }: Props) {
                 English Translation
               </p>
               {activePassage.en}
+            </div>
+          )}
+
+          {showKanjiRef && (
+            <div className="mt-3 p-4 rounded-2xl bg-card-muted/35 border border-border-color">
+              <div className="flex items-center justify-between gap-2 mb-2.5 flex-wrap">
+                <p className="text-xs font-bold uppercase tracking-wider text-text-main">
+                  {isId ? 'Kanji di Bacaan Ini' : 'Kanji in This Passage'}
+                </p>
+                <span className="text-[11px] text-text-muted">
+                  {isId
+                    ? 'Klik kanji untuk membuka detail di tab baru'
+                    : 'Click any kanji to open details in a new tab'}
+                </span>
+              </div>
+
+              {passageKanjiChars.length === 0 ? (
+                <p className="text-xs text-text-subtle">
+                  {isId ? 'Tidak ada kanji di bacaan ini.' : 'No kanji found in this passage.'}
+                </p>
+              ) : (
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-72 overflow-y-auto pr-1 scrollbar-thin">
+                  {passageKanjiChars.map((ch) => {
+                    const info = kanjiMap[ch]
+                    if (!info) {
+                      return (
+                        <div
+                          key={ch}
+                          className="p-2.5 rounded-xl border border-dashed border-border-color bg-surface/60 flex items-center gap-2.5 opacity-75"
+                        >
+                          <span
+                            className="text-2xl font-bold text-text-main"
+                            style={{ fontFamily: "'Noto Serif JP', serif" }}
+                          >
+                            {ch}
+                          </span>
+                          <span className="text-[10px] text-text-subtle leading-tight">
+                            {isId ? 'Di luar JLPT N5–N1' : 'Outside JLPT N5–N1'}
+                          </span>
+                        </div>
+                      )
+                    }
+
+                    const meaningText =
+                      isId && info.meanings_id && info.meanings_id.length > 0
+                        ? info.meanings_id[0]
+                        : info.meanings[0] ?? ''
+
+                    return (
+                      <Link
+                        key={ch}
+                        href={`/learn/${info.jlpt}/${info.subLevel}/${encodeURIComponent(info.character)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group p-2.5 rounded-xl border border-border-color bg-surface hover:border-primary hover:shadow-sm transition-all flex items-center justify-between gap-2 min-w-0"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <span
+                            className="text-2xl font-bold text-text-main group-hover:text-primary transition-colors flex-shrink-0"
+                            style={{ fontFamily: "'Noto Serif JP', serif" }}
+                          >
+                            {info.character}
+                          </span>
+                          <div className="min-w-0">
+                            <span className="inline-block px-1.5 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-bold">
+                              N{info.jlpt}
+                            </span>
+                            <p className="text-[11px] font-medium text-text-muted truncate capitalize mt-0.5">
+                              {meaningText}
+                            </p>
+                          </div>
+                        </div>
+                        <ExternalLink
+                          size={13}
+                          className="text-text-subtle group-hover:text-primary flex-shrink-0"
+                        />
+                      </Link>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           )}
         </div>

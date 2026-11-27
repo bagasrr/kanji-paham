@@ -52,9 +52,29 @@ export interface KanjiEntry {
   keyword?: string;
   mnemonic?: string;
   components?: string[];
+  /** Japanese radical/component glyphs from KRADFILE/RADKFILE (CC BY-SA 4.0) */
+  radicals?: string[];
   soundHooks?: KanjiSoundHook[];
   /** Vocabulary examples from OpenJLPT & kanji_mnemonic */
   vocab?: KanjiVocab[];
+}
+
+export interface RadicalEntry {
+  radical: string;
+  strokeCount: number;
+  classicalNumber: number | null;
+  meanings: string[];
+  kanjiChars: string[];
+}
+
+export interface KanjiReferenceItem {
+  character: string;
+  jlpt: number;
+  subLevel: number;
+  meanings: string[];
+  meanings_id?: string[];
+  readings_on: string[];
+  readings_kun: string[];
 }
 
 // ── Exercises (Dokkai & Contextual Vocab) ─────────────────────────────────────

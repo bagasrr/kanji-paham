@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Lock } from 'lucide-react'
+import { ChevronRight, Layers, Lock } from 'lucide-react'
 
 const LEVELS = [
   { level: 5, label: 'N5', title: 'Pemula', description: 'Mulai perjalanan Kanji-mu', count: 79, color: '#5C946E', emoji: '🌱', gradient: 'from-emerald-50 to-green-100', locked: false },
@@ -15,6 +15,39 @@ export default function LearnPage() {
       <div className="mb-10 text-center relative z-10">
         <h1 className="text-3xl md:text-4xl font-bold text-text-main tracking-tight">🗾 Perjalanan Kanji</h1>
         <p className="text-text-muted mt-3 font-medium">Pilih levelmu dan mulai kuasai Kanji sedikit demi sedikit.</p>
+      </div>
+
+      {/* Radical Browser Entry */}
+      <div className="max-w-2xl mx-auto mb-6 relative z-10">
+        <Link
+          href="/learn/radicals"
+          className="group flex items-center justify-between gap-4 p-5 rounded-3xl border-2 border-primary/25 bg-surface hover:border-primary hover:shadow-lg transition-all"
+        >
+          <div className="flex items-center gap-4 min-w-0">
+            <div
+              className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl font-bold flex-shrink-0 group-hover:scale-105 transition-transform"
+              style={{ fontFamily: "'Noto Serif JP', serif" }}
+            >
+              部首
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-bold">
+                  <Layers size={11} /> 240 Radikal
+                </span>
+              </div>
+              <h2 className="font-bold text-base sm:text-lg text-text-main group-hover:text-primary transition-colors">
+                Jelajahi Kanji by Radikal
+              </h2>
+              <p className="text-xs sm:text-sm text-text-muted">
+                Kelompokkan 2.211 kanji N5–N1 berdasarkan radikal penyusunnya
+              </p>
+            </div>
+          </div>
+          <div className="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 group-hover:translate-x-0.5 transition-transform">
+            <ChevronRight size={18} />
+          </div>
+        </Link>
       </div>
       
       <div className="space-y-6 relative max-w-2xl mx-auto z-10">

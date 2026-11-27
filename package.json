@@ -11,6 +11,7 @@
     "seed:kanji": "tsx scripts/seed-kanji.ts",
     "seed:n5": "tsx scripts/seed-kanji.ts --level=5",
     "seed:exercises": "tsx scripts/seed-exercises.ts",
+    "seed:radicals": "tsx scripts/seed-radicals.ts",
     "seed:db": "tsx scripts/seed-db.ts",
     "svg:n5-sl1": "tsx scripts/download-svg.ts --level=5 --sublevel=1",
     "svg:n5": "tsx scripts/download-svg.ts --level=5",

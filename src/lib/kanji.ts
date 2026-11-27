@@ -6,7 +6,7 @@
  * - Data loading helpers for JSON assets
  */
 
-import type { KanjiEntry, KanjiSoundHook, VocabExample } from "@/lib/types";
+import type { KanjiEntry, KanjiReferenceItem, KanjiSoundHook, VocabExample } from "@/lib/types";
 import type { Prisma } from "@prisma/client";
 
 // ── SVG ──────────────────────────────────────────────────────────────────────
@@ -115,6 +115,7 @@ export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEn
         ...(k.keyword ? { keyword: k.keyword } : {}),
         ...(k.mnemonic ? { mnemonic: k.mnemonic } : {}),
         ...(k.components.length > 0 ? { components: k.components } : {}),
+        ...(k.radicals.length > 0 ? { radicals: k.radicals } : {}),
         ...(parseSoundHooks(k.soundHooks) ? { soundHooks: parseSoundHooks(k.soundHooks) } : {}),
         vocab: k.vocab.map(v => ({
           word: v.word,
@@ -156,4 +157,29 @@ export async function getSubLevels(level: 1 | 2 | 3 | 4 | 5): Promise<number[]> 
   const all = await getKanjiByLevel(level);
   const levels = [...new Set(all.map((k) => k.subLevel))].sort((a, b) => a - b);
   return levels;
+}
+
+/**
+ * Load lightweight lookup map of all N5–N1 kanji keyed by character
+ * for cross-referencing inside Dokkai reading passages.
+ */
+export async function getAllKanjiReferenceMap(): Promise<Record<string, KanjiReferenceItem>> {
+  const levels = await Promise.all(
+    ([5, 4, 3, 2, 1] as const).map((lvl) => getKanjiByLevel(lvl))
+  );
+  const map: Record<string, KanjiReferenceItem> = {};
+  for (const list of levels) {
+    for (const k of list) {
+      map[k.character] = {
+        character: k.character,
+        jlpt: k.jlpt,
+        subLevel: k.subLevel,
+        meanings: k.meanings,
+        meanings_id: k.meanings_id,
+        readings_on: k.readings_on,
+        readings_kun: k.readings_kun,
+      };
+    }
+  }
+  return map;
 }

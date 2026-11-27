@@ -105,9 +105,18 @@ model Kanji {
   keyword      String?
   mnemonic     String?
   components   String[] @default([])
+  radicals     String[] @default([])
   soundHooks   Json?
   vocab        Vocab[]
   weakBy       WeakKanji[]
+}
+
+model Radical {
+  radical         String   @id
+  strokeCount     Int
+  classicalNumber Int?
+  meanings        String[] @default([])
+  kanjiChars      String[] @default([])
 }
 
 model Vocab {

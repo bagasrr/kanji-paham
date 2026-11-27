@@ -118,6 +118,35 @@
   - Playwright verification on mobile (`390x844`) and desktop (`1280x800`): **PASS** (`0 console errors`, `0 horizontal overflow`, verified `1・2・3・4から一つ選びなさい` visible on `/quiz`, `/quiz/dokkai`, and `/quiz/vocab`).
   - `graphify update .`: rebuilt (`501` nodes, `845` edges, `33` communities).
 
+---
+
+## 2026-11-27 — Dokkai Kanji Reference (New Tab) & Japanese Radicals Circle Browser (`/learn/radicals`)
+
+### Proposed Plan & User Approval
+- User requested:
+  1. A **Kanji Reference** button inside Dokkai passages listing kanji present in the passage and opening kanji details in a new tab/page so the Dokkai page stays open.
+  2. A **Radicals menu/page** using the most complete open dataset, grouping N5–N1 kanji by radical with JLPT level badges on cards, and full `KanjiCard` detail view where prev/next navigation cycles through kanji inside the same radical circle.
+- User confirmed: "gw mau yang lengkap aja, lu bisa pilih aja yang paling lengkap, gunakan untuk sekarang".
+
+### Implementation & Completion Report
+- **Dataset & Database:**
+  - Created `scripts/seed-radicals.ts` fetching `data/core/radicals.json` from `jkindrix/japanese-language-data` (`CC BY-SA 4.0`, KRADFILE/RADKFILE + Kangxi), mapping all `2,211` N5–N1 kanji (`79/79` N5, `166/166` N4, `367/367` N3, `367/367` N2, `1232/1232` N1) and generating `src/data/kanji/radicals.json` (`240` Japanese radicals).
+  - Updated `prisma/schema.prisma` (`Kanji.radicals` + `Radical` model), pushed via session port `5432`, and optimized `scripts/seed-db.ts` with batched concurrency (`BATCH_SIZE = 20`) — seeded 2,211 kanji, 240 radicals, 97 dokkai passages, and 772 vocab exam questions.
+  - Created `src/lib/radicals.ts` and updated `src/lib/kanji.ts` (`getAllKanjiReferenceMap`), `src/lib/types.ts`, `src/data/ATTRIBUTION.md`, and `src/app/info/page.tsx`.
+- **UI Implementation:**
+  - Updated `src/app/quiz/dokkai/page.tsx` & `src/components/DokkaiPractice.tsx`: added **"Referensi Kanji (`N`)"** toggle extracting unique kanji from the active passage & questions, showing JLPT badge + meaning, linking to `/learn/[level]/[subLevel]/[character]` with `target="_blank" rel="noopener noreferrer"`.
+  - Updated `src/app/learn/page.tsx` with **"Jelajahi Kanji by Radikal"** entry card.
+  - Created `src/components/RadicalsBrowser.tsx` & `src/app/learn/radicals/page.tsx` (stroke-count filter chips + search across 240 radicals).
+  - Created `src/components/RadicalKanjiGrid.tsx` & `src/app/learn/radicals/[radical]/page.tsx` (JLPT filter chips + `N5`–`N1` badges on every kanji card).
+  - Created `src/app/learn/radicals/[radical]/[character]/page.tsx` reusing `KanjiCard` + `KanjiNavigation` cycling prev/next within the active radical circle.
+- **Verification Results:**
+  - `npx eslint` on all created/modified files: passed (0 errors/warnings).
+  - `npx tsc --noEmit`: passed (0 errors).
+  - `npx next build --webpack`: passed (exit 0).
+  - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console errors`, `0 horizontal overflow`, verified Dokkai `Referensi Kanji` `target="_blank"` link, `/learn/radicals`, `/learn/radicals/木` `N5` badge, and prev/next navigation staying inside `/learn/radicals/木/...`).
+  - `graphify update .`: rebuilt (`535` nodes, `948` edges, `34` communities).
+
+
 
 
 

@@ -8,6 +8,9 @@ Datasets generated in `src/data/` combine the following open-source projects:
 - **evanclan/OpenJLPT** (`data/json/vocab/n1.json`–`n5.json`, including Tatoeba sentence examples with furigana):
   - License: **CC BY-SA 4.0**
   - Source: https://github.com/evanclan/OpenJLPT
+- **jkindrix/japanese-language-data** (`data/core/radicals.json`, derived from EDRDG KRADFILE/RADKFILE & Kangxi radicals):
+  - License: **CC BY-SA 4.0**
+  - Source: https://github.com/jkindrix/japanese-language-data
 - **davidluzgouveia/kanji-data** (`kanji.json`, derived from KANJIDIC2 / EDRDG):
   - Source: https://github.com/davidluzgouveia/kanji-data
 - **KanjiVG** (stroke-order SVGs in `public/svg/`):

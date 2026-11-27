@@ -259,6 +259,10 @@ export default function InfoPage() {
             <span className="text-text-muted">JLPT Vocab &amp; Tatoeba Sentences (CC BY-SA 4.0)</span>
           </li>
           <li className="p-3 rounded-xl bg-card-muted/30 border border-border-color">
+            <span className="font-bold block">jkindrix/japanese-language-data</span>
+            <span className="text-text-muted">240 Radicals · KRADFILE/RADKFILE (CC BY-SA 4.0)</span>
+          </li>
+          <li className="p-3 rounded-xl bg-card-muted/30 border border-border-color">
             <span className="font-bold block">KanjiVG &amp; davidluzgouveia/kanji-data</span>
             <span className="text-text-muted">Stroke SVGs (CC BY-SA 3.0) &amp; KANJIDIC2</span>
           </li>
