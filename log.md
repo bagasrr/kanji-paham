@@ -168,6 +168,18 @@
   - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console errors`, `0 horizontal overflow`).
   - `graphify update .`: rebuilt (`521` nodes, `941` edges, `29` communities).
 
+---
+
+## 2026-11-27 — Add Ponytail Skill Rule to `AGENTS.md`
+
+### Proposed Plan & User Request
+- User requested adding the `ponytail` skill discipline to `AGENTS.md` so future code stays minimal, structured, and clean.
+
+### Implementation & Completion Report
+- Added Rule 13 (**Ponytail Minimalism & Clean Code**) to `AGENTS.md` enforcing `ponytail` (`full` mode by default) across all coding tasks.
+- Files modified: `AGENTS.md`, `log.md`.
+
+
 
 
 

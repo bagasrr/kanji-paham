@@ -49,6 +49,7 @@ This project (**KanjiPaham**) is a Japanese Kanji learning web platform comprisi
 10. **Playwright Real-Browser UI Verification:** Whenever implementing or debugging Frontend UI, layout (e.g., sticky/fixed sidebars, modals, responsive `360px–430px` views), or routing behavior, ALWAYS open and verify the live web page using **Playwright** (inspecting actual DOM bounding boxes, scroll behavior, and screenshots) in addition to running automated checks.
 11. **Commit Before New Analysis:** Whenever previous completed/verified changes are still uncommitted in the working tree, commit them cleanly to Git (using `type(scope): concise description` per `docs/antigrafity.md`) **before** analyzing or starting a new task/request from the user.
 12. Never run destructive Git, database, or filesystem operations without explicit user confirmation.
+13. **Ponytail Minimalism & Clean Code (Every Coding Task):** Apply the `ponytail` skill (`full` mode by default) on all code changes: understand the full flow first, then take the simplest working path—reuse existing helpers/components in `src/lib/` and `src/components/`, prefer standard library/native web/CSS/DB features over new dependencies, avoid speculative abstractions/dead flags/boilerplate, mark deliberate ceiling shortcuts with a `ponytail:` comment, and never simplify away validation, error handling, security, accessibility, or explicitly requested features.
 
 ## Completion Report
 
