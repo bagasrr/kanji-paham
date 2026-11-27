@@ -146,6 +146,29 @@
   - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console errors`, `0 horizontal overflow`, verified Dokkai `Referensi Kanji` `target="_blank"` link, `/learn/radicals`, `/learn/radicals/木` `N5` badge, and prev/next navigation staying inside `/learn/radicals/木/...`).
   - `graphify update .`: rebuilt (`535` nodes, `948` edges, `34` communities).
 
+---
+
+## 2026-11-27 — Ponytail Audit Cleanup
+
+### Proposed Plan & User Approval
+- Ran `/ponytail:ponytail-audit` and user approved cleaning up all dead code, unused dependencies, and duplicated helpers while keeping all functionality intact.
+
+### Implementation & Completion Report
+- **What was implemented:**
+  - Deleted `scripts/theme-replace.mjs` and unused API route `src/app/api/exercises/dokkai/route.ts`.
+  - Extracted shared `shuffle()`, `isKanjiLike()`, and `getKanjiOptionFontSize()` into `src/lib/quiz.ts` and updated `src/app/api/quiz/jlpt/route.ts`, `src/app/api/exercises/vocab/route.ts`, `src/app/quiz/page.tsx`, and `src/app/learn/[level]/[subLevel]/quiz/page.tsx`.
+  - Removed unreachable `locked` branch and `Lock` import from `src/app/learn/page.tsx`.
+  - Removed unused `UserProgress`, `QuizMode`, `QuizQuestion` from `src/lib/types.ts` and unused `getN5Kanji()` from `src/lib/kanji.ts`.
+  - Shared `kanjiData` payload in `scripts/seed-db.ts` across `update` and `create`.
+  - Removed unused `next-themes` and redundant `@napi-rs/canvas` from `package.json`.
+- **Verification Results:**
+  - `npx eslint` on all touched files: 0 errors.
+  - `npx tsc --noEmit`: passed (0 errors).
+  - `npx next build --webpack`: passed (exit 0).
+  - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console errors`, `0 horizontal overflow`).
+  - `graphify update .`: rebuilt (`521` nodes, `941` edges, `29` communities).
+
+
 
 
 

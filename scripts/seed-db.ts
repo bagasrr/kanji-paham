@@ -48,42 +48,30 @@ async function seedKanjis(): Promise<void> {
     console.log(`Processing N${level}: ${kanjis.length} kanji`);
 
     await runInBatches(kanjis, BATCH_SIZE, async (k) => {
+      const kanjiData = {
+        strokes: k.strokes,
+        grade: k.grade,
+        freq: k.freq,
+        jlpt: k.jlpt,
+        meanings: k.meanings ?? [],
+        meanings_id: k.meanings_id ?? [],
+        readings_on: k.readings_on ?? [],
+        readings_kun: k.readings_kun ?? [],
+        svgFile: k.svgFile,
+        subLevel: k.subLevel,
+        keyword: k.keyword ?? null,
+        mnemonic: k.mnemonic ?? null,
+        components: k.components ?? [],
+        radicals: k.radicals ?? [],
+        soundHooks: toJsonInput(k.soundHooks),
+      };
+
       await prisma.kanji.upsert({
         where: { character: k.character },
-        update: {
-          strokes: k.strokes,
-          grade: k.grade,
-          freq: k.freq,
-          jlpt: k.jlpt,
-          meanings: k.meanings ?? [],
-          meanings_id: k.meanings_id ?? [],
-          readings_on: k.readings_on ?? [],
-          readings_kun: k.readings_kun ?? [],
-          svgFile: k.svgFile,
-          subLevel: k.subLevel,
-          keyword: k.keyword ?? null,
-          mnemonic: k.mnemonic ?? null,
-          components: k.components ?? [],
-          radicals: k.radicals ?? [],
-          soundHooks: toJsonInput(k.soundHooks),
-        },
+        update: kanjiData,
         create: {
           character: k.character,
-          strokes: k.strokes,
-          grade: k.grade,
-          freq: k.freq,
-          jlpt: k.jlpt,
-          meanings: k.meanings ?? [],
-          meanings_id: k.meanings_id ?? [],
-          readings_on: k.readings_on ?? [],
-          readings_kun: k.readings_kun ?? [],
-          svgFile: k.svgFile,
-          subLevel: k.subLevel,
-          keyword: k.keyword ?? null,
-          mnemonic: k.mnemonic ?? null,
-          components: k.components ?? [],
-          radicals: k.radicals ?? [],
-          soundHooks: toJsonInput(k.soundHooks),
+          ...kanjiData,
         },
       });
 

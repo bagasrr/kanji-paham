@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import type { KanjiEntry } from '@/lib/types'
+import { shuffle } from '@/lib/quiz'
 
 export const dynamic = 'force-dynamic'
 
@@ -44,13 +45,7 @@ export async function GET(request: NextRequest) {
       }
     })
 
-    // Fisher-Yates shuffle for vocab array
-    const shuffledVocab = [...allVocab]
-    for (let i = shuffledVocab.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledVocab[i], shuffledVocab[j]] = [shuffledVocab[j], shuffledVocab[i]]
-    }
-    const selectedVocab = shuffledVocab.slice(0, 20)
+    const selectedVocab = shuffle(allVocab).slice(0, 20)
 
     const questions = selectedVocab.map((v) => {
       // 5 Variations
@@ -98,11 +93,7 @@ export async function GET(request: NextRequest) {
 
       // Pick 3 wrong answers with Fisher-Yates
       const wrongAnswers: string[] = []
-      const shuffledPool = [...pool.filter(Boolean)]
-      for (let i = shuffledPool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledPool[i], shuffledPool[j]] = [shuffledPool[j], shuffledPool[i]]
-      }
+      const shuffledPool = shuffle(pool.filter(Boolean))
 
       for (const wrong of shuffledPool) {
         if (!wrongAnswers.includes(wrong) && wrong !== correctAnswer) {
@@ -113,11 +104,7 @@ export async function GET(request: NextRequest) {
       while (wrongAnswers.length < 3) wrongAnswers.push('—')
 
       // Shuffle options with Fisher-Yates
-      const options = [correctAnswer, ...wrongAnswers]
-      for (let i = options.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [options[i], options[j]] = [options[j], options[i]]
-      }
+      const options = shuffle([correctAnswer, ...wrongAnswers])
       
       const correctIndex = options.indexOf(correctAnswer)
 

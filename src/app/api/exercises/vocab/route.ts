@@ -1,17 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getVocabExamQuestions } from '@/lib/exercises'
 import type { VocabExamQuestion } from '@/lib/types'
+import { shuffle } from '@/lib/quiz'
 
 export const dynamic = 'force-dynamic'
-
-function shuffleCopy<T>(items: T[]): T[] {
-  const copy = [...items]
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[copy[i], copy[j]] = [copy[j], copy[i]]
-  }
-  return copy
-}
 
 export async function GET(request: NextRequest) {
   try {
@@ -32,7 +24,7 @@ export async function GET(request: NextRequest) {
         ? all.filter((q) => q.mode === mode)
         : all
 
-    const questions = shuffleCopy(pool).slice(0, limit)
+    const questions = shuffle(pool).slice(0, limit)
     return NextResponse.json({ questions, counts })
   } catch (error) {
     console.error('[api/exercises/vocab] Failed to load vocab exam questions:', error)

@@ -1,5 +1,30 @@
 import type { KanjiEntry } from '@/lib/types'
 
+/**
+ * Return a Fisher-Yates shuffled shallow copy without mutating the input array.
+ */
+export function shuffle<T>(items: readonly T[]): T[] {
+  const copy = [...items]
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
+
+export function isKanjiLike(text: string): boolean {
+  return text.length <= 6 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
+}
+
+export function getKanjiOptionFontSize(text: string): string {
+  const len = text.length
+  if (len <= 1) return 'text-3xl sm:text-4xl md:text-5xl'
+  if (len === 2) return 'text-xl sm:text-2xl md:text-3xl'
+  if (len === 3) return 'text-base sm:text-lg md:text-xl'
+  if (len === 4) return 'text-sm sm:text-base md:text-lg'
+  return 'text-xs sm:text-sm md:text-base'
+}
+
 export interface FlashCard {
   character: string
   answer: string // Indonesian meaning (first meaning)
@@ -25,12 +50,7 @@ function getMeaning(entry: KanjiEntry, lang: 'id' | 'en') {
 }
 
 export function buildMCQQuestions(entries: KanjiEntry[], lang: 'id' | 'en' = 'id'): MCQQuestion[] {
-  // Robust Fisher-Yates shuffle
-  const shuffledEntries = [...entries]
-  for (let i = shuffledEntries.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledEntries[i], shuffledEntries[j]] = [shuffledEntries[j], shuffledEntries[i]]
-  }
+  const shuffledEntries = shuffle(entries)
 
   return shuffledEntries.map((entry) => {
     // 5 Variations
@@ -102,13 +122,7 @@ export function buildMCQQuestions(entries: KanjiEntry[], lang: 'id' | 'en' = 'id
 
     // Pick 3 unique wrong answers
     const wrongAnswers: string[] = []
-    
-    // Shuffle pool
-    const shuffledPool = [...pool.filter(Boolean)]
-    for (let i = shuffledPool.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledPool[i], shuffledPool[j]] = [shuffledPool[j], shuffledPool[i]]
-    }
+    const shuffledPool = shuffle(pool.filter(Boolean))
 
     for (const wrong of shuffledPool) {
       if (!wrongAnswers.includes(wrong) && wrong !== correctAnswer) {
@@ -119,11 +133,7 @@ export function buildMCQQuestions(entries: KanjiEntry[], lang: 'id' | 'en' = 'id
     while (wrongAnswers.length < 3) wrongAnswers.push('—')
 
     // Shuffle all 4 options
-    const allOptions = [correctAnswer, ...wrongAnswers]
-    for (let i = allOptions.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [allOptions[i], allOptions[j]] = [allOptions[j], allOptions[i]]
-    }
+    const allOptions = shuffle([correctAnswer, ...wrongAnswers])
     const correctIndex = allOptions.indexOf(correctAnswer)
 
     return { 

@@ -128,22 +128,3 @@ export interface KanaEntry {
   type: KanaType;
   svgFile: string;
 }
-
-// ── Progress ──────────────────────────────────────────────────────────────────
-
-export interface UserProgress {
-  userId: string;
-  characterId: string; // kanji character or kana
-  completedAt: string; // ISO date string
-}
-
-// ── Quiz ──────────────────────────────────────────────────────────────────────
-
-export type QuizMode = "meaning" | "reading" | "compound";
-
-export interface QuizQuestion {
-  character: string;
-  mode: QuizMode;
-  correctAnswer: string;
-  options: string[]; // 4 options including correct answer, shuffled
-}

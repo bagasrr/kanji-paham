@@ -5,26 +5,18 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, RotateCcw, CheckCircle2, XCircle, ChevronRight, Zap, Brain } from 'lucide-react'
 import type { KanjiEntry } from '@/lib/types'
-import { buildFlashCards, buildMCQQuestions, type FlashCard, type MCQQuestion } from '@/lib/quiz'
+import {
+  buildFlashCards,
+  buildMCQQuestions,
+  getKanjiOptionFontSize,
+  isKanjiLike,
+  type FlashCard,
+  type MCQQuestion,
+} from '@/lib/quiz'
 import { useLanguage } from '@/components/LanguageProvider'
 
 type Mode = 'select' | 'flashcard' | 'mcq'
 type AnswerState = 'unanswered' | 'correct' | 'wrong'
-
-// Detect if text is primarily kanji/kana (for large display)
-function isKanjiLike(text: string): boolean {
-  return text.length <= 6 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
-}
-
-// Adjust font size dynamically per option based on character length
-function getKanjiOptionFontSize(text: string): string {
-  const len = text.length
-  if (len <= 1) return 'text-3xl sm:text-4xl md:text-5xl'
-  if (len === 2) return 'text-xl sm:text-2xl md:text-3xl'
-  if (len === 3) return 'text-base sm:text-lg md:text-xl'
-  if (len === 4) return 'text-sm sm:text-base md:text-lg'
-  return 'text-xs sm:text-sm md:text-base'
-}
 
 // ──────────────────────────────────────────────────────────────
 // SHARED: Progress Header

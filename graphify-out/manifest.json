@@ -18,9 +18,9 @@
     "semantic_hash": "6db366c7c78518bee79204353d55c3ba"
   },
   "package.json": {
-    "mtime": 1795734858.8429563,
-    "seen": 1795738902.616145,
-    "ast_hash": "e8ba486bd468846c978a739acff79acb",
+    "mtime": 1795743987.639046,
+    "seen": 1795744012.581197,
+    "ast_hash": "64c8fa8226b5a8612f2146347bac55ce",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -36,9 +36,9 @@
     "semantic_hash": "bc38a7abdc89144a93f665ce6911d563"
   },
   "scripts/seed-db.ts": {
-    "mtime": 1795734861.9187832,
-    "seen": 1795738902.6162481,
-    "ast_hash": "97402f79d05db65a97bcdffcf5ba5a9c",
+    "mtime": 1795743986.1381805,
+    "seen": 1795744012.5812669,
+    "ast_hash": "65e2ebb9c577076e3a39c60d057de867",
     "semantic_hash": ""
   },
   "scripts/seed-kana.ts": {
@@ -52,12 +52,6 @@
     "seen": 1795696233.2231889,
     "ast_hash": "b6d0bc6afc7108271afa1326bdd8f78d",
     "semantic_hash": ""
-  },
-  "scripts/theme-replace.mjs": {
-    "mtime": 1789201878.6515443,
-    "seen": 1795694853.6239512,
-    "ast_hash": "9748927a23c10a28f913995cf7e22d6a",
-    "semantic_hash": "9748927a23c10a28f913995cf7e22d6a"
   },
   "src/app/api/admin/questions/bank/[id]/route.ts": {
     "mtime": 1789478503.2811515,
@@ -102,10 +96,10 @@
     "semantic_hash": "9d12e25d8c6b380e13cb57cde7f22ef3"
   },
   "src/app/api/quiz/jlpt/route.ts": {
-    "mtime": 1789479011.146619,
-    "seen": 1795694853.623957,
-    "ast_hash": "ce4f9c57cfe7a7ce660b185b350c3542",
-    "semantic_hash": "ce4f9c57cfe7a7ce660b185b350c3542"
+    "mtime": 1795743949.4788892,
+    "seen": 1795744012.581799,
+    "ast_hash": "c225ade2f894efb915763556142eb85a",
+    "semantic_hash": ""
   },
   "src/app/api/user/apply-sensei/route.ts": {
     "mtime": 1789785853.2543957,
@@ -204,10 +198,10 @@
     "semantic_hash": "e183272aeb8b0101c7d59d55265bd19b"
   },
   "src/app/learn/[level]/[subLevel]/quiz/page.tsx": {
-    "mtime": 1789787637.237304,
-    "seen": 1795694853.62397,
-    "ast_hash": "2f65506616460afafffcb5277b898623",
-    "semantic_hash": "2f65506616460afafffcb5277b898623"
+    "mtime": 1795743978.8678932,
+    "seen": 1795744012.582561,
+    "ast_hash": "1bc70312a8b79cb5d94babc137b73fc1",
+    "semantic_hash": ""
   },
   "src/app/learn/[level]/loading.tsx": {
     "mtime": 1789787111.757832,
@@ -222,9 +216,9 @@
     "semantic_hash": "5268ba4e468158348f01dcdc95361e24"
   },
   "src/app/learn/page.tsx": {
-    "mtime": 1795738862.0755317,
-    "seen": 1795738902.6188202,
-    "ast_hash": "e9e7da483351601c2a3a7e95e6508314",
+    "mtime": 1795743981.7959337,
+    "seen": 1795744012.582654,
+    "ast_hash": "3bc1cbd01a4b5bc6dcf5ceb565c38690",
     "semantic_hash": ""
   },
   "src/app/loading.tsx": {
@@ -258,9 +252,9 @@
     "semantic_hash": "c05a122e8f44d95cf57d5308fe207f16"
   },
   "src/app/quiz/page.tsx": {
-    "mtime": 1795733897.937155,
-    "seen": 1795733924.487824,
-    "ast_hash": "737fdc76ff23aab9e931064f41af168a",
+    "mtime": 1795743977.4668832,
+    "seen": 1795744012.583062,
+    "ast_hash": "466eb04e6dec0225050ba1ec0935f813",
     "semantic_hash": ""
   },
   "src/components/BottomNav.tsx": {
@@ -378,9 +372,9 @@
     "semantic_hash": "08e47268a928bab46efc0f67b799219f"
   },
   "src/lib/kanji.ts": {
-    "mtime": 1795734893.4704812,
-    "seen": 1795738902.620459,
-    "ast_hash": "ddbf18cce191a368240828c96b762076",
+    "mtime": 1795743999.4112282,
+    "seen": 1795744012.5841238,
+    "ast_hash": "f8f7315215fac64edf49479d6d6e1c60",
     "semantic_hash": ""
   },
   "src/lib/prisma.ts": {
@@ -390,15 +384,15 @@
     "semantic_hash": "b0146e42203f4335e81be13a87248e20"
   },
   "src/lib/quiz.ts": {
-    "mtime": 1789317253.4573326,
-    "seen": 1795694853.6239932,
-    "ast_hash": "f8dbced09fe9fa177ebfd535c5f56614",
-    "semantic_hash": "f8dbced09fe9fa177ebfd535c5f56614"
+    "mtime": 1795743945.4007816,
+    "seen": 1795744012.584161,
+    "ast_hash": "fabb2495d2651eb76f73d4c0631469e9",
+    "semantic_hash": ""
   },
   "src/lib/types.ts": {
-    "mtime": 1795734858.2030494,
-    "seen": 1795738902.621017,
-    "ast_hash": "88f468ab254bdb274d59ca089513a0c7",
+    "mtime": 1795743983.1786678,
+    "seen": 1795744012.584235,
+    "ast_hash": "9769ad6a7f6353a64ec86f7da1d10ca0",
     "semantic_hash": ""
   },
   "src/proxy.ts": {
@@ -504,9 +498,9 @@
     "semantic_hash": ""
   },
   "log.md": {
-    "mtime": 1795733966.556853,
-    "seen": 1795738902.622252,
-    "ast_hash": "d60172ef65103ccfcdcc9d96ede68ae4",
+    "mtime": 1795738986.4819345,
+    "seen": 1795744012.584615,
+    "ast_hash": "ed8501ddcc8075c53fe3f05b87e24307",
     "semantic_hash": ""
   },
   "src/data/ATTRIBUTION.md": {
@@ -515,16 +509,10 @@
     "ast_hash": "32b5ffcad46418fea8aaaa92c9ceb7e4",
     "semantic_hash": ""
   },
-  "src/app/api/exercises/dokkai/route.ts": {
-    "mtime": 1795705534.9796436,
-    "seen": 1795705679.136962,
-    "ast_hash": "d3aee674dec923245dca01803d3819c4",
-    "semantic_hash": ""
-  },
   "src/app/api/exercises/vocab/route.ts": {
-    "mtime": 1795705536.5872035,
-    "seen": 1795705679.1369631,
-    "ast_hash": "1fefa869ecdca8a6850186ee6af86de3",
+    "mtime": 1795743952.0639455,
+    "seen": 1795744012.581751,
+    "ast_hash": "0fa9dc09e3cd659dd03cd1367b211e5f",
     "semantic_hash": ""
   },
   "src/app/quiz/dokkai/page.tsx": {

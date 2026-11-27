@@ -43,13 +43,6 @@ export function kanjiSvgPath(char: string): string {
 
 import { prisma } from '@/lib/prisma';
 
-/**
- * Load all N5 kanji entries.
- */
-export async function getN5Kanji(): Promise<KanjiEntry[]> {
-  return getKanjiByLevel(5)
-}
-
 function parseSoundHooks(value: Prisma.JsonValue | null | undefined): KanjiSoundHook[] | undefined {
   if (!Array.isArray(value)) return undefined;
   const hooks: KanjiSoundHook[] = [];

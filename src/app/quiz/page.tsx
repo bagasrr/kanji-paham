@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, RotateCcw, Zap, BookOpen, ChevronRight, FileText, Languages } from 'lucide-react'
 import { useLanguage } from '@/components/LanguageProvider'
 import { MondaiInstruction } from '@/components/MondaiInstruction'
+import { getKanjiOptionFontSize, isKanjiLike } from '@/lib/quiz'
 
 type JLPTQuestion = {
   prompt: string
@@ -60,21 +61,6 @@ const LEVEL_DATA = [
     accentBg: 'bg-primary',
   },
 ]
-
-// Detect if an option looks like a kanji character (≤6 chars, CJK)
-function isKanji(text: string): boolean {
-  return text.length <= 6 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
-}
-
-// Adjust font size dynamically per option based on character length
-function getKanjiOptionFontSize(text: string): string {
-  const len = text.length
-  if (len <= 1) return 'text-3xl sm:text-4xl md:text-5xl'
-  if (len === 2) return 'text-xl sm:text-2xl md:text-3xl'
-  if (len === 3) return 'text-base sm:text-lg md:text-xl'
-  if (len === 4) return 'text-sm sm:text-base md:text-lg'
-  return 'text-xs sm:text-sm md:text-base'
-}
 
 function renderUnderlinedPrompt(text: string) {
   const parts = text.split(/(__[^_]+__)/g)
@@ -247,7 +233,7 @@ export default function GlobalQuizPage() {
   if (questions.length > 0 && questions[idx]) {
     const q = questions[idx]
     const progressPct = (idx / questions.length) * 100
-    const optionsAreKanji = q.options.every(o => isKanji(o))
+    const optionsAreKanji = q.options.every(o => isKanjiLike(o))
 
     return (
       <div className="max-w-2xl mx-auto px-4 py-6 pb-32">
