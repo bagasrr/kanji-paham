@@ -12,8 +12,12 @@ export function shuffle<T>(items: readonly T[]): T[] {
   return copy
 }
 
+export function hasJapanese(text: string): boolean {
+  return /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
+}
+
 export function isKanjiLike(text: string): boolean {
-  return text.length <= 6 && /[\u4e00-\u9fff\u3040-\u30ff]/.test(text)
+  return text.length <= 6 && hasJapanese(text)
 }
 
 export function getKanjiOptionFontSize(text: string): string {

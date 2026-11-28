@@ -197,6 +197,34 @@
   - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console errors`, `0 horizontal overflow`, verified computed `fontFamily` includes `"BIZ UDPGothic"`).
   - `graphify update .`: rebuilt (`527` nodes, `950` edges, `29` communities).
 
+---
+
+## 2026-11-28 — Login UX, Pointer Cursors, Standalone Burgundy Admin Portal, `/dashboard/kanji` CRUD, and Global `BIZ UDPGothic` Japanese Font
+
+### Proposed Plan & User Request
+- Fix `/auth/login` (and `/auth/register`) disabled/loading submit state during processing and eliminate unnecessary vertical scroll on both mobile and desktop (`@utility pb-safe` cascade fix so `md:pb-0` applies cleanly).
+- Enforce consistent `cursor: pointer` on clickable buttons/links and `cursor: not-allowed` on disabled controls via `src/app/globals.css`.
+- Decouple `/dashboard/*` from the main KanjiPaham learner sidebar/topbar (`src/components/AppShell.tsx`, `src/components/DashboardSidebar.tsx`) and restyle the admin portal in Burgundy (`#800020`) + global theme tokens.
+- Implement missing `/dashboard/kanji` (`Kelola Kanji`) CRUD page + `/api/admin/kanji` routes and `/dashboard/applications` (`Verifikasi Sensei`) page + `/api/admin/applications` route.
+- Enforce `BIZ UDPGothic` globally for all Kanji/Kana text across `/quiz`, `/learn/[level]/[subLevel]/quiz`, `/kana`, `BottomNav`, and body fallback (`--font-sans` with `Plus Jakarta Sans` Latin-first + `BIZ UDPGothic` Japanese fallback in `src/app/globals.css` & `src/app/layout.tsx`).
+
+### Implementation & Completion Report
+- **Files Created:**
+  - `src/components/AppShell.tsx`, `src/components/DashboardSidebar.tsx`
+  - `src/app/dashboard/kanji/page.tsx`, `src/app/api/admin/kanji/route.ts`, `src/app/api/admin/kanji/[character]/route.ts`
+  - `src/app/dashboard/applications/page.tsx`, `src/app/api/admin/applications/route.ts`
+- **Files Modified:**
+  - `src/app/auth/login/page.tsx`, `src/app/auth/register/page.tsx`
+  - `src/app/layout.tsx`, `src/app/globals.css`
+  - `src/app/dashboard/layout.tsx`, `src/app/dashboard/page.tsx`, `src/app/dashboard/questions/page.tsx`
+  - `src/lib/quiz.ts`, `src/app/quiz/page.tsx`, `src/app/learn/[level]/[subLevel]/quiz/page.tsx`, `src/components/KanaClient.tsx`, `src/components/BottomNav.tsx`
+- **Verification Results:**
+  - ESLint on all touched TS/TSX files: **0 errors** (3 pre-existing warnings).
+  - `npx tsc --noEmit`: passed (0 errors).
+  - `npx next build --webpack`: passed (exit 0, all static & dynamic routes including `/dashboard`, `/dashboard/kanji`, `/dashboard/questions`, `/dashboard/applications`, `/api/admin/kanji/*`, `/api/admin/applications` built).
+  - `graphify update .`: updated (`568` nodes, `1046` edges, `40` communities).
+  - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console/page errors`, `0 horizontal overflow`; verified zero vertical scroll on `/auth/login` & `/auth/register`, disabled/loading login state & error recovery, `cursor: pointer`, standalone Burgundy `/dashboard*` without learner `BottomNav` leak, and `BIZ UDPGothic` computed font on `body`, `/quiz`, `/quiz/dokkai`, and `/kana`).
+
 
 
 

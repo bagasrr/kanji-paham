@@ -63,7 +63,7 @@ export function BottomNav() {
       
       <div className="hidden md:block mt-auto p-6 text-center">
         <div className="pattern-washi absolute inset-0 z-[-1]"></div>
-        <p className="text-xs text-text-subtle font-serif italic mb-2 tracking-widest text-sakura">桜が咲くように</p>
+        <p className="text-xs text-text-subtle font-jp italic mb-2 tracking-widest text-sakura">桜が咲くように</p>
         <Link 
           href="/info"
           className="text-xs text-text-muted/70 hover:text-primary transition-colors block"

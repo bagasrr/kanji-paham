@@ -9,6 +9,7 @@ import {
   buildFlashCards,
   buildMCQQuestions,
   getKanjiOptionFontSize,
+  hasJapanese,
   isKanjiLike,
   type FlashCard,
   type MCQQuestion,
@@ -495,7 +496,11 @@ export default function QuizPage() {
 
                 <span
                   className={`font-semibold leading-snug whitespace-nowrap text-center max-w-full overflow-hidden text-ellipsis px-1 ${
-                    optionsAreKanji ? `${getKanjiOptionFontSize(option)} font-jp` : 'text-base'
+                    optionsAreKanji
+                      ? `${getKanjiOptionFontSize(option)} font-jp`
+                      : hasJapanese(option)
+                      ? 'text-base font-jp'
+                      : 'text-base'
                   }`}
                 >
                   {option}
@@ -523,7 +528,7 @@ export default function QuizPage() {
               <p className="text-sm text-text-muted">
                 {lang === 'id' ? 'Jawaban benar: ' : 'Correct answer: '}
                 <span
-                  className={`font-bold text-text-main ${isKanjiLike(q.options[q.correctIndex]) ? 'font-jp' : ''}`}
+                  className={`font-bold text-text-main ${hasJapanese(q.options[q.correctIndex]) ? 'font-jp' : ''}`}
                 >
                   {q.options[q.correctIndex]}
                 </span>

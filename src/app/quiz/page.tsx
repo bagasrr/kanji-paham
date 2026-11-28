@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, RotateCcw, Zap, BookOpen, ChevronRight, FileText, Languages } from 'lucide-react'
 import { useLanguage } from '@/components/LanguageProvider'
 import { MondaiInstruction } from '@/components/MondaiInstruction'
-import { getKanjiOptionFontSize, isKanjiLike } from '@/lib/quiz'
+import { getKanjiOptionFontSize, hasJapanese, isKanjiLike } from '@/lib/quiz'
 
 type JLPTQuestion = {
   prompt: string
@@ -326,7 +326,11 @@ export default function GlobalQuizPage() {
 
                 <span
                   className={`font-semibold leading-snug whitespace-nowrap text-center max-w-full overflow-hidden text-ellipsis px-1 ${
-                    optionsAreKanji ? `${getKanjiOptionFontSize(option)} font-jp` : 'text-base md:text-lg'
+                    optionsAreKanji
+                      ? `${getKanjiOptionFontSize(option)} font-jp`
+                      : hasJapanese(option)
+                      ? 'text-base md:text-lg font-jp'
+                      : 'text-base md:text-lg'
                   }`}
                 >
                   {option}
@@ -353,7 +357,7 @@ export default function GlobalQuizPage() {
                   : (lang === 'id' ? '✕ Kurang tepat' : '✕ Not quite right')}
               </p>
               <p className="text-sm text-text-muted">
-                <span className="font-semibold text-text-main">{q.word}</span>{' '}
+                <span className="font-semibold text-text-main font-jp">{q.word}</span>{' '}
                 {lang === 'id' ? 'berarti' : 'means'}{' '}
                 <span className="font-semibold text-text-main">
                   {lang === 'id' ? (q.meaning_id || q.meaning) : (q.meaning_en || q.meaning)}
@@ -423,7 +427,7 @@ export default function GlobalQuizPage() {
           >
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5">
-                <span className="px-2.5 py-0.5 rounded-lg bg-primary/10 text-primary text-xs font-bold">
+                <span className="px-2.5 py-0.5 rounded-lg bg-primary/10 text-primary text-xs font-bold font-jp">
                   読解 Dokkai
                 </span>
                 <span className="text-xs font-semibold text-text-subtle">
@@ -450,7 +454,7 @@ export default function GlobalQuizPage() {
           >
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5">
-                <span className="px-2.5 py-0.5 rounded-lg bg-secondary/15 text-secondary text-xs font-bold">
+                <span className="px-2.5 py-0.5 rounded-lg bg-secondary/15 text-secondary text-xs font-bold font-jp">
                   文脈 Vocab
                 </span>
                 <span className="text-xs font-semibold text-text-subtle">

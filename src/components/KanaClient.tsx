@@ -46,7 +46,7 @@ export function KanaClient({ data }: Props) {
             className="aspect-square flex flex-col items-center justify-center bg-surface border border-border-color rounded-xl hover:border-primary/50 transition-colors cursor-pointer group"
           >
             {/* SVG implementation placeholder - For now just text, or render SVG */}
-            <div className="text-3xl md:text-4xl text-text-main font-medium group-hover:text-primary transition-colors">
+            <div className="text-3xl md:text-4xl text-text-main font-medium group-hover:text-primary transition-colors font-jp">
               {item.character}
             </div>
             <div className="text-xs text-text-muted mt-1">{item.romaji}</div>

@@ -3,9 +3,8 @@ import './globals.css'
 import NextTopLoader from 'nextjs-toploader'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { LanguageProvider } from '@/components/LanguageProvider'
-import { BottomNav } from '@/components/BottomNav'
 import { ToastProvider } from '@/components/Toast'
-import { TopBar } from '@/components/TopBar'
+import { AppShell } from '@/components/AppShell'
 
 export const metadata: Metadata = {
   title: 'KanjiPaham',
@@ -34,12 +33,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         />
       </head>
-      <body className="bg-background min-h-screen antialiased flex flex-col md:flex-row relative">
+      <body className="bg-background min-h-screen antialiased relative">
         <NextTopLoader
-          color="#D62828"
+          color="#800020"
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}
@@ -47,18 +46,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           showSpinner={false}
           easing="ease"
           speed={200}
-          shadow="0 0 10px rgba(214, 40, 40, 0.5), 0 0 5px rgba(214, 40, 40, 0.3)"
+          shadow="0 0 10px rgba(128, 0, 32, 0.5), 0 0 5px rgba(128, 0, 32, 0.3)"
         />
         <LanguageProvider>
           <ThemeProvider>
             <ToastProvider>
-              <TopBar />
-              <BottomNav />
-              <main className="flex-1 min-h-screen pb-safe md:pb-0 md:ml-60 w-full relative z-0">
-                <div className="max-w-3xl mx-auto w-full px-4 pt-16 md:pt-8">
-                  {children}
-                </div>
-              </main>
+              <AppShell>{children}</AppShell>
             </ToastProvider>
           </ThemeProvider>
         </LanguageProvider>
