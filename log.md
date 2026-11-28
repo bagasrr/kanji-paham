@@ -267,6 +267,14 @@
   - `npx next typegen`, ESLint across all touched TS/TSX files (0 errors), `npx tsc --noEmit`, `npx next build --webpack` (exit 0), and `graphify update .` (`659` nodes, `1252` edges, `43` communities): **PASS**.
   - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0` console/page errors, `0` horizontal overflow across `/dashboard`, `/dashboard/kanji`, `/dashboard/dokkai`, `/dashboard/vocab-exam`, `/dashboard/questions`, `/dashboard/applications`, and interactive modals/audio controls; no ElevenLabs credits consumed).
 
+---
+
+## 2026-11-28 — ElevenLabs CLI Onboarding & Official SDK Integration (`@elevenlabs/elevenlabs-js`)
+
+- Ran `npx -y @elevenlabs/cli@latest onboard init`: authenticated via OAuth, stored `ELEVENLABS_API_KEY` (key ending `6e76`) in `.env.local`.
+- Installed official `@elevenlabs/elevenlabs-js` SDK in `package.json` and updated `src/lib/audio-storage.ts` (`generateElevenLabsAudio`) to use `ElevenLabsClient` (`client.textToSpeech.convert(...)`) per official ElevenLabs TTS skill guidelines.
+- Verified with `npx -y @elevenlabs/cli@latest onboard check --written --env-path .env.local` (passed, `key_last4: 6e76`), `npx eslint`, `npx tsc --noEmit`, `npx next build --webpack` (exit 0), and `graphify update .` (`663` nodes, `1265` edges).
+
 
 
 

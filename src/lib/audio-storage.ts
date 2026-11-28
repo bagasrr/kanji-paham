@@ -3,6 +3,8 @@
  * synthesizing single-item TTS via ElevenLabs on explicit admin action.
  */
 
+import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js'
+
 const DEFAULT_ELEVENLABS_VOICE_ID = '21m00Tcm4TlvDq8ikWAM'
 const DEFAULT_ELEVENLABS_MODEL_ID = 'eleven_multilingual_v2'
 
@@ -85,14 +87,14 @@ export async function uploadAudioToSupabase(
   return `${url}/storage/v1/object/public/${encodeURIComponent(bucket)}/${normalizedPath}`
 }
 
-/** Generate Japanese speech MP3 via ElevenLabs REST API (only called manually by Admin). */
+/** Generate Japanese speech MP3 via @elevenlabs/elevenlabs-js (only called manually by Admin). */
 export async function generateElevenLabsAudio(
   text: string,
   options?: { voiceId?: string; modelId?: string }
 ): Promise<{ buffer: ArrayBuffer; contentType: string }> {
   const { apiKey, voiceId: defaultVoice, modelId: defaultModel } = getElevenLabsConfig()
   if (!apiKey) {
-    throw new Error('ELEVENLABS_API_KEY belum diset di .env.')
+    throw new Error('ELEVENLABS_API_KEY belum diset di .env.local.')
   }
 
   const trimmed = text.trim()
@@ -103,26 +105,14 @@ export async function generateElevenLabsAudio(
   const voiceId = (options?.voiceId || defaultVoice).trim()
   const modelId = (options?.modelId || defaultModel).trim()
 
-  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${encodeURIComponent(voiceId)}`, {
-    method: 'POST',
-    headers: {
-      'xi-api-key': apiKey,
-      'Content-Type': 'application/json',
-      Accept: 'audio/mpeg',
-    },
-    body: JSON.stringify({
-      text: trimmed,
-      model_id: modelId,
-    }),
+  const client = new ElevenLabsClient()
+  const audioStream = await client.textToSpeech.convert(voiceId, {
+    text: trimmed,
+    modelId,
   })
 
-  if (!res.ok) {
-    const detail = await res.text().catch(() => res.statusText)
-    throw new Error(`ElevenLabs error (${res.status}): ${detail.slice(0, 200)}`)
-  }
-
   return {
-    buffer: await res.arrayBuffer(),
-    contentType: res.headers.get('content-type') || 'audio/mpeg',
+    buffer: await new Response(audioStream).arrayBuffer(),
+    contentType: 'audio/mpeg',
   }
 }
