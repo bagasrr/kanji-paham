@@ -41,7 +41,7 @@ export default async function LevelPage({ params }: { params: Promise<{ level: s
       </Link>
       
       <div className="mb-10 flex flex-col items-center text-center">
-        <span className="text-8xl font-serif text-primary opacity-20 mb-[-40px] select-none" style={{ fontFamily: "'Noto Serif JP', serif" }}>漢字</span>
+        <span className="text-8xl font-jp text-primary opacity-20 mb-[-40px] select-none">漢字</span>
         <h1 className="text-3xl md:text-4xl font-bold text-text-main relative z-10">N{level} — {titles[levelNum]}</h1>
         <p className="text-text-muted mt-3 font-medium">Pilih kategori untuk mulai belajar</p>
       </div>

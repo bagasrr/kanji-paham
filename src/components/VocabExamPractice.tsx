@@ -223,8 +223,7 @@ export function VocabExamPractice({ counts }: Props) {
             </button>
           </div>
           <p
-            className="text-lg sm:text-xl font-bold text-text-main leading-relaxed"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            className="text-lg sm:text-xl font-bold text-text-main leading-relaxed font-jp"
           >
             {q.mode === 'para' ? renderBracketHighlight(q.prompt) : q.prompt}
           </p>
@@ -275,7 +274,7 @@ export function VocabExamPractice({ counts }: Props) {
                   {isAnswered && optCorrect ? '✓' : isAnswered && optWrong ? '✕' : ['1', '2', '3', '4'][optIdx]}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm sm:text-base font-medium leading-relaxed">{opt}</p>
+                  <p className="text-sm sm:text-base font-medium leading-relaxed font-jp">{opt}</p>
                   {(showGloss || isAnswered) && q.optsEn?.[optIdx] && (
                     <p className="text-xs text-text-muted mt-1">{q.optsEn[optIdx]}</p>
                   )}

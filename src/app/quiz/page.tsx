@@ -276,8 +276,7 @@ export default function GlobalQuizPage() {
         {/* Question Card */}
         <div className="bg-surface rounded-3xl border border-border-color p-6 md:p-10 mb-6 text-center shadow-sm min-h-[160px] flex flex-col items-center justify-center">
           <p
-            className="text-xl md:text-2xl font-bold text-text-main leading-relaxed"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            className="text-xl md:text-2xl font-bold text-text-main leading-relaxed font-jp"
           >
             {renderUnderlinedPrompt(q.prompt)}
           </p>
@@ -327,9 +326,8 @@ export default function GlobalQuizPage() {
 
                 <span
                   className={`font-semibold leading-snug whitespace-nowrap text-center max-w-full overflow-hidden text-ellipsis px-1 ${
-                    optionsAreKanji ? getKanjiOptionFontSize(option) : 'text-base md:text-lg'
+                    optionsAreKanji ? `${getKanjiOptionFontSize(option)} font-jp` : 'text-base md:text-lg'
                   }`}
-                  style={optionsAreKanji ? { fontFamily: "'Noto Serif JP', serif" } : undefined}
                 >
                   {option}
                 </span>

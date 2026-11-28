@@ -111,7 +111,7 @@ export default async function ProfilePage() {
             <div className="grid grid-cols-4 md:grid-cols-5 gap-3">
               {weakKanjis.map(wk => (
                 <div key={wk.character} className="aspect-square bg-card-muted/30 border border-border-color rounded-2xl flex flex-col items-center justify-center relative hover:border-primary transition-colors group cursor-default">
-                  <span className="text-3xl font-serif text-text-main group-hover:text-primary transition-colors" style={{ fontFamily: "'Noto Serif JP', serif" }}>{wk.character}</span>
+                  <span className="text-3xl font-jp text-text-main group-hover:text-primary transition-colors">{wk.character}</span>
                   <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm border border-white">
                     {wk.mistakeCount}x
                   </span>
@@ -129,7 +129,7 @@ export default async function ProfilePage() {
       <div className="bg-surface rounded-3xl border border-border-color p-8 md:p-12 text-center shadow-lg shadow-black/5 relative overflow-hidden mt-8">
         <div className="pattern-washi absolute inset-0 z-0"></div>
         <div className="relative z-10">
-          <div className="w-24 h-24 rounded-full bg-card-muted flex items-center justify-center mx-auto mb-6 shadow-inner border-4 border-white text-6xl text-primary font-serif select-none" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <div className="w-24 h-24 rounded-full bg-card-muted flex items-center justify-center mx-auto mb-6 shadow-inner border-4 border-white text-6xl text-primary font-jp select-none">
             大
           </div>
           <h2 className="text-2xl font-bold text-text-main mb-2">Belum Masuk</h2>

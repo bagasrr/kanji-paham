@@ -99,6 +99,11 @@ body {
   background-color: var(--text-subtle);
 }
 
+/* Japanese readable font (BIZ UDPGothic) */
+.font-jp {
+  font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+}
+
 /* Japanese brush-style border accent */
 .border-brush {
   border-bottom: 3px solid var(--primary);

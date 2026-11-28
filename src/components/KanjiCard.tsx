@@ -55,8 +55,7 @@ export function KanjiCard({ entry }: Props) {
           </div>
 
           <span
-            className="text-[110px] md:text-[140px] font-serif leading-none select-none text-text-main drop-shadow-sm relative z-10 my-2"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            className="text-[110px] md:text-[140px] font-jp leading-none select-none text-text-main drop-shadow-sm relative z-10 my-2"
           >
             {entry.character}
           </span>
@@ -268,7 +267,7 @@ export function KanjiCard({ entry }: Props) {
                       <div className="flex items-center justify-between p-3 sm:p-3.5 gap-2.5 sm:gap-3.5">
                         {/* 1. Kanji & Furigana */}
                         <div className="flex-shrink-0 min-w-[65px] sm:min-w-[85px] flex items-center justify-start">
-                          <ruby className="text-xl sm:text-2xl font-medium text-text-main tracking-wide">
+                          <ruby className="text-xl sm:text-2xl font-medium text-text-main tracking-wide font-jp">
                             {v.word}
                             {showFurigana && v.reading && (
                               <rt className="text-[10px] sm:text-xs text-text-muted mb-0.5 font-normal tracking-normal">
@@ -344,7 +343,7 @@ export function KanjiCard({ entry }: Props) {
                               className="flex items-start justify-between gap-2 text-xs bg-card-muted/30 rounded-xl px-3 py-2 border border-border-color/50"
                             >
                               <div className="min-w-0 flex-1">
-                                <p className="text-sm text-text-main font-medium leading-loose">
+                                <p className="text-sm text-text-main font-medium leading-loose font-jp">
                                   {renderFuriganaText(ex.furigana ?? ex.ja, showFurigana)}
                                 </p>
                                 <p className="text-text-muted mt-0.5">{ex.en}</p>

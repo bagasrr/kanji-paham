@@ -233,8 +233,7 @@ export function DokkaiPractice({ passages, kanjiMap }: Props) {
           </h1>
 
           <div
-            className={`whitespace-pre-line text-text-main bg-card-muted/25 rounded-2xl p-4 sm:p-5 border border-border-color/70 ${FONT_SIZES[fontIdx]}`}
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            className={`whitespace-pre-line text-text-main bg-card-muted/25 rounded-2xl p-4 sm:p-5 border border-border-color/70 font-jp ${FONT_SIZES[fontIdx]}`}
           >
             {activePassage.text}
           </div>
@@ -318,8 +317,7 @@ export function DokkaiPractice({ passages, kanjiMap }: Props) {
                           className="p-2.5 rounded-xl border border-dashed border-border-color bg-surface/60 flex items-center gap-2.5 opacity-75"
                         >
                           <span
-                            className="text-2xl font-bold text-text-main"
-                            style={{ fontFamily: "'Noto Serif JP', serif" }}
+                            className="text-2xl font-bold text-text-main font-jp"
                           >
                             {ch}
                           </span>
@@ -345,8 +343,7 @@ export function DokkaiPractice({ passages, kanjiMap }: Props) {
                       >
                         <div className="flex items-center gap-2.5 min-w-0">
                           <span
-                            className="text-2xl font-bold text-text-main group-hover:text-primary transition-colors flex-shrink-0"
-                            style={{ fontFamily: "'Noto Serif JP', serif" }}
+                            className="text-2xl font-bold text-text-main group-hover:text-primary transition-colors flex-shrink-0 font-jp"
                           >
                             {info.character}
                           </span>
@@ -400,8 +397,7 @@ export function DokkaiPractice({ passages, kanjiMap }: Props) {
                 </div>
 
                 <p
-                  className="text-base sm:text-lg font-bold text-text-main leading-relaxed mb-4"
-                  style={{ fontFamily: "'Noto Serif JP', serif" }}
+                  className="text-base sm:text-lg font-bold text-text-main leading-relaxed mb-4 font-jp"
                 >
                   {q.prompt}
                 </p>
@@ -445,7 +441,7 @@ export function DokkaiPractice({ passages, kanjiMap }: Props) {
                           {isAnswered && optCorrect ? '✓' : isAnswered && optWrong ? '✕' : ['1', '2', '3', '4'][optIdx]}
                         </span>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm sm:text-base font-medium leading-snug">{opt}</p>
+                          <p className="text-sm sm:text-base font-medium leading-snug font-jp">{opt}</p>
                           {(showOptionEn || isAnswered) && q.optsEn?.[optIdx] && (
                             <p className="text-xs text-text-muted mt-1">{q.optsEn[optIdx]}</p>
                           )}
@@ -652,8 +648,7 @@ export function DokkaiPractice({ passages, kanjiMap }: Props) {
                     {p.title}
                   </h3>
                   <p
-                    className="text-xs text-text-muted mt-1.5 line-clamp-2 leading-relaxed"
-                    style={{ fontFamily: "'Noto Serif JP', serif" }}
+                    className="text-xs text-text-muted mt-1.5 line-clamp-2 leading-relaxed font-jp"
                   >
                     {snippet}…
                   </p>

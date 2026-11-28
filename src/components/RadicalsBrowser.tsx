@@ -130,8 +130,7 @@ export function RadicalsBrowser({ radicals }: Props) {
 
               <div className="text-center py-1">
                 <span
-                  className="text-5xl text-text-main group-hover:text-primary transition-colors block leading-none"
-                  style={{ fontFamily: "'Noto Serif JP', serif" }}
+                  className="text-5xl text-text-main group-hover:text-primary transition-colors block leading-none font-jp"
                 >
                   {r.radical}
                 </span>

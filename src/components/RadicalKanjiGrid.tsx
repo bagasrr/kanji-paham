@@ -52,8 +52,7 @@ export function RadicalKanjiGrid({ radical, kanjis }: Props) {
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-3.5">
             <div
-              className="w-14 h-14 rounded-2xl bg-surface border-2 border-primary/30 flex items-center justify-center text-4xl text-primary font-bold shadow-sm flex-shrink-0"
-              style={{ fontFamily: "'Noto Serif JP', serif" }}
+              className="w-14 h-14 rounded-2xl bg-surface border-2 border-primary/30 flex items-center justify-center text-4xl text-primary font-bold shadow-sm flex-shrink-0 font-jp"
             >
               {radical.radical}
             </div>
@@ -129,8 +128,7 @@ export function RadicalKanjiGrid({ radical, kanjis }: Props) {
               </div>
 
               <span
-                className="text-6xl text-text-main group-hover:text-primary transition-colors py-1"
-                style={{ fontFamily: "'Noto Serif JP', serif" }}
+                className="text-6xl text-text-main group-hover:text-primary transition-colors py-1 font-jp"
               >
                 {entry.character}
               </span>

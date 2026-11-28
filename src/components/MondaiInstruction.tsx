@@ -20,8 +20,7 @@ export function MondaiInstruction({ jp, guideId, guideEn, lang }: Props) {
         <HelpCircle size={16} className="text-primary flex-shrink-0 mt-0.5" />
         <div className="min-w-0 space-y-1">
           <p
-            className="text-xs sm:text-sm font-bold text-text-main leading-relaxed"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            className="text-xs sm:text-sm font-bold text-text-main leading-relaxed font-jp"
           >
             {jp}
           </p>

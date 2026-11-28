@@ -179,6 +179,25 @@
 - Added Rule 13 (**Ponytail Minimalism & Clean Code**) to `AGENTS.md` enforcing `ponytail` (`full` mode by default) across all coding tasks.
 - Files modified: `AGENTS.md`, `log.md`.
 
+---
+
+## 2026-11-28 — Upgrade Japanese Typography to `BIZ UDPGothic`
+
+### Proposed Plan & User Approval
+- Identified that `'Noto Serif JP', serif` was never loaded in `layout.tsx` or `globals.css`, causing fallback to OS generic serif with thin, cramped strokes.
+- Recommended beginner-friendly Japanese fonts and user selected **`BIZ UDPGothic`**.
+
+### Implementation & Completion Report
+- **What was implemented:**
+  - Loaded Google Font `BIZ UDPGothic` (weights `400`, `700`) in `src/app/layout.tsx` and defined shared `.font-jp` utility in `src/app/globals.css` (`"BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif`).
+  - Replaced all inline `Noto Serif JP` font styles across quiz, Dokkai, Vocab Exam, KanjiCard, Radicals, Learn, and Profile views with `.font-jp`.
+- **Verification Results:**
+  - `npx tsc --noEmit`: passed (0 errors).
+  - `npx next build --webpack`: passed (exit 0).
+  - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console errors`, `0 horizontal overflow`, verified computed `fontFamily` includes `"BIZ UDPGothic"`).
+  - `graphify update .`: rebuilt (`527` nodes, `950` edges, `29` communities).
+
+
 
 
 

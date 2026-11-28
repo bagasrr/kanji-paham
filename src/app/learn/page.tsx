@@ -25,8 +25,7 @@ export default function LearnPage() {
         >
           <div className="flex items-center gap-4 min-w-0">
             <div
-              className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl font-bold flex-shrink-0 group-hover:scale-105 transition-transform"
-              style={{ fontFamily: "'Noto Serif JP', serif" }}
+              className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl font-bold flex-shrink-0 group-hover:scale-105 transition-transform font-jp"
             >
               部首
             </div>

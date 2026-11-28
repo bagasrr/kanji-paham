@@ -51,8 +51,7 @@ export default async function SubLevelPage({
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary transition-all duration-500"></div>
             <span
-              className="text-6xl md:text-7xl text-text-main group-hover:text-primary transition-colors"
-              style={{ fontFamily: "'Noto Serif JP', serif" }}
+              className="text-6xl md:text-7xl text-text-main group-hover:text-primary transition-colors font-jp"
             >
               {entry.character}
             </span>

@@ -362,13 +362,12 @@ export default function QuizPage() {
           `}
         >
           {/* Subtle decorative character in bg */}
-          <div className="absolute text-[8rem] font-serif opacity-[0.04] pointer-events-none select-none text-text-main" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <div className="absolute text-[8rem] font-jp opacity-[0.04] pointer-events-none select-none text-text-main">
             {card.character}
           </div>
 
           <span
-            className="text-8xl md:text-9xl font-serif text-text-main leading-none relative z-10"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            className="text-8xl md:text-9xl font-jp text-text-main leading-none relative z-10"
           >
             {card.character}
           </span>
@@ -435,8 +434,7 @@ export default function QuizPage() {
           {/* Kanji hero (for reverse questions showing "?") */}
           {q.character && (
             <div
-              className="text-7xl md:text-8xl font-serif text-text-main leading-none mb-4"
-              style={{ fontFamily: "'Noto Serif JP', serif" }}
+              className="text-7xl md:text-8xl font-jp text-text-main leading-none mb-4"
             >
               {q.character}
             </div>
@@ -497,9 +495,8 @@ export default function QuizPage() {
 
                 <span
                   className={`font-semibold leading-snug whitespace-nowrap text-center max-w-full overflow-hidden text-ellipsis px-1 ${
-                    optionsAreKanji ? getKanjiOptionFontSize(option) : 'text-base'
+                    optionsAreKanji ? `${getKanjiOptionFontSize(option)} font-jp` : 'text-base'
                   }`}
-                  style={optionsAreKanji ? { fontFamily: "'Noto Serif JP', serif" } : undefined}
                 >
                   {option}
                 </span>
@@ -526,8 +523,7 @@ export default function QuizPage() {
               <p className="text-sm text-text-muted">
                 {lang === 'id' ? 'Jawaban benar: ' : 'Correct answer: '}
                 <span
-                  className="font-bold text-text-main"
-                  style={isKanjiLike(q.options[q.correctIndex]) ? { fontFamily: "'Noto Serif JP', serif" } : undefined}
+                  className={`font-bold text-text-main ${isKanjiLike(q.options[q.correctIndex]) ? 'font-jp' : ''}`}
                 >
                   {q.options[q.correctIndex]}
                 </span>
