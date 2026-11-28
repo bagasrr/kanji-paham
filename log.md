@@ -274,6 +274,7 @@
 - Ran `npx -y @elevenlabs/cli@latest onboard init`: authenticated via OAuth, stored `ELEVENLABS_API_KEY` (key ending `6e76`) in `.env.local`.
 - Installed official `@elevenlabs/elevenlabs-js` SDK in `package.json` and updated `src/lib/audio-storage.ts` (`generateElevenLabsAudio`) to use `ElevenLabsClient` (`client.textToSpeech.convert(...)`) per official ElevenLabs TTS skill guidelines.
 - Verified with `npx -y @elevenlabs/cli@latest onboard check --written --env-path .env.local` (passed, `key_last4: 6e76`), `npx eslint`, `npx tsc --noEmit`, `npx next build --webpack` (exit 0), and `graphify update .` (`663` nodes, `1265` edges).
+- Updated `src/lib/audio-storage.ts` (`uploadAudioToSupabase`) to support both Supabase Secret Keys (`sb_secret_...` via `apikey` header without `Authorization: Bearer`) and legacy `service_role` JWTs (`eyJ...`); re-verified `eslint`, `tsc --noEmit`, `next build --webpack` (exit 0), and `graphify update .` (`664` nodes, `1267` edges).
 
 
 

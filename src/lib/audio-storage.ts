@@ -68,14 +68,18 @@ export async function uploadAudioToSupabase(
   const normalizedPath = storagePath.replace(/^\/+/, '')
   const endpoint = `${url}/storage/v1/object/${encodeURIComponent(bucket)}/${normalizedPath}`
 
+  const headers: Record<string, string> = {
+    apikey: serviceKey,
+    'Content-Type': contentType,
+    'x-upsert': 'true',
+  }
+  if (!serviceKey.startsWith('sb_secret_')) {
+    headers.Authorization = `Bearer ${serviceKey}`
+  }
+
   const res = await fetch(endpoint, {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${serviceKey}`,
-      apikey: serviceKey,
-      'Content-Type': contentType,
-      'x-upsert': 'true',
-    },
+    headers,
     body: data instanceof Uint8Array ? Buffer.from(data) : Buffer.from(data),
   })
 
