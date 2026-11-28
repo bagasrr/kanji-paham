@@ -225,6 +225,48 @@
   - `graphify update .`: updated (`568` nodes, `1046` edges, `40` communities).
   - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0 console/page errors`, `0 horizontal overflow`; verified zero vertical scroll on `/auth/login` & `/auth/register`, disabled/loading login state & error recovery, `cursor: pointer`, standalone Burgundy `/dashboard*` without learner `BottomNav` leak, and `BIZ UDPGothic` computed font on `body`, `/quiz`, `/quiz/dokkai`, and `/kana`).
 
+---
+
+## 2026-11-28 — Proposed Plan: Admin Content CMS (Vocab, Mnemonic, Dokkai, Quiz) & Hybrid Audio (Manual Upload + Supabase Storage)
+
+### Proposed Plan & Cost Analysis (Awaiting User Approval)
+- **Dataset Scope Measured:**
+  - `Kanji`: `2,211` items (`629` mnemonics populated)
+  - `Vocab`: `2,741` words (`5,811` Japanese chars) & `4,961` example sentences (`83,703` Japanese chars)
+  - `DokkaiPassage`: `97` passages (`22,873` chars) + `173` `DokkaiQuestion` items
+  - `VocabExamQuestion`: `772` questions (`14,377` chars)
+  - Combined Japanese TTS corpus: `126,764` characters (~115 MB MP3 at 128 kbps, fits well inside Supabase Storage 1 GB free tier).
+- **Proposed Admin CMS Architecture:**
+  1. Extend `/dashboard/kanji` with inline editing for Kanji `keyword`/`mnemonic`/`soundHooks` + nested `Vocab` & `examples` CRUD + audio upload per word/example.
+  2. Add `/dashboard/dokkai` for `DokkaiPassage` & `DokkaiQuestion` CRUD + passage audio upload.
+  3. Add `/dashboard/vocab-exam` for `VocabExamQuestion` CRUD + audio upload.
+  4. Extend `/dashboard/questions` with per-question (`CustomQuestion`) add/edit/delete & optional audio upload.
+  5. Hybrid Audio Pipeline: Add optional `audioUrl` fields (`Vocab`, `DokkaiPassage`, `VocabExamQuestion`, `CustomQuestion`, plus `examples[].audioUrl`), upload manually generated MP3/M4A/WAV files via `/api/admin/audio` to Supabase Storage, and update `useJapaneseSpeech` to prefer native `audioUrl` and fallback to Web Speech API when `null`.
+- **Open Questions for User:**
+  1. Confirm CMS scope & priority (all modules at once vs phased starting with Kanji/Vocab/Mnemonic + Dokkai/Vocab Exam).
+  2. Confirm whether Supabase Storage bucket + `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` env vars are ready for audio upload, and whether ElevenLabs Starter/Creator (one-off batch) or VOICEVOX will be used for generating audio files.
+
+### User Approval & Rationale
+- User approved building the full Admin Portal CMS + setting up ElevenLabs & Supabase Storage audio infrastructure in the codebase **without auto-generating any voices yet** (preserving remaining ~9k ElevenLabs credits for manual on-demand testing/uploads).
+
+### Implementation & Completion Report
+- **Schema & Database (`prisma/schema.prisma` + `npx prisma db push`):**
+  - Added nullable `audioUrl String?` to `Vocab`, `DokkaiPassage`, `VocabExamQuestion`, and `CustomQuestion`, plus `@@index([kanjiChar])` and `@@index([bankId])`.
+  - Synced schema to Supabase PostgreSQL via session port `5432` and regenerated Prisma Client (`v5.22.0`).
+- **Audio Infrastructure & Hybrid Playback:**
+  - Created `src/lib/audio-storage.ts` (`getAudioIntegrationStatus`, `uploadAudioToSupabase`, `generateElevenLabsAudio`, `buildSafeAudioPath`) and `src/app/api/admin/audio/route.ts`.
+  - Documented `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_AUDIO_BUCKET`, `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID`, and `ELEVENLABS_MODEL_ID` in `.env.example`.
+  - Created reusable `src/components/AdminAudioField.tsx` (URL input, audio preview, manual upload to Supabase Storage, and guarded on-demand ElevenLabs synthesis showing exact character count).
+  - Updated `src/hooks/useJapaneseSpeech.ts`, `src/lib/types.ts`, `src/lib/kanji.ts`, `src/lib/exercises.ts`, `src/components/KanjiCard.tsx`, `src/components/DokkaiPractice.tsx`, and `src/components/VocabExamPractice.tsx` to play `audioUrl` first and fallback seamlessly to Web Speech API (`ja-JP`).
+- **Unified Admin CMS (`/dashboard/*`):**
+  - Created `src/lib/admin.ts` (`requireStaff`) and updated `src/components/DashboardSidebar.tsx` + `src/app/dashboard/page.tsx` with counts & navigation for Kanji & Vocab, Dokkai, Contextual Vocab, Custom Question Banks, and Sensei Verification.
+  - Extended `/dashboard/kanji` (`src/app/dashboard/kanji/page.tsx`, `src/components/AdminKanjiVocabTab.tsx`, `src/app/api/admin/kanji/[character]/route.ts`, `src/app/api/admin/kanji/[character]/vocab/route.ts`) to edit `components`, `radicals`, `soundHooks`, `Vocab` entries, and `examples` with per-item audio.
+  - Added `/dashboard/dokkai` (`src/app/dashboard/dokkai/page.tsx`, `src/app/api/admin/dokkai/route.ts`, `src/app/api/admin/dokkai/[id]/route.ts`) and `/dashboard/vocab-exam` (`src/app/dashboard/vocab-exam/page.tsx`, `src/app/api/admin/vocab-exam/route.ts`, `src/app/api/admin/vocab-exam/[id]/route.ts`).
+  - Extended `/dashboard/questions` (`src/app/dashboard/questions/page.tsx`, `src/components/AdminBankItemsModal.tsx`, `src/app/api/admin/questions/bank/[id]/route.ts`, `src/app/api/admin/questions/item/route.ts`) for per-question CRUD + audio.
+- **Verification Results:**
+  - `npx next typegen`, ESLint across all touched TS/TSX files (0 errors), `npx tsc --noEmit`, `npx next build --webpack` (exit 0), and `graphify update .` (`659` nodes, `1252` edges, `43` communities): **PASS**.
+  - Playwright verification (`390x844` mobile & `1280x800` desktop): **PASS** (`0` console/page errors, `0` horizontal overflow across `/dashboard`, `/dashboard/kanji`, `/dashboard/dokkai`, `/dashboard/vocab-exam`, `/dashboard/questions`, `/dashboard/applications`, and interactive modals/audio controls; no ElevenLabs credits consumed).
+
 
 
 

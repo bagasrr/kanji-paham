@@ -202,7 +202,7 @@ export function DokkaiPractice({ passages, kanjiMap }: Props) {
 
             {isSupported && (
               <button
-                onClick={() => (isPlaying ? stop() : speak(activePassage.text))}
+                onClick={() => (isPlaying ? stop() : speak(activePassage.text, activePassage.audioUrl))}
                 className={`px-3 py-2 rounded-full border text-xs font-bold flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer ${
                   isPlaying
                     ? 'bg-primary text-white border-primary'

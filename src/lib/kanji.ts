@@ -73,6 +73,7 @@ function parseVocabExamples(value: Prisma.JsonValue | null | undefined): VocabEx
           en: rec.en,
           ...(typeof rec.furigana === "string" ? { furigana: rec.furigana } : {}),
           ...(typeof rec.tatoebaId === "number" ? { tatoebaId: rec.tatoebaId } : {}),
+          ...(typeof rec.audioUrl === "string" && rec.audioUrl ? { audioUrl: rec.audioUrl } : {}),
         });
       }
     }
@@ -116,6 +117,7 @@ export async function getKanjiByLevel(level: 1 | 2 | 3 | 4 | 5): Promise<KanjiEn
           meanings: v.meanings,
           meanings_id: v.meanings_id,
           ...(v.mnemonic ? { mnemonic: v.mnemonic } : {}),
+          ...(v.audioUrl ? { audioUrl: v.audioUrl } : {}),
           ...(parseVocabExamples(v.examples) ? { examples: parseVocabExamples(v.examples) } : {}),
         }))
       }));

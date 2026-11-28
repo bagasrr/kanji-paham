@@ -56,6 +56,7 @@ export async function getDokkaiPassages(): Promise<DokkaiPassage[]> {
         title: p.title,
         text: p.text,
         en: p.en,
+        ...(p.audioUrl ? { audioUrl: p.audioUrl } : {}),
         questions: p.questions.map((q) => ({
           orderIdx: q.orderIdx,
           prompt: q.prompt,
@@ -91,6 +92,7 @@ export async function getVocabExamQuestions(): Promise<VocabExamQuestion[]> {
         answer: row.answer,
         ...(row.why ? { why: row.why } : {}),
         ...(row.en ? { en: row.en } : {}),
+        ...(row.audioUrl ? { audioUrl: row.audioUrl } : {}),
         ...(parseVocabWrongMap(row.wrong) ? { wrong: parseVocabWrongMap(row.wrong) } : {}),
       }));
     }

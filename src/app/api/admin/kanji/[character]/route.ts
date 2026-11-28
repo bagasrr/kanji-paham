@@ -1,21 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { auth } from '@/lib/auth'
+import { Prisma } from '@prisma/client'
+import { requireStaff } from '@/lib/admin'
 import { prisma } from '@/lib/prisma'
 
 export const dynamic = 'force-dynamic'
 
-function isStaff(role?: string) {
-  return role === 'ADMIN' || role === 'SENSEI'
+export async function GET(
+  _request: NextRequest,
+  { params }: { params: Promise<{ character: string }> }
+) {
+  const { error } = await requireStaff()
+  if (error) return error
+
+  const { character } = await params
+  const decoded = decodeURIComponent(character)
+
+  const kanji = await prisma.kanji.findUnique({
+    where: { character: decoded },
+    include: { vocab: { orderBy: { id: 'asc' } } },
+  })
+
+  if (!kanji) {
+    return NextResponse.json({ error: 'Kanji tidak ditemukan' }, { status: 404 })
+  }
+
+  return NextResponse.json({ kanji })
 }
 
 export async function PATCH(
   request: NextRequest,
   { params }: { params: Promise<{ character: string }> }
 ) {
-  const session = await auth()
-  if (!session?.user?.id || !isStaff(session.user.role)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const { error } = await requireStaff()
+  if (error) return error
 
   const { character } = await params
   const decoded = decodeURIComponent(character)
@@ -30,6 +47,9 @@ export async function PATCH(
     readings_kun?: string[]
     keyword?: string | null
     mnemonic?: string | null
+    components?: string[]
+    radicals?: string[]
+    soundHooks?: Prisma.InputJsonValue | null
   }
 
   const updated = await prisma.kanji.update({
@@ -44,6 +64,11 @@ export async function PATCH(
       ...(body.readings_kun !== undefined ? { readings_kun: body.readings_kun } : {}),
       ...(body.keyword !== undefined ? { keyword: body.keyword || null } : {}),
       ...(body.mnemonic !== undefined ? { mnemonic: body.mnemonic || null } : {}),
+      ...(body.components !== undefined ? { components: body.components } : {}),
+      ...(body.radicals !== undefined ? { radicals: body.radicals } : {}),
+      ...(body.soundHooks !== undefined
+        ? { soundHooks: body.soundHooks === null ? Prisma.DbNull : body.soundHooks }
+        : {}),
     },
   })
 
@@ -54,10 +79,8 @@ export async function DELETE(
   _request: NextRequest,
   { params }: { params: Promise<{ character: string }> }
 ) {
-  const session = await auth()
-  if (!session?.user?.id || !isStaff(session.user.role)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const { error } = await requireStaff()
+  if (error) return error
 
   const { character } = await params
   const decoded = decodeURIComponent(character)

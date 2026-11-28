@@ -10,10 +10,13 @@ import {
   Languages,
   RotateCcw,
   Sparkles,
+  Volume2,
+  VolumeX,
 } from 'lucide-react'
 import type { VocabExamQuestion, VocabExamUsageWrongDetail } from '@/lib/types'
 import { useLanguage } from '@/components/LanguageProvider'
 import { MondaiInstruction } from '@/components/MondaiInstruction'
+import { useJapaneseSpeech } from '@/hooks/useJapaneseSpeech'
 
 type QuizModeFilter = 'all' | 'para' | 'usage'
 type AnswerState = 'unanswered' | 'correct' | 'wrong'
@@ -47,6 +50,7 @@ function isUsageDetail(
 export function VocabExamPractice({ counts }: Props) {
   const { lang } = useLanguage()
   const isId = lang === 'id'
+  const { speak, stop, isPlaying, isSupported } = useJapaneseSpeech()
 
   const [mode, setMode] = useState<QuizModeFilter | null>(null)
   const [questions, setQuestions] = useState<VocabExamQuestion[]>([])
@@ -211,16 +215,35 @@ export function VocabExamPractice({ counts }: Props) {
         {/* Prompt Card */}
         <div className="bg-surface rounded-3xl border border-border-color p-5 sm:p-7 mb-5 shadow-sm">
           <div className="flex items-center justify-between gap-2 mb-3">
-            <span className="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold">
+            <span className="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold font-jp">
               {q.targetWord}
             </span>
-            <button
-              onClick={() => setShowGloss((v) => !v)}
-              className="inline-flex items-center gap-1 text-xs font-semibold text-text-muted hover:text-primary cursor-pointer"
-            >
-              {showGloss ? <EyeOff size={14} /> : <Eye size={14} />}
-              <span>{isId ? 'Arti (EN)' : 'Meaning'}</span>
-            </button>
+            <div className="flex items-center gap-2">
+              {isSupported && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    isPlaying ? stop() : speak(q.prompt.replace(/[【】]/g, ''), q.audioUrl)
+                  }
+                  className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full border text-xs font-semibold transition-colors ${
+                    isPlaying
+                      ? 'bg-primary text-white border-primary'
+                      : 'bg-surface border-border-color text-text-muted hover:text-primary'
+                  }`}
+                  aria-label={isPlaying ? 'Stop audio' : 'Play question audio'}
+                >
+                  {isPlaying ? <VolumeX size={13} /> : <Volume2 size={13} />}
+                  <span>{isPlaying ? 'Stop' : 'Audio'}</span>
+                </button>
+              )}
+              <button
+                onClick={() => setShowGloss((v) => !v)}
+                className="inline-flex items-center gap-1 text-xs font-semibold text-text-muted hover:text-primary cursor-pointer"
+              >
+                {showGloss ? <EyeOff size={14} /> : <Eye size={14} />}
+                <span>{isId ? 'Arti (EN)' : 'Meaning'}</span>
+              </button>
+            </div>
           </div>
           <p
             className="text-lg sm:text-xl font-bold text-text-main leading-relaxed font-jp"

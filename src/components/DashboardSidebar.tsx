@@ -7,6 +7,8 @@ import {
   ArrowLeft,
   BookOpen,
   FileQuestion,
+  FileText,
+  Languages,
   LayoutDashboard,
   Menu,
   Moon,
@@ -30,8 +32,10 @@ export function DashboardSidebar({ role, userName, children }: Props) {
 
   const navItems = [
     { href: '/dashboard', label: 'Overview', icon: LayoutDashboard, exact: true },
-    { href: '/dashboard/kanji', label: 'Kelola Kanji', icon: BookOpen, exact: false },
-    { href: '/dashboard/questions', label: 'Bank Soal', icon: FileQuestion, exact: false },
+    { href: '/dashboard/kanji', label: 'Kanji & Vocab', icon: BookOpen, exact: false },
+    { href: '/dashboard/dokkai', label: 'Latihan Dokkai', icon: FileText, exact: false },
+    { href: '/dashboard/vocab-exam', label: 'Kosakata Kontekstual', icon: Languages, exact: false },
+    { href: '/dashboard/questions', label: 'Bank Soal Kustom', icon: FileQuestion, exact: false },
     ...(role === 'ADMIN'
       ? [{ href: '/dashboard/applications', label: 'Verifikasi Sensei', icon: UserCheck, exact: false }]
       : []),

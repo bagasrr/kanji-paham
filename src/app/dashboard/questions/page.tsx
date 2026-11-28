@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Plus, Trash2, X, UploadCloud, Eye } from 'lucide-react'
+import { Edit3, Plus, Trash2, X, UploadCloud, Eye } from 'lucide-react'
+import { AdminBankItemsModal } from '@/components/AdminBankItemsModal'
 
 type QuestionPreview = {
   prompt: string
@@ -25,6 +26,7 @@ export default function QuestionsDashboard() {
   const [loading, setLoading] = useState(true)
 
   const [showUploadModal, setShowUploadModal] = useState(false)
+  const [manageBankId, setManageBankId] = useState<string | null>(null)
   const [showDeleteModal, setShowDeleteModal] = useState<string | null>(null)
 
   const [file, setFile] = useState<File | null>(null)
@@ -193,7 +195,13 @@ export default function QuestionsDashboard() {
                   <td className="p-4 border-b border-border-color text-text-muted text-sm">
                     {new Date(bank.createdAt).toLocaleDateString('id-ID')}
                   </td>
-                  <td className="p-4 border-b border-border-color text-right">
+                  <td className="p-4 border-b border-border-color text-right space-x-2 whitespace-nowrap">
+                    <button
+                      onClick={() => setManageBankId(bank.id)}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-border-color text-xs font-semibold hover:border-[#800020]"
+                    >
+                      <Edit3 size={14} /> Kelola Soal
+                    </button>
                     <button
                       onClick={() => setShowDeleteModal(bank.id)}
                       className="p-2 text-error hover:bg-error/10 rounded-lg transition-colors inline-flex"
@@ -348,6 +356,15 @@ export default function QuestionsDashboard() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Manage Bank Items Modal */}
+      {manageBankId && (
+        <AdminBankItemsModal
+          bankId={manageBankId}
+          onClose={() => setManageBankId(null)}
+          onUpdated={() => void fetchBanks()}
+        />
       )}
 
       {/* Delete Confirmation Modal */}

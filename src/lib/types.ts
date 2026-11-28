@@ -17,6 +17,7 @@ export interface VocabExample {
   furigana?: string;
   en: string;
   tatoebaId?: number;
+  audioUrl?: string;
 }
 
 export interface KanjiVocab {
@@ -25,6 +26,7 @@ export interface KanjiVocab {
   meanings: string[];
   meanings_id?: string[];
   mnemonic?: string;
+  audioUrl?: string;
   examples?: VocabExample[];
 }
 
@@ -95,6 +97,7 @@ export interface DokkaiPassage {
   title: string;
   text: string;
   en: string;
+  audioUrl?: string;
   questions: DokkaiQuestion[];
 }
 
@@ -115,6 +118,7 @@ export interface VocabExamQuestion {
   answer: number;
   why?: string;
   en?: string;
+  audioUrl?: string;
   wrong?: VocabExamWrongMap;
 }
 

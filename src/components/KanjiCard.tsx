@@ -317,7 +317,7 @@ export function KanjiCard({ entry }: Props) {
                               type="button"
                               onClick={() => {
                                 if (isPlaying) stop()
-                                speak(v.word)
+                                speak(v.word, v.audioUrl)
                               }}
                               className="w-8 h-8 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center transition-all shadow-sm active:scale-95 flex-shrink-0 cursor-pointer"
                               title={`Dengarkan ${v.word}`}
@@ -353,7 +353,7 @@ export function KanjiCard({ entry }: Props) {
                                   type="button"
                                   onClick={() => {
                                     if (isPlaying) stop()
-                                    speak(ex.ja)
+                                    speak(ex.ja, ex.audioUrl)
                                   }}
                                   className="w-7 h-7 rounded-full bg-surface border border-border-color hover:border-primary text-primary flex items-center justify-center flex-shrink-0 mt-0.5 cursor-pointer"
                                   title={lang === 'id' ? 'Putar kalimat' : 'Play sentence'}

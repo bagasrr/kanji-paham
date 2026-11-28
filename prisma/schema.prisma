@@ -128,7 +128,10 @@ model Vocab {
   meanings    String[]
   meanings_id String[]
   mnemonic    String?
+  audioUrl    String?
   examples    Json?
+
+  @@index([kanjiChar])
 }
 
 model DokkaiPassage {
@@ -137,6 +140,7 @@ model DokkaiPassage {
   title     String
   text      String
   en        String
+  audioUrl  String?
   questions DokkaiQuestion[]
   createdAt DateTime         @default(now())
 }
@@ -166,6 +170,7 @@ model VocabExamQuestion {
   answer     Int
   why        String?
   en         String?
+  audioUrl   String?
   wrong      Json?
   createdAt  DateTime @default(now())
 
@@ -215,5 +220,8 @@ model CustomQuestion {
   options       String[]
   correctIndex  Int
   type          String   // e.g., 'meaning', 'reading', 'reverse'
+  audioUrl      String?
   bank          CustomQuestionBank @relation(fields: [bankId], references: [id], onDelete: Cascade)
+
+  @@index([bankId])
 }

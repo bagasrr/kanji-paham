@@ -102,6 +102,8 @@
 - [x] 16.2 Update `auth.ts` NextAuth configuration to persist and expose user `role` in JWT and Session.
 - [x] 16.3 Build UI and API (`/profile/apply-sensei`) for Gakusei to upload JLPT certificates and apply to become a Sensei.
 - [x] 16.4 Create protected routing layout for the unified Teacher/Admin Dashboard (`/dashboard/*`).
-- [ ] 16.5 Build UI/API for Admins to verify/approve Sensei applications.
-- [ ] 16.6 Build CRUD interfaces for modifying Kanji/Vocab data in the dashboard.
+- [x] 16.5 Build UI/API for Admins to verify/approve Sensei applications.
+- [x] 16.6 Build CRUD interfaces for modifying Kanji/Vocab data in the dashboard.
 - [x] 16.7 Build Question Bank manager to allow uploading (PDF/Word parsing), previewing, mapping to optional Kanji reference, and deleting custom multiple-choice packages.
+- [x] 16.8 Expand Admin Portal CMS for Dokkai (`/dashboard/dokkai`), Contextual Vocab (`/dashboard/vocab-exam`), and per-item Custom Question editing (`/dashboard/questions`).
+- [x] 16.9 Setup Hybrid Audio pipeline (`Supabase Storage` upload + optional on-demand `ElevenLabs` TTS generation in Admin UI + `useJapaneseSpeech` native/Web Speech fallback).
